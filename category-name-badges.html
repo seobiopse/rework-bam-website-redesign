@@ -81,6 +81,16 @@
   .nav-dropdown:hover .nav-dropdown-panel{display:flex;}
   .nav-dropdown-panel a{padding:9px 12px !important;border-radius:6px;font-size:13.5px !important;color:var(--slate) !important;font-weight:500 !important;}
   .nav-dropdown-panel a:hover{background:var(--ivory-2);color:var(--green-forest-2) !important;}
+  .nav-mega{width:600px;display:none;grid-template-columns:1fr 1fr;gap:0 24px;padding:16px;}
+  .nav-dropdown:hover .nav-mega{display:grid;}
+  .nav-mega .mega-col{display:flex;flex-direction:column;}
+  .nav-mega .has-submenu{position:relative;}
+  .nav-mega .has-submenu > a{display:flex;align-items:center;justify-content:space-between;gap:6px;}
+  .nav-mega .has-submenu > a::after{content:'\203A';color:var(--slate);}
+  .nav-mega .submenu{display:none;position:absolute;left:100%;top:-10px;background:var(--white);border:1px solid var(--line);border-radius:10px;box-shadow:0 20px 40px -12px rgba(24,27,24,0.18);padding:10px;min-width:250px;flex-direction:column;z-index:60;}
+  .nav-mega .has-submenu:hover .submenu{display:flex;}
+  .nav-mega .submenu a{white-space:normal !important;}
+  @media(max-width:960px){.nav-mega{width:320px;grid-template-columns:1fr;} .nav-mega .submenu{position:static;box-shadow:none;border:none;padding:4px 0 4px 14px;display:flex;}}
 
   /* HERO — Heritage Modern */
   .hero{background:var(--hm-primary, #26512F);padding:80px 0;position:relative;overflow:hidden;}
@@ -450,13 +460,43 @@
         <a href="index.html">Home</a>
         <div class="nav-dropdown">
           <a href="https://badge-a-minit.com.au/categories">Categories</a>
-          <div class="nav-dropdown-panel">
-            <a href="category-name-badges.html">Name Badges</a>
-            <a href="category-lapel-pins.html">Lapel Pins</a>
-            <a href="category-button-badges.html">Button Badges</a>
-            <a href="category-lanyards.html">Lanyards</a>
-            <a href="category-button-badge-machines.html">Button Badge Machines</a>
-            <a href="https://badge-a-minit.com.au/categories">View all categories →</a>
+          <div class="nav-dropdown-panel nav-mega">
+            <div class="mega-col">
+              <div class="has-submenu">
+                <a href="category-name-badges.html">Custom &amp; Personalised Name Badges</a>
+                <div class="submenu">
+                  <a href="category-full-colour-name-badges.html">Full Colour Name Badges</a>
+                  <a href="category-engraved-name-badges.html">Engraved Name Badges</a>
+                  <a href="category-chalkboard-name-badges.html">Chalkboard Name Badges</a>
+                  <a href="category-engraved-wood-name-badges.html">Engraved Wood Name Badges</a>
+                  <a href="https://badge-a-minit.com.au/products/name-badges/reusable-name-badges">Reusable Name Badges</a>
+                  <a href="https://badge-a-minit.com.au/products/name-badges/framed-name-badges">Framed Name Badges</a>
+                </div>
+              </div>
+              <a href="category-lapel-pins.html">Lapel Pins</a>
+              <a href="category-button-badges.html">Custom Button Badges</a>
+              <div class="has-submenu">
+                <a href="category-button-badge-machines.html">Button Badge Machines</a>
+                <div class="submenu">
+                  <a href="https://badge-a-minit.com.au/products/button-badge-machines/australian-made-button-badge-machine">Australian Made Button Badge Machine</a>
+                  <a href="https://badge-a-minit.com.au/products/button-badge-machines/multi-press-button-badge-machine">Multi Press Button Badge Machine</a>
+                </div>
+              </div>
+              <a href="category-id-cards.html">ID Cards / Event Badges</a>
+              <a href="category-lanyards.html">Lanyards</a>
+              <a href="category-desk-name-plates.html">Desk Name Plates</a>
+            </div>
+            <div class="mega-col">
+              <a href="category-plaques.html">PVC Plaques</a>
+              <a href="category-plaques.html">Stainless Steel Plaques</a>
+              <a href="category-plaques.html">Aluminium Plaques</a>
+              <a href="category-luggage-tags.html">Luggage Tags</a>
+              <a href="category-badge-accessories.html">Badge Accessories</a>
+              <a href="category-button-badge-accessories.html">Button Badge Accessories</a>
+              <a href="https://badge-a-minit.com.au/products/button-badge-components">Button Badge Components</a>
+              <a href="category-button-badge-die-cutting-tools.html">Button Badge Die Cutting Tools</a>
+              <a href="category-button-badge-interchangeable-dies.html">Button Badge Interchangeable Dies</a>
+            </div>
           </div>
         </div>
         <a href="https://badge-a-minit.com.au/about-us">About Us</a>
