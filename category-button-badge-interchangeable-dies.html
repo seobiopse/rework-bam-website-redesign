@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Badge-A-Minit — Button Badge Interchangeable Dies Category</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green-forest:#26512F;
+    --green-forest-2:#1D3F25;
+    --green-leaf:#6FA841;
+    --green-leaf-2:#83BE52;
+    --ink:#181B18;
+    --ivory:#F8F6F0;
+    --ivory-2:#F1EDE3;
+    --brass:#B08D46;
+    --brass-light:#D8BE84;
+    --slate:#5B6660;
+    --white:#FFFFFF;
+    --line:rgba(24,27,24,0.10);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--ivory);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;}
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--brass);display:flex;align-items:center;gap:10px;}
+  .eyebrow::before{content:'';width:22px;height:1px;background:var(--brass);}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em;color:var(--green-forest-2);}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;padding:14px 26px;border-radius:3px;cursor:pointer;border:1px solid transparent;transition:transform .18s ease, box-shadow .18s ease, background .18s ease;}
+  .btn-primary{background:var(--green-forest);color:var(--ivory);}
+  .btn-primary:hover{background:var(--green-forest-2);transform:translateY(-1px);box-shadow:0 8px 20px rgba(38,81,47,0.28);}
+  .btn-ghost{background:transparent;color:var(--green-forest-2);border-color:rgba(24,27,24,0.22);}
+  .btn-ghost:hover{border-color:var(--green-forest-2);}
+  .btn-brass{background:var(--brass);color:var(--ink);}
+  .btn-brass:hover{background:var(--brass-light);transform:translateY(-1px);}
+  .btn-sm{padding:9px 16px;font-size:13px;}
+
+  /* HEADER — three-tier, matches original site structure */
+  header{position:sticky;top:0;z-index:100;background:var(--white);box-shadow:0 1px 0 var(--line);}
+  .header-utility{padding:14px 32px;max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .header-logo img{height:40px;width:auto;display:block;}
+  .header-contact{display:flex;align-items:center;gap:28px;}
+  .header-contact a{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink);}
+  .header-contact a svg{width:15px;height:15px;stroke:var(--green-forest);flex-shrink:0;}
+  .header-contact a b{font-weight:700;}
+  .header-contact a.email{color:var(--green-forest-2);}
+  .header-account{display:flex;align-items:center;gap:18px;}
+  .header-account a{font-size:13px;color:var(--slate);white-space:nowrap;}
+  .header-account a:hover{color:var(--green-forest-2);}
+  .header-account .sep{width:1px;height:12px;background:var(--line);}
+  .header-account .cart{display:flex;align-items:center;gap:6px;color:var(--ink);font-weight:600;}
+  .header-account .cart svg{width:17px;height:17px;}
+  .header-search{display:flex;align-items:center;background:var(--ivory-2);border:1px solid var(--line);border-radius:30px;padding:8px 8px 8px 16px;gap:8px;width:220px;}
+  .header-search input{border:none;background:none;outline:none;font-size:12.5px;color:var(--ink);width:100%;font-family:'Inter',sans-serif;}
+  .header-search input::placeholder{color:var(--slate);}
+  .header-search button{width:26px;height:26px;border-radius:50%;background:var(--green-forest);border:none;display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer;}
+  .header-search button svg{width:12px;height:12px;stroke:var(--ivory);}
+  @media(max-width:1080px){.header-contact,.header-search{display:none;}}
+
+  .trust-strip{background:var(--green-forest-2);}
+  .trust-strip .wrap{display:flex;justify-content:center;gap:44px;flex-wrap:wrap;padding:11px 32px;}
+  .trust-strip-item{display:flex;align-items:center;gap:8px;color:rgba(248,246,240,0.88);font-size:12.5px;font-weight:600;}
+  .trust-strip-item svg{width:14px;height:14px;stroke:var(--brass-light);flex-shrink:0;}
+  @media(max-width:760px){.trust-strip .wrap{gap:20px 26px;}}
+
+  .main-nav-strip{background:var(--green-forest);}
+  .main-nav-strip .wrap{display:flex;justify-content:center;}
+  .main-nav-strip .nav-links{display:flex;gap:0;font-size:14px;font-weight:600;color:var(--ivory);}
+  .main-nav-strip .nav-links a{padding:15px 22px;color:rgba(248,246,240,0.92);display:flex;align-items:center;gap:5px;}
+  .main-nav-strip .nav-links a:hover{background:rgba(0,0,0,0.12);color:var(--white);}
+  .main-nav-strip .nav-dropdown-panel{top:calc(100% + 0px);}
+  @media(max-width:760px){.main-nav-strip .nav-links{overflow-x:auto;width:100%;justify-content:flex-start;}.main-nav-strip .nav-links a{padding:14px 16px;white-space:nowrap;}}
+
+  .nav-dropdown{position:relative;}
+  .nav-dropdown-panel{position:absolute;left:50%;transform:translateX(-50%);background:var(--white);border:1px solid var(--line);border-radius:10px;box-shadow:0 20px 40px -12px rgba(24,27,24,0.18);padding:10px;display:none;flex-direction:column;min-width:220px;z-index:50;}
+  .nav-dropdown:hover .nav-dropdown-panel{display:flex;}
+  .nav-dropdown-panel a{padding:9px 12px !important;border-radius:6px;font-size:13.5px !important;color:var(--slate) !important;font-weight:500 !important;}
+  .nav-dropdown-panel a:hover{background:var(--ivory-2);color:var(--green-forest-2) !important;}
+
+  /* HERO — Heritage Modern */
+  .hero{background:var(--hm-primary, #26512F);padding:80px 0;position:relative;overflow:hidden;}
+  .hero-watermark{position:absolute;top:-40px;right:-40px;width:420px;height:420px;opacity:0.06;pointer-events:none;transform:rotate(12deg);}
+  .hero-watermark svg{width:100%;height:100%;stroke:var(--ivory);fill:none;}
+  .hero-grid{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:center;position:relative;z-index:2;}
+  .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:20px;justify-content:flex-start;}
+  .hero-eyebrow .rule{width:48px;height:1px;background:rgba(248,246,240,0.6);}
+  .hero-eyebrow span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(248,246,240,0.75);}
+  .hero h1{font-size:clamp(36px,4.6vw,54px);line-height:1.1;margin-bottom:22px;color:var(--white);}
+  .hero h1 em{font-style:italic;font-weight:500;color:var(--brass-light,var(--brass));display:block;}
+  .hero p.lead{font-size:16.5px;color:rgba(248,246,240,0.78);max-width:440px;margin-bottom:32px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;}
+  .btn-cream{background:var(--ivory);color:var(--green-forest-2);}
+  .btn-cream:hover{background:var(--white);transform:translateY(-1px);}
+  .btn-outline-light{background:transparent;color:var(--ivory);border-color:rgba(248,246,240,0.5);}
+  .btn-outline-light:hover{background:rgba(248,246,240,0.1);border-color:var(--ivory);}
+  .hero-kicker{display:inline-flex;align-items:center;gap:10px;background:rgba(248,246,240,0.1);border:1px solid rgba(248,246,240,0.22);padding:8px 16px 8px 8px;border-radius:30px;margin-bottom:8px;}
+  .hero-kicker .avatars{display:flex;}
+  .hero-kicker .avatars span{width:22px;height:22px;border-radius:50%;border:2px solid var(--green-forest);background:var(--brass);margin-left:-8px;display:flex;align-items:center;justify-content:center;font-size:8px;color:var(--ink);font-weight:700;}
+  .hero-kicker .avatars span:first-child{margin-left:0;}
+  .hero-kicker p{font-size:12px;font-weight:600;color:var(--ivory);}
+  .hero-stats{display:flex;gap:34px;margin-top:32px;}
+  .hero-stat b{font-family:'Fraunces',serif;font-size:21px;color:var(--white);display:block;}
+  .hero-stat span{font-size:11.5px;color:rgba(248,246,240,0.65);}
+
+  /* HERO VISUAL — organic mask + floating badge */
+  .hero-visual{position:relative;}
+  .hero-visual-inner{position:relative;width:100%;aspect-ratio:4/3;max-width:640px;margin-left:auto;}
+  .hero-pebble{width:100%;height:100%;border-radius:60% 40% 30% 70% / 60% 30% 70% 40%;overflow:hidden;background:var(--ivory-2);box-shadow:0 30px 60px -20px rgba(0,0,0,0.4);transition:transform .7s ease;}
+  .hero-pebble:hover{transform:scale(1.02);}
+  .hero-pebble img{width:100%;height:100%;object-fit:cover;display:block;}
+  .hero-float-badge{position:absolute;bottom:-24px;right:6%;width:128px;height:128px;border-radius:50%;background:var(--brass);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:4px;box-shadow:0 16px 30px -8px rgba(24,27,24,0.4);transform:rotate(-6deg);transition:transform .4s ease;cursor:default;}
+  .hero-float-badge:hover{transform:rotate(6deg) scale(1.04);}
+  .hero-float-badge svg{width:22px;height:22px;stroke:var(--ink);}
+  .hero-float-badge span{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;line-height:1.2;max-width:88px;}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;} .hero{text-align:center;padding:56px 0;} .hero-eyebrow{justify-content:center;} .hero-actions{justify-content:center;} .hero-stats{justify-content:center;} .hero p.lead{margin-left:auto;margin-right:auto;} .hero-visual-inner{margin:40px auto 0;} .hero-float-badge{right:0;}}
+
+  /* TRUST BAR */
+  .trust-bar{background:var(--ink);padding:20px 0;}
+  .trust-bar .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+  .trust-item{display:flex;align-items:center;gap:10px;color:var(--ivory-2);font-size:13px;}
+  .trust-item b{font-family:'Fraunces',serif;color:var(--brass-light);font-size:14.5px;font-weight:600;}
+
+  section{padding:80px 0;}
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head h2{font-size:clamp(27px,3.2vw,36px);margin-top:14px;}
+  .section-head p{color:var(--slate);margin-top:12px;font-size:15px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+
+  /* EXPLORER TOGGLE */
+  .explorer{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .explorer-toggle{display:inline-flex;background:var(--ivory-2);border-radius:40px;padding:5px;gap:4px;margin-bottom:8px;}
+  .explorer-toggle button{border:none;background:transparent;padding:11px 22px;border-radius:32px;font-family:'Inter',sans-serif;font-weight:600;font-size:13.5px;color:var(--slate);cursor:pointer;transition:all .2s ease;}
+  .explorer-toggle button.active{background:var(--green-forest);color:var(--ivory);}
+  .explorer-panel{display:none;}
+  .explorer-panel.active{display:block;}
+  .explorer-note{font-size:13.5px;color:var(--slate);margin-top:16px;max-width:560px;}
+
+  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px;}
+  .cat-tile{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:1/1.05;background:var(--ivory-2);cursor:pointer;}
+  .cat-tile img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .cat-tile:hover img{transform:scale(1.08);}
+  .cat-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg, rgba(24,27,24,0.82) 0%, rgba(24,27,24,0.15) 45%, transparent 70%);}
+  .cat-tile .cat-tag{position:absolute;top:12px;left:12px;background:rgba(248,246,240,0.92);color:var(--green-forest-2);font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;padding:5px 9px;border-radius:20px;z-index:2;}
+  .cat-tile .cat-label{position:absolute;left:16px;right:16px;bottom:14px;z-index:2;}
+  .cat-tile .cat-label h3{color:var(--white);font-size:16.5px;font-family:'Fraunces',serif;font-weight:600;line-height:1.2;}
+  .cat-tile .cat-label span{color:var(--brass-light);font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.06em;text-transform:uppercase;display:flex;align-items:center;gap:5px;margin-top:6px;opacity:0;transform:translateY(4px);transition:all .25s ease;}
+  .cat-tile:hover .cat-label span{opacity:1;transform:translateY(0);}
+  @media(max-width:960px){.cat-grid{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:640px){.cat-grid{grid-template-columns:repeat(2,1fr);}}
+
+  /* TRENDING */
+  /* HERITAGE MODERN — Best sellers section */
+  .hm{--hm-primary:#03271a;--hm-on-primary:#ffffff;--hm-secondary:#7a5823;--hm-secondary-container:#fed08f;--hm-on-secondary-container:#795722;--hm-bg:#fbf9f4;--hm-surface-lowest:#ffffff;--hm-surface-low:#f5f3ee;--hm-surface:#f0eee9;--hm-on-surface:#1b1c19;--hm-on-surface-variant:#414844;--hm-outline-variant:#c1c8c2;}
+  .hm-serif{font-family:'Source Serif 4',serif;}
+  .hm-sans{font-family:'Hanken Grotesk',sans-serif;}
+  .hm-label{font-family:'Hanken Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;}
+
+  /* BENTO — post-hero feature grid */
+  .bento{padding:0 0 80px;}
+  .bento-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;}
+  .bento-card{padding:48px;}
+  .bento-feature{grid-column:span 8;background:var(--hm-surface-low);display:flex;align-items:center;gap:48px;}
+  .bento-feature-text{flex:1;}
+  .bento-feature-text .hm-label{color:var(--hm-secondary);margin-bottom:16px;display:block;}
+  .bento-feature-text h2{font-family:'Source Serif 4',serif;font-size:32px;line-height:1.2;color:var(--hm-primary);margin-bottom:16px;}
+  .bento-feature-text p{font-family:'Hanken Grotesk',sans-serif;font-size:16px;line-height:1.55;color:var(--hm-on-surface-variant);margin-bottom:20px;}
+  .bento-link{font-family:'Hanken Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--hm-primary);display:inline-flex;align-items:center;gap:8px;}
+  .bento-link svg{width:16px;height:16px;transition:transform .2s ease;}
+  .bento-link:hover svg{transform:translateX(4px);}
+  .bento-feature-img{flex:1;aspect-ratio:1/1;overflow:hidden;background:var(--hm-surface);}
+  .bento-feature-img img{width:100%;height:100%;object-fit:cover;}
+  .bento-tonal{grid-column:span 4;background:var(--hm-primary);color:var(--white);display:flex;flex-direction:column;justify-content:space-between;}
+  .bento-tonal h2{font-family:'Source Serif 4',serif;font-size:28px;line-height:1.25;margin-bottom:14px;}
+  .bento-tonal p{font-family:'Hanken Grotesk',sans-serif;font-size:15px;line-height:1.55;opacity:0.82;}
+  .bento-tonal svg{width:44px;height:44px;stroke:rgba(248,246,240,0.4);margin-top:28px;}
+  .bento-info{grid-column:span 4;background:var(--hm-surface);display:flex;flex-direction:column;gap:20px;}
+  .bento-icon{width:48px;height:48px;border-radius:50%;background:var(--hm-secondary-container);display:flex;align-items:center;justify-content:center;}
+  .bento-icon svg{width:22px;height:22px;stroke:var(--hm-on-secondary-container);}
+  .bento-info h3{font-family:'Source Serif 4',serif;font-size:22px;color:var(--hm-primary);margin-bottom:8px;}
+  .bento-info p{font-family:'Hanken Grotesk',sans-serif;font-size:15px;line-height:1.55;color:var(--hm-on-surface-variant);}
+  .bento-cta{grid-column:span 8;background:var(--hm-secondary-container);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;transition:background .4s ease;}
+  .bento-cta:hover{background:var(--brass-light);}
+  .bento-cta h2{font-family:'Source Serif 4',serif;font-size:28px;color:var(--hm-on-secondary-container);margin-bottom:10px;}
+  .bento-cta p{font-family:'Hanken Grotesk',sans-serif;font-size:15px;color:var(--hm-on-secondary-container);opacity:0.85;margin-bottom:24px;}
+  .bento-cta-btn{background:var(--hm-primary);color:var(--white);font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:13px;padding:14px 24px;}
+  .bento-cta-btn:hover{opacity:0.9;}
+  @media(max-width:900px){
+    .bento-feature,.bento-tonal,.bento-info,.bento-cta{grid-column:span 12;}
+    .bento-feature{flex-direction:column;}
+    .bento-card{padding:32px;}
+  }
+  .hm .section-head .eyebrow{color:var(--hm-secondary);}
+  .hm .section-head .eyebrow::before{background:var(--hm-secondary);}
+  .hm .section-head h2{font-family:'Source Serif 4',serif;color:var(--hm-primary);}
+  .hm .section-head p{font-family:'Hanken Grotesk',sans-serif;color:var(--hm-on-surface-variant);}
+  .hm-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;}
+  .hm-tab{border:1px solid var(--hm-outline-variant);background:var(--hm-surface-low);color:var(--hm-on-surface);padding:11px 20px;border-radius:9999px;font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.02em;cursor:pointer;transition:all .18s ease;}
+  .hm-tab:hover{background:var(--hm-surface);}
+  .hm-tab.active{background:var(--hm-primary);color:var(--hm-on-primary);border-color:var(--hm-primary);}
+  .trend-panel{display:none;}
+  .trend-panel.active{display:block;}
+  .hm-promo{background:var(--hm-primary);color:var(--hm-on-primary);border-radius:10px;padding:26px 28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;margin-bottom:28px;}
+  .hm-promo-left{display:flex;flex-direction:column;gap:8px;max-width:520px;}
+  .hm-promo-tag{display:flex;align-items:center;gap:8px;opacity:0.65;}
+  .hm-promo-tag .rule{width:16px;height:1px;background:var(--hm-on-primary);}
+  .hm-promo-tag span{font-family:'Hanken Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;}
+  .hm-promo h3{font-family:'Source Serif 4',serif;font-weight:600;font-size:22px;line-height:1.25;}
+  .hm-promo-right{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+  .hm-promo-right p{font-family:'Hanken Grotesk',sans-serif;font-size:14.5px;opacity:0.82;max-width:320px;line-height:1.5;}
+  .hm-promo-cta{flex-shrink:0;background:var(--hm-secondary-container);color:var(--hm-on-secondary-container);font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:12px;letter-spacing:0.04em;padding:12px 18px;border-radius:4px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;}
+  .hm-promo-cta:hover{filter:brightness(1.08);}
+  .hm-scroll{display:flex;gap:24px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;}
+  .hm-scroll::-webkit-scrollbar{display:none;}
+  .hm-card{flex:0 0 240px;background:var(--hm-surface-lowest);border:1px solid var(--hm-outline-variant);border-radius:8px;padding:16px;transition:box-shadow .2s ease;}
+  .hm-card:hover{box-shadow:0 4px 24px rgba(3,39,26,0.08);}
+  .hm-card .hm-img{aspect-ratio:1/1;background:var(--hm-surface);border-radius:4px;overflow:hidden;margin-bottom:24px;}
+  .hm-card .hm-img img{width:100%;height:100%;object-fit:contain;transition:transform .5s ease;}
+  .hm-card:hover .hm-img img{transform:scale(1.05);}
+  .hm-card h4{font-family:'Source Serif 4',serif;font-weight:600;font-size:18px;color:var(--hm-primary);margin-bottom:6px;line-height:1.3;min-height:47px;}
+  .hm-card .hm-price{font-family:'Hanken Grotesk',sans-serif;font-size:13px;color:var(--hm-on-surface-variant);margin-bottom:10px;}
+  .hm-card .hm-price b{color:var(--hm-primary);}
+  .hm-card .hm-more{font-family:'Hanken Grotesk',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.05em;color:var(--hm-secondary);display:inline-flex;align-items:center;gap:6px;margin-top:4px;}
+  .hm-card:hover .hm-more{color:var(--hm-primary);}
+  .hm-controls{margin-top:16px;display:flex;align-items:center;gap:24px;}
+  .hm-nav-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--hm-outline-variant);background:var(--hm-surface-lowest);display:flex;align-items:center;justify-content:center;color:var(--hm-primary);cursor:pointer;flex-shrink:0;}
+  .hm-nav-btn:hover{background:var(--hm-surface-low);}
+  .hm-track{flex-grow:1;height:2px;background:var(--hm-outline-variant);position:relative;border-radius:9999px;}
+  .hm-thumb{position:absolute;top:0;left:0;height:2px;width:30%;background:var(--hm-primary);border-radius:9999px;transition:left .15s ease;}
+  @media(max-width:640px){.hm-card{flex-basis:190px;}.hm-promo{padding:22px;}}
+
+  /* WHY */
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  .why-card{background:var(--ivory);padding:30px 24px;}
+  .why-card .num{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--brass);letter-spacing:0.1em;}
+  .why-card h3{font-size:16px;margin:14px 0 8px;font-family:'Inter',sans-serif;font-weight:600;color:var(--ink);}
+  .why-card p{font-size:13.5px;color:var(--slate);}
+  @media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+
+  /* STORY */
+  .story{background:var(--green-forest);color:var(--ivory-2);}
+  .story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+  .story .eyebrow{color:var(--brass-light);}
+  .story .eyebrow::before{background:var(--brass-light);}
+  .story h2{color:var(--white);margin-top:16px;font-size:clamp(26px,3.2vw,36px);}
+  .story p{color:rgba(248,246,240,0.72);margin-top:16px;font-size:15px;max-width:460px;}
+  .story .btn-brass{margin-top:24px;}
+  .story-visual{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;}
+  .story-visual img{width:100%;height:100%;object-fit:cover;}
+  @media(max-width:900px){.story .wrap{grid-template-columns:1fr;} .story-visual{display:none;}}
+
+  /* BRANDS */
+  .brands-strip{background:var(--white);border-bottom:1px solid var(--line);}
+  .brands-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;opacity:0.75;}
+  .brand-chip{font-family:'Fraunces',serif;font-weight:600;font-size:14.5px;color:var(--slate);}
+
+  /* TESTIMONIALS */
+  .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .t-card{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:14px;}
+  .t-stars{color:var(--brass);font-size:14px;letter-spacing:2px;}
+  .t-quote{font-family:'Fraunces',serif;font-size:16px;color:var(--ink);line-height:1.5;font-style:italic;}
+  .t-who{display:flex;align-items:center;gap:10px;margin-top:auto;}
+  .t-avatar{width:32px;height:32px;border-radius:50%;background:var(--green-forest);color:var(--ivory);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;}
+  .t-who b{font-size:13px;} .t-who span{font-size:11.5px;color:var(--slate);display:block;}
+  @media(max-width:900px){.testimonial-grid{grid-template-columns:1fr;}}
+
+  /* FAQ */
+  .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 48px;}
+  .faq-col-head{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brass);margin-bottom:8px;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{width:100%;text-align:left;background:none;border:none;padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;color:var(--ink);}
+  .faq-q .plus{font-family:'IBM Plex Mono',monospace;font-size:17px;color:var(--brass);transition:transform .25s ease;flex-shrink:0;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .faq-a p{padding-bottom:20px;color:var(--slate);font-size:13.5px;}
+  @media(max-width:900px){.faq-grid{grid-template-columns:1fr;}}
+
+  /* VISIT / MAP */
+  .visit{background:var(--white);border-top:1px solid var(--line);}
+  .visit .wrap{display:grid;grid-template-columns:0.85fr 1.15fr;gap:48px;align-items:stretch;}
+  .visit-info{display:flex;flex-direction:column;justify-content:center;}
+  .nap-list{margin-top:20px;display:flex;flex-direction:column;gap:16px;}
+  .nap-row{display:flex;gap:12px;align-items:flex-start;}
+  .nap-row svg{width:18px;height:18px;stroke:var(--brass);flex-shrink:0;margin-top:2px;}
+  .nap-row b{display:block;font-size:14px;color:var(--ink);}
+  .nap-row span{font-size:13.5px;color:var(--slate);}
+  .map-embed{border-radius:14px;overflow:hidden;min-height:340px;border:1px solid var(--line);}
+  .map-embed iframe{width:100%;height:100%;min-height:340px;border:0;display:block;}
+  @media(max-width:900px){.visit .wrap{grid-template-columns:1fr;}}
+
+  /* CTA BAND */
+  .cta-band{background:var(--ink);text-align:center;}
+  .cta-band h2{color:var(--white);font-size:clamp(26px,3.4vw,38px);}
+  .cta-band p{color:rgba(248,246,240,0.6);margin:16px auto 30px;max-width:480px;font-size:15px;}
+  .cta-band .wrap{display:flex;flex-direction:column;align-items:center;}
+
+  /* FOOTER */
+  footer{background:var(--green-forest-2);color:rgba(248,246,240,0.7);padding:60px 0 26px;font-size:13.5px;}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(248,246,240,0.14);}
+  .foot-col h4{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brass-light);margin-bottom:16px;}
+  .foot-col a{display:block;color:rgba(248,246,240,0.65);margin-bottom:10px;}
+  .foot-col a:hover{color:var(--white);}
+  .foot-social{display:flex;gap:10px;margin-top:16px;}
+  .foot-social a{width:32px;height:32px;border-radius:50%;border:1px solid rgba(248,246,240,0.25);display:flex;align-items:center;justify-content:center;}
+  .foot-social a:hover{background:var(--brass);border-color:var(--brass);color:var(--ink);}
+  .foot-bottom{display:flex;justify-content:space-between;padding-top:22px;flex-wrap:wrap;gap:10px;color:rgba(248,246,240,0.45);font-size:12px;}
+
+  /* ===== CATEGORY PAGE v2 — sidebar + filters + grid first ===== */
+  .breadcrumb{padding:16px 0;background:var(--white);border-bottom:1px solid var(--line);}
+  .breadcrumb .wrap{display:flex;gap:8px;align-items:center;font-size:12.5px;color:var(--slate);}
+  .breadcrumb a{color:var(--slate);}
+  .breadcrumb a:hover{color:var(--green-forest-2);}
+  .breadcrumb .current{color:var(--green-forest-2);font-weight:600;}
+
+  .cat-layout{display:grid;grid-template-columns:250px 1fr;gap:40px;padding:36px 0 0;}
+  .cat-sidebar{border-right:1px solid var(--line);padding-right:28px;}
+  .cat-sidebar-group{margin-bottom:0;padding-top:24px;margin-top:8px;border-top:1px solid var(--line);}
+  .cat-sidebar a.top{display:block;font-family:'Fraunces',serif;font-weight:600;color:var(--green-forest-2);font-size:15px;padding:4px 0 10px;}
+  .cat-sidebar ul{list-style:none;margin:0;padding:0;}
+  .cat-sidebar ul li a{display:block;font-size:13px;color:var(--slate);padding:5px 0;}
+  .cat-sidebar ul li a.active{color:var(--green-forest);font-weight:700;}
+  .cat-sidebar ul li a:hover{color:var(--green-forest-2);}
+
+  .filter-facets{padding-top:0;margin-top:0;}
+  .filter-facets-title{font-family:'Fraunces',serif;font-weight:600;color:var(--green-forest-2);font-size:14px;margin-bottom:16px;}
+  .facet-group{margin-bottom:24px;}
+  .facet-title{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink);font-weight:700;margin-bottom:12px;}
+  .facet-option{display:flex;align-items:center;gap:9px;margin-bottom:9px;cursor:pointer;}
+  .facet-option input{accent-color:var(--green-forest);width:14px;height:14px;flex-shrink:0;}
+  .facet-option label{font-size:13px;color:var(--ink);cursor:pointer;flex:1;}
+  .facet-option .count{font-size:11.5px;color:var(--slate);}
+  .facet-clear{font-size:11.5px;color:var(--brass);font-weight:600;cursor:pointer;}
+  .facet-clear:hover{color:var(--green-forest);}
+
+  .other-cats-toggle{list-style:none;padding:20px 0 0;margin-top:28px;border-top:1px solid var(--line);}
+  .other-cats-toggle summary{font-size:12px;color:var(--slate);font-weight:600;cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px;}
+  .other-cats-toggle summary::-webkit-details-marker{display:none;}
+  .other-cats-toggle summary::before{content:'+';font-size:14px;color:var(--brass);}
+  .other-cats-toggle[open] summary::before{content:'–';}
+  .other-cats-toggle ul{margin-top:10px;padding-left:2px;}
+  .other-cats-toggle ul li a{font-size:12.5px;color:var(--slate);padding:4px 0;}
+  .other-cats-toggle ul li a:hover{color:var(--green-forest-2);}
+  .other-cats-toggle ul li ul{padding-left:14px;margin-top:2px;}
+  .other-cats-toggle ul li ul li a{font-size:11.5px;}
+
+  .cat-main-head{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+  .cat-main-head .icon{width:38px;height:38px;border-radius:50%;background:var(--ivory-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .cat-main-head .icon svg{width:19px;height:19px;stroke:var(--green-forest);}
+  .cat-main-head h1{font-family:'Fraunces',serif;font-weight:600;font-size:30px;color:var(--green-forest-2);}
+
+  .filter-bar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-bottom:20px;border-bottom:1px solid var(--line);margin-bottom:20px;}
+  .filter-chips{display:flex;gap:8px;flex-wrap:wrap;}
+  .filter-chip{border:1px solid var(--line);background:var(--white);padding:9px 16px;border-radius:30px;font-size:12.5px;font-weight:600;color:var(--slate);cursor:pointer;transition:all .15s ease;}
+  .filter-chip:hover{border-color:var(--green-forest);color:var(--green-forest);}
+  .filter-chip.active{background:var(--green-forest);color:var(--ivory);border-color:var(--green-forest);}
+  .filter-meta{display:flex;align-items:center;gap:14px;font-size:13px;color:var(--slate);}
+  .filter-meta select{border:1px solid var(--line);border-radius:6px;padding:8px 12px;font-size:13px;color:var(--ink);font-family:'Inter',sans-serif;background:var(--white);}
+
+  .product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+  .product-card{position:relative;}
+  .product-card .p-img{position:relative;aspect-ratio:1/1;background:var(--ivory-2);border-radius:8px;overflow:hidden;margin-bottom:12px;}
+  .product-card .p-img img{width:100%;height:100%;object-fit:contain;padding:10px;transition:transform .35s ease;}
+  .product-card:hover .p-img img{transform:scale(1.06);}
+  .product-card .wishlist{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;z-index:2;}
+  .product-card .wishlist svg{width:15px;height:15px;stroke:var(--slate);fill:none;}
+  .product-card .wishlist:hover svg{stroke:var(--brass);}
+  .product-card h4{font-family:'Inter',sans-serif;font-weight:600;font-size:14px;color:var(--ink);line-height:1.35;min-height:38px;margin-bottom:6px;}
+  .product-card .stock{display:flex;align-items:center;gap:5px;font-size:11.5px;color:var(--green-forest);font-weight:600;margin-bottom:4px;}
+  .product-card .stock svg{width:11px;height:11px;stroke:var(--green-forest);}
+  .product-card .p-price{font-family:'IBM Plex Mono',monospace;font-size:15px;color:var(--green-forest-2);font-weight:600;}
+  .product-card .p-price span{font-family:'Inter',sans-serif;font-size:11px;color:var(--slate);font-weight:400;text-transform:uppercase;letter-spacing:0.04em;margin-right:4px;}
+  .load-more-wrap{display:flex;justify-content:center;margin-top:36px;}
+  .hidden-card{display:none;}
+  @media(max-width:960px){.cat-layout{grid-template-columns:1fr;}.cat-sidebar{display:none;}.product-grid{grid-template-columns:repeat(2,1fr);}}
+
+  /* Below-the-fold value sections (reused pattern) */
+  .compare-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  .compare-card{background:var(--white);padding:28px 22px;display:flex;flex-direction:column;}
+  .compare-card .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--brass);margin-bottom:12px;}
+  .compare-card h3{font-family:'Fraunces',serif;font-size:19px;color:var(--green-forest-2);margin-bottom:10px;}
+  .compare-card .row-label{font-size:11px;text-transform:uppercase;letter-spacing:0.05em;color:var(--slate);font-weight:700;margin-top:14px;margin-bottom:4px;}
+  .compare-card .row-value{font-size:13.5px;color:var(--ink);line-height:1.5;}
+  .compare-card .price{font-family:'Fraunces',serif;font-size:20px;color:var(--green-forest);margin-top:16px;}
+  .compare-card a.cta{margin-top:18px;font-size:12px;font-weight:700;color:var(--brass);display:inline-flex;align-items:center;gap:6px;}
+  @media(max-width:1024px){.compare-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:640px){.compare-grid{grid-template-columns:1fr;}}
+
+  .material-strip{display:flex;gap:18px;overflow-x:auto;padding-bottom:8px;}
+  .material-chip{flex:0 0 150px;text-align:center;}
+  .material-chip .swatch{aspect-ratio:1/1;border-radius:50%;overflow:hidden;margin-bottom:12px;box-shadow:0 10px 24px -8px rgba(24,27,24,0.25);}
+  .material-chip .swatch img{width:100%;height:100%;object-fit:cover;}
+  .material-chip h4{font-family:'Fraunces',serif;font-size:14.5px;color:var(--ink);margin-bottom:4px;}
+  .material-chip span{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--green-forest);}
+
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .process-card{text-align:center;padding:8px;}
+  .process-num{width:34px;height:34px;border-radius:50%;background:var(--green-forest);color:var(--ivory);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;margin:0 auto 16px;}
+  .process-card h4{font-family:'Fraunces',serif;font-size:16px;color:var(--green-forest-2);margin-bottom:8px;}
+  .process-card p{font-size:13px;color:var(--slate);line-height:1.5;}
+  @media(max-width:900px){.process-grid{grid-template-columns:repeat(2,1fr);}}
+
+  .content-block{max-width:760px;}
+  .content-block h2{font-family:'Fraunces',serif;font-size:26px;color:var(--green-forest-2);margin-bottom:14px;}
+  .content-block p{font-size:15px;color:var(--slate);line-height:1.65;margin-bottom:16px;}
+  .content-block a{color:var(--brass);font-weight:600;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-utility">
+    <a href="index.html" class="header-logo">
+      <img src="https://badge-a-minit.com.au/assets/img/logo/Badge-a-minit-logo.png" alt="Badge-A-Minit">
+    </a>
+    <div class="header-contact">
+      <a href="tel:0883631655"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .3 2 .7 3a2 2 0 01-.4 2.1L8 10.3a16 16 0 006 6l1.5-1.4a2 2 0 012.1-.4c1 .4 2 .6 3 .7a2 2 0 011.7 2.1z"/></svg><span>Customer Service: <b>(08) 8363 1655</b></span></a>
+      <a href="mailto:sales@badge-a-minit.com.au" class="email"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>sales@badge-a-minit.com.au</span></a>
+    </div>
+    <div style="display:flex;align-items:center;gap:24px;">
+      <div class="header-account">
+        <a href="https://badge-a-minit.com.au/login">Sign in</a>
+        <span class="sep"></span>
+        <a href="https://badge-a-minit.com.au/register">Create an account</a>
+        <span class="sep"></span>
+        <a href="#" class="cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 002 1.6h9.7a2 2 0 002-1.6L23 6H6"/></svg>View cart (0)</a>
+      </div>
+      <div class="header-search">
+        <input type="text" placeholder="Search from the largest collection of Badges...">
+        <button type="button" aria-label="Search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust-strip">
+    <div class="wrap">
+      <div class="trust-strip-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Fastest Turnaround</div>
+      <div class="trust-strip-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 22V3M4 3h13l-2.5 4L17 11H4"/></svg>Australian Owned</div>
+      <div class="trust-strip-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg>Free Design Service</div>
+      <div class="trust-strip-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M20.6 12.3L12.7 20.2a2 2 0 01-2.8 0L3 13.3V4h9.3l8.3 8.3a2 2 0 010 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Volume Pricing</div>
+    </div>
+  </div>
+
+  <div class="main-nav-strip">
+    <div class="wrap">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <div class="nav-dropdown">
+          <a href="https://badge-a-minit.com.au/categories">Categories</a>
+          <div class="nav-dropdown-panel">
+            <a href="category-name-badges.html">Name Badges</a>
+            <a href="category-lapel-pins.html">Lapel Pins</a>
+            <a href="category-button-badges.html">Button Badges</a>
+            <a href="category-lanyards.html">Lanyards</a>
+            <a href="category-button-badge-machines.html">Button Badge Machines</a>
+            <a href="https://badge-a-minit.com.au/categories">View all categories →</a>
+          </div>
+        </div>
+        <a href="https://badge-a-minit.com.au/about-us">About Us</a>
+        <a href="https://badge-a-minit.com.au/contact">Contact Us</a>
+        <a href="https://badge-a-minit.com.au/get-quote">Quote Form</a>
+        <a href="https://badge-a-minit.com.au/reseller-form">Become a Reseller</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="breadcrumb">
+  <div class="wrap">
+    <a href="index.html">Home</a> <span>/</span>
+    <span class="current">Button Badge Interchangeable Dies</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="cat-layout">
+    <aside class="cat-sidebar">
+      <details class="other-cats-toggle" open>
+        <summary>Browse other categories</summary>
+        <ul>
+          <li>
+            <a href="category-name-badges.html">Custom &amp; Personalised Name Badges</a>
+            <ul>
+              <li><a href="category-full-colour-name-badges.html">Full Colour Name Badges</a></li>
+              <li><a href="category-engraved-name-badges.html">Engraved Name Badges</a></li>
+              <li><a href="category-chalkboard-name-badges.html">Chalkboard Name Badges</a></li>
+              <li><a href="category-engraved-wood-name-badges.html">Engraved Wood Name Badges</a></li>
+              <li><a href="https://badge-a-minit.com.au/products/name-badges/reusable-name-badges">Reusable Name Badges</a></li>
+              <li><a href="https://badge-a-minit.com.au/products/name-badges/framed-name-badges">Framed Name Badges</a></li>
+            </ul>
+          </li>
+          <li><a href="category-lapel-pins.html">Lapel Pins</a></li>
+          <li><a href="category-button-badges.html">Custom Button Badges</a></li>
+          <li>
+            <a href="category-button-badge-machines.html">Button Badge Machines</a>
+            <ul>
+              <li><a href="https://badge-a-minit.com.au/products/button-badge-machines/australian-made-button-badge-machine">Australian Made Button Badge Machine</a></li>
+              <li><a href="https://badge-a-minit.com.au/products/button-badge-machines/multi-press-button-badge-machine">Multi Press Button Badge Machine</a></li>
+            </ul>
+          </li>
+          <li><a href="category-id-cards.html">ID Cards / Event Badges</a></li>
+          <li><a href="category-lanyards.html">Lanyards</a></li>
+          <li><a href="category-desk-name-plates.html">Desk Name Plates</a></li>
+          <li>
+            <a href="category-plaques.html">Plaques</a>
+            <ul>
+              <li><a href="https://badge-a-minit.com.au/products/pvc-plaques">PVC Plaques</a></li>
+              <li><a href="https://badge-a-minit.com.au/products/aluminium-plaques">Aluminium Plaques</a></li>
+              <li><a href="https://badge-a-minit.com.au/products/stainless-steel-plaques">Stainless Steel Plaques</a></li>
+            </ul>
+          </li>
+          <li><a href="category-luggage-tags.html">Luggage Tags</a></li>
+          <li><a href="category-badge-accessories.html">Badge Accessories</a></li>
+          <li><a href="category-button-badge-accessories.html">Button Badge Accessories</a></li>
+          <li><a href="https://badge-a-minit.com.au/products/button-badge-components">Button Badge Components</a></li>
+          <li><a href="category-button-badge-die-cutting-tools.html">Button Badge Die Cutting Tools</a></li>
+        </ul>
+      </details>
+    </aside>
+
+    <main>
+      <div class="cat-main-head">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h1>Button Badge Interchangeable Dies</h1>
+      </div>
+      <p style="font-size:14.5px;color:var(--slate);max-width:720px;margin:-12px 0 24px;line-height:1.6;">Get more from your badge press. Interchangeable dies unlock the full versatility of your Multi Press machine — create multiple badge sizes from a single machine and keep production simple, efficient and cost-effective.</p>
+
+      <div class="filter-bar">
+        <div id="activeFilterSummary" style="font-size:13px;color:var(--slate);">Showing all sizes</div>
+        <div class="filter-meta">
+          <span id="productCount">3 products</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <a class="btn btn-primary btn-sm" href="https://badge-a-minit.com.au/get-quote">Get a Free Quote</a>
+      </div>
+
+      <div class="product-grid" id="productGrid" style="grid-template-columns:repeat(3,minmax(0,1fr));max-width:760px;">
+        <div class="product-card" data-index="0" data-style="25mm" data-price="275.00">
+          <a href="https://badge-a-minit.com.au/product/multi-press-25mm-die-set">
+            <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/button-badge-interchangeable-dies-4250.jpg" alt="Multi Press 25mm Die Set"></div>
+            <h4>Multi Press 25mm Die Set</h4>
+          </a>
+          <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$275.00</div>
+        </div>
+        <div class="product-card" data-index="1" data-style="35mm" data-price="315.00">
+          <a href="https://badge-a-minit.com.au/product/multi-press-35mm-die-set">
+            <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/button-badge-interchangeable-dies-6354.jpg" alt="Multi Press 35mm Die Set"></div>
+            <h4>Multi Press 35mm Die Set</h4>
+          </a>
+          <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$315.00</div>
+        </div>
+        <div class="product-card" data-index="2" data-style="57mm" data-price="340.00">
+          <a href="https://badge-a-minit.com.au/product/multi-press-57mm-die-set">
+            <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/button-badge-interchangeable-dies-5429.jpg" alt="Multi Press 57mm Die Set"></div>
+            <h4>Multi Press 57mm Die Set</h4>
+          </a>
+          <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$340.00</div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<section id="section-compare" style="background:var(--white);border-top:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head" id="compareHead"></div>
+    <div class="compare-grid" id="compareGrid"></div>
+  </div>
+</section>
+
+<section id="section-variant" style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head" id="variantHead"></div>
+    <div class="material-strip" id="variantStrip"></div>
+  </div>
+</section>
+
+<section id="section-process">
+  <div class="wrap">
+    <div class="section-head" id="processHead"></div>
+    <div class="process-grid" id="processGrid"></div>
+  </div>
+</section>
+
+<section id="section-reviews" style="background:var(--white);border-top:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head" id="reviewsHead"></div>
+    <div class="testimonial-grid" id="reviewsGrid"></div>
+  </div>
+</section>
+
+<section id="section-crosssell" class="hm" style="background:var(--white);border-top:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head" id="crossSellHead"></div>
+    <div class="hm-scroll" id="crossSellScroll"></div>
+  </div>
+</section>
+
+<section id="section-buyingguide" style="background:var(--white);border-top:1px solid var(--line);">
+  <div class="wrap">
+    <div class="content-block" id="buyingGuideBlock"></div>
+  </div>
+</section>
+
+<section id="section-faq" style="background:var(--white);border-top:1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head" id="faqHead"></div>
+    <div class="faq-grid" id="faqGrid"></div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <h2>Ready to design your name badge?</h2>
+    <p>Send us your logo and quantities — we'll come back with a proof and a price, usually the same day.</p>
+    <a class="btn btn-brass" href="https://badge-a-minit.com.au/get-quote">Get a quote →</a>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <h4>Badge-A-Minit</h4>
+        <p style="color:rgba(248,246,240,0.55);max-width:270px;">Australia's badge accessories and promotional products manufacturer, family owned since 1978.</p>
+        <div class="foot-social">
+          <a href="https://www.facebook.com/Badge.a.Minit.Oz" aria-label="Facebook" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.5-3h-3V8.5c0-.9.3-1.5 1.6-1.5H16.5V4.2C16.2 4.1 15.2 4 14 4c-2.5 0-4.2 1.5-4.2 4.3V10.5H7v3h2.8V21h3.7z"/></svg></a>
+          <a href="https://www.instagram.com/badge_a_minit" aria-label="Instagram" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Quick links</h4>
+        <a href="#">About us</a><a href="#">Delivery info</a><a href="#">Privacy policy</a><a href="#">Become a reseller</a><a href="#">Terms &amp; conditions</a>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <a href="#explorer">Name badges</a><a href="#explorer">Lapel pins</a><a href="#explorer">Lanyards</a><a href="#explorer">Equipment &amp; supplies</a>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <a href="tel:0883631655">(08) 8363 1655</a>
+        <a href="mailto:sales@badge-a-minit.com.au">sales@badge-a-minit.com.au</a>
+        <a href="#visit">56a Prospect Road, Prospect SA 5082</a>
+        <p style="margin-top:8px;">ABN: 24 662 539 406</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Badge-A-Minit. Redesign concept.</span>
+      <span>Visa · Mastercard · Amex accepted · Purchase orders welcome</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ============================================================
+     CATEGORY CONTENT TEMPLATE
+     This object is the ONLY thing that needs to change per
+     category page. Structure, styling, and rendering logic below
+     stay identical across every category — swap this data in and
+     the whole "content" section rebuilds itself.
+     See /category-content-schema.md for the full field spec and
+     LLM generation guidance.
+     ============================================================ */
+  const CATEGORY_CONTENT = {
+    category: "Button Badge Interchangeable Dies",
+
+    compareGuide: {
+      eyebrow: "Not sure which to pick?",
+      heading: "Which die set matches your badge size?",
+      intro: "Three sizes for the Multi Press machine — the difference is purely the badge format you're producing.",
+      options: [
+        { tag: "For smaller badges", title: "25mm Die Set", bestFor: "Producing smaller, 25mm button badges on your Multi Press", benefit: "A perfect-fit die set specifically engineered for 25mm badge production", priceFrom: "$275.00", ctaLabel: "Shop 25mm die set →", ctaHref: "https://badge-a-minit.com.au/product/multi-press-25mm-die-set" },
+        { tag: "For medium badges", title: "35mm Die Set", bestFor: "Producing medium-sized, 35mm button badges", benefit: "A perfect-fit die set specifically engineered for 35mm badge production", priceFrom: "$315.00", ctaLabel: "Shop 35mm die set →", ctaHref: "https://badge-a-minit.com.au/product/multi-press-35mm-die-set" },
+        { tag: "For larger badges", title: "57mm Die Set", bestFor: "Producing larger, 57mm button badges", benefit: "A perfect-fit die set specifically engineered for 57mm badge production", priceFrom: "$340.00", ctaLabel: "Shop 57mm die set →", ctaHref: "https://badge-a-minit.com.au/product/multi-press-57mm-die-set" }
+      ]
+    },
+
+    process: {
+      eyebrow: "How ordering works",
+      heading: "From choosing a size to your next badge run",
+      steps: [
+        { title: "Choose your size", body: "25mm, 35mm or 57mm — matched to your badge format." },
+        { title: "Swap tool-free", body: "Change dies in moments, no recalibration needed." },
+        { title: "Order online", body: "Supplied directly from Australian stock." },
+        { title: "Track & receive", body: "Shipped Australia-wide." }
+      ]
+    },
+
+    reviews: {
+      eyebrow: "Reviews",
+      heading: "What our customers say",
+      items: [
+        { quote: "Excellent service and top-quality products, custom made and fast.", name: "John M.", source: "Google review" },
+        { quote: "Nice staff, excellent quality — we've used this service for years.", name: "Nancy X.", source: "Google review" },
+        { quote: "Beautiful work.", name: "Georgene O.", source: "Google review" }
+      ]
+    },
+
+    crossSell: {
+      eyebrow: "Complete your setup",
+      heading: "You may also like",
+      intro: "The machine these dies are built for, and the tools that keep it running.",
+      items: [
+        { name: "Multi Press Button Badge Machine", image: "https://badge-a-minit.com.au/storage/product/image/multi-press-button-badge-machine-frame-only-2877.jpg", href: "https://badge-a-minit.com.au/products/button-badge-machines/multi-press-button-badge-machine" },
+        { name: "Button Badge Components", image: "https://badge-a-minit.com.au/storage/product/parent_category/button-badge-components-2923.jpg", href: "https://badge-a-minit.com.au/products/button-badge-components" },
+        { name: "Button Badge Die Cutting Tools", image: "https://badge-a-minit.com.au/storage/product/parent_category/button-badge-die-cutting-tools-2212.jpg", href: "https://badge-a-minit.com.au/products/button-badge-die-cutting-tools" },
+        { name: "Custom Button Badges", image: "https://badge-a-minit.com.au/storage/product/parent_category/button-badge-main-1695.jpg", href: "https://badge-a-minit.com.au/products/button-badge" }
+      ]
+    },
+
+    buyingGuide: {
+      eyebrow: "Buying guide",
+      heading: "Maximise your Multi Press investment",
+      paragraphs: [
+        "Why buy a separate machine for every badge size when the <a href=\"https://badge-a-minit.com.au/products/button-badge-machines/multi-press-button-badge-machine\">Multi Press button badge machine</a> lets you do it all in one unit? These dedicated dies let you switch between 25mm, 35mm and 57mm badges without extra equipment, saving space in your workshop and cutting setup costs while maintaining a professional finish.",
+        "Each die set is engineered specifically for the Multi Press for a perfect fit and smooth, reliable operation, made from robust, long-wearing materials and supplied directly from Australian stock — with quick, tool-free interchangeability for minimal downtime between sizes."
+      ]
+    },
+
+    faq: {
+      eyebrow: "FAQ",
+      heading: "Interchangeable die questions, answered",
+      items: [
+        { q: "What's included in a Multi Press Die Set?", a: "Each set includes all the precision parts required to convert your Multi Press to a new size — upper and lower dies suited to the 25mm, 35mm or 57mm format for a seamless changeover." },
+        { q: "Are these dies compatible with any badge machine?", a: "No — these die sets are designed exclusively for the Badge-A-Minit Multi Press and are not suitable for other presses or generic badge-making supplies." },
+        { q: "How do I change the dies on my Multi Press machine?", a: "The process is quick and tool-free. Swap dies in moments and move from one badge size to another without slowing down your workflow." },
+        { q: "Why should I buy official Badge-A-Minit dies instead of generic ones?", a: "Official dies ensure perfect compatibility, superior performance and long-term reliability. They protect your machine and deliver a clean, professional finish every time." }
+      ]
+    }
+  };
+
+
+
+
+
+
+
+  function renderSectionHead(el, eyebrow, heading, intro){
+    el.innerHTML = `<div class="eyebrow">${eyebrow}</div><h2>${heading}</h2>${intro ? `<p>${intro}</p>` : ''}`;
+  }
+
+  function renderCategoryContent(data){
+    // Compare guide
+    if (data.compareGuide) {
+      renderSectionHead(document.getElementById('compareHead'), data.compareGuide.eyebrow, data.compareGuide.heading, data.compareGuide.intro);
+      document.getElementById('compareGrid').innerHTML = data.compareGuide.options.map(o => `
+        <div class="compare-card">
+          <div class="tag">${o.tag}</div>
+          <h3>${o.title}</h3>
+          <div class="row-label">Best for</div>
+          <div class="row-value">${o.bestFor}</div>
+          <div class="row-label">Key benefit</div>
+          <div class="row-value">${o.benefit}</div>
+          <div class="price">${o.priceFrom ? `From ${o.priceFrom}` : 'Free quote'}</div>
+          <a class="cta" href="${o.ctaHref}">${o.ctaLabel}</a>
+        </div>`).join('');
+    } else { document.getElementById('section-compare').style.display = 'none'; }
+
+    // Variant showcase (materials / finishes / attachment styles — whatever applies)
+    if (data.variantShowcase) {
+      renderSectionHead(document.getElementById('variantHead'), data.variantShowcase.eyebrow, data.variantShowcase.heading, data.variantShowcase.intro);
+      document.getElementById('variantStrip').innerHTML = data.variantShowcase.items.map(v => `
+        <div class="material-chip">
+          <div class="swatch"><img src="${v.image}" alt="${v.name}"></div>
+          <h4>${v.name}</h4>${v.priceFrom ? `<span>From ${v.priceFrom}</span>` : ''}
+        </div>`).join('');
+    } else { document.getElementById('section-variant').style.display = 'none'; }
+
+    // Process
+    if (data.process) {
+      renderSectionHead(document.getElementById('processHead'), data.process.eyebrow, data.process.heading);
+      document.getElementById('processGrid').innerHTML = data.process.steps.map((s, i) => `
+        <div class="process-card"><div class="process-num">${i + 1}</div><h4>${s.title}</h4><p>${s.body}</p></div>`).join('');
+    } else { document.getElementById('section-process').style.display = 'none'; }
+
+    // Reviews
+    if (data.reviews) {
+      renderSectionHead(document.getElementById('reviewsHead'), data.reviews.eyebrow, data.reviews.heading);
+      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => {
+        const initials = r.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+        return `<div class="t-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"${r.quote}"</p>
+          <div class="t-who"><div class="t-avatar">${initials}</div><div><b>${r.name}</b><span>${r.source}</span></div></div>
+        </div>`;
+      }).join('');
+    } else { document.getElementById('section-reviews').style.display = 'none'; }
+
+    // Cross-sell
+    if (data.crossSell) {
+      renderSectionHead(document.getElementById('crossSellHead'), data.crossSell.eyebrow, data.crossSell.heading, data.crossSell.intro);
+      document.getElementById('crossSellScroll').innerHTML = data.crossSell.items.map(p => `
+        <div class="hm-card"><div class="hm-img"><img src="${p.image}" alt="${p.name}"></div><h4 class="hm-serif">${p.name}</h4>${p.priceFrom ? `<div class="hm-price">From <b>${p.priceFrom}</b></div>` : '<div class="hm-price">&nbsp;</div>'}<a class="hm-more" href="${p.href}">MORE INFO →</a></div>`).join('');
+    } else { document.getElementById('section-crosssell').style.display = 'none'; }
+
+    // Buying guide
+    if (data.buyingGuide) {
+      document.getElementById('buyingGuideBlock').innerHTML = `
+        <div class="eyebrow" style="margin-bottom:16px;">${data.buyingGuide.eyebrow}</div>
+        <h2>${data.buyingGuide.heading}</h2>
+        ${data.buyingGuide.paragraphs.map(p => `<p>${p}</p>`).join('')}`;
+    } else { document.getElementById('section-buyingguide').style.display = 'none'; }
+
+    // FAQ — split into two columns automatically
+    if (data.faq) {
+      renderSectionHead(document.getElementById('faqHead'), data.faq.eyebrow, data.faq.heading);
+      const col1 = [], col2 = [];
+      data.faq.items.forEach((item, i) => (i % 2 === 0 ? col1 : col2).push(item));
+      const buildCol = items => items.map(it => `
+        <div class="faq-item">
+          <button class="faq-q">${it.q} <span class="plus">+</span></button>
+          <div class="faq-a"><p>${it.a}</p></div>
+        </div>`).join('');
+      document.getElementById('faqGrid').innerHTML = `<div>${buildCol(col1)}</div><div>${buildCol(col2)}</div>`;
+    } else { document.getElementById('section-faq').style.display = 'none'; }
+  }
+
+  renderCategoryContent(CATEGORY_CONTENT);
+
+</script>
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = null; });
+      if (!isOpen) { item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+    });
+  });
+</script>
+
+</body>
+</html>
