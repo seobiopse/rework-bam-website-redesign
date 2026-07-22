@@ -179,7 +179,7 @@
   .bento-feature-img{flex:1;aspect-ratio:1/1;overflow:hidden;background:var(--hm-surface);}
   .bento-feature-img img{width:100%;height:100%;object-fit:cover;}
   .bento-tonal{grid-column:span 4;background:var(--hm-primary);color:var(--white);display:flex;flex-direction:column;justify-content:space-between;}
-  .bento-tonal h2{font-family:'Source Serif 4',serif;font-size:28px;line-height:1.25;margin-bottom:14px;}
+  .bento-tonal h2{font-family:'Source Serif 4',serif;font-size:28px;line-height:1.25;margin-bottom:14px;color:rgba(248,246,240,0.92);}
   .bento-tonal p{font-family:'Hanken Grotesk',sans-serif;font-size:15px;line-height:1.55;opacity:0.82;}
   .bento-tonal svg{width:44px;height:44px;stroke:rgba(248,246,240,0.4);margin-top:28px;}
   .bento-info{grid-column:span 4;background:var(--hm-surface);display:flex;flex-direction:column;gap:20px;}
@@ -414,8 +414,7 @@
     <h1>Badges, plaques &amp;<br><em>the gear to make your own</em></h1>
     <p class="lead">Custom name badges, lapel pins, ID cards and lanyards made to order — plus the button badge machines, dies and components thousands of Australian businesses buy to make their own, in-house.</p>
     <div class="hero-actions">
-      <a class="btn btn-cream" href="#quote">Design your badge</a>
-      <a class="btn btn-outline-light" href="#explorer">Browse the range →</a>
+      <a class="btn btn-cream" href="#explorer">Design your badge</a>
     </div>
     <div class="hero-stats">
       <div class="hero-stat"><b>47+</b><span>Years trading</span></div>
@@ -438,46 +437,6 @@
     <div class="trust-item"><b>Bulk pricing</b> that scales with your order</div>
   </div>
 </div>
-
-<section class="hm bento">
-  <div class="wrap">
-    <div class="bento-grid">
-      <div class="bento-card bento-feature">
-        <div class="bento-feature-text">
-          <span class="hm-label">The Workshop</span>
-          <h2>Precision meets craft</h2>
-          <p>Every badge and plaque is hand-finished on machinery we build ourselves — the same presses and dies we sell to other businesses making their own, in-house.</p>
-          <a class="bento-link" href="https://badge-a-minit.com.au/about-us">Learn our process <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-        </div>
-        <div class="bento-feature-img">
-          <img src="workshop-button-press.jpg" alt="Green Stack-A-Button button badge press with components and a finished name badge, in the Badge-A-Minit workshop">
-        </div>
-      </div>
-
-      <div class="bento-card bento-tonal">
-        <div>
-          <h2>Materials made to last</h2>
-          <p>From engraved wood to stainless steel, every material is chosen to hold its finish through years of daily wear.</p>
-        </div>
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M12 2l2.6 7.2L22 12l-7.4 2.8L12 22l-2.6-7.2L2 12l7.4-2.8z"/></svg>
-      </div>
-
-      <div class="bento-card bento-info">
-        <div class="bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="1" y="7" width="14" height="10" rx="1"/><path d="M15 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg></div>
-        <div>
-          <h3>Fast, Australia-wide delivery</h3>
-          <p>Same-day dispatch on stock lines, shipped nationwide from our workshop in Prospect, SA.</p>
-        </div>
-      </div>
-
-      <div class="bento-card bento-cta">
-        <h2>Ready to outfit your team?</h2>
-        <p>Talk to us about bulk name badges, lanyards, or setting up your own badge-making equipment.</p>
-        <a class="bento-cta-btn" href="https://badge-a-minit.com.au/get-quote">Start a conversation</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- SEGMENTED EXPLORER -->
 <section class="explorer" id="explorer">
@@ -716,6 +675,46 @@
         <div class="hm-card"><div class="hm-img"><img src="https://badge-a-minit.com.au/storage/product/image/multi-press-button-badge-machine-frame-only-2877.jpg" alt="Multi Press Button Badge Machine Frame Only"></div><h4 class="hm-serif">Multi Press Machine — Frame Only</h4><div class="hm-price">From <b>$100.00</b></div><a class="hm-more" href="#">MORE INFO →</a></div>
       </div>
       <div class="hm-controls"><button class="hm-nav-btn" data-scroll-prev>‹</button><div class="hm-track"><div class="hm-thumb"></div></div><button class="hm-nav-btn" data-scroll-next>›</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="hm bento">
+  <div class="wrap">
+    <div class="bento-grid">
+      <div class="bento-card bento-feature">
+        <div class="bento-feature-text">
+          <span class="hm-label">The Workshop</span>
+          <h2>Precision meets craft</h2>
+          <p>Every badge and plaque is hand-finished on machinery we build ourselves — the same presses and dies we sell to other businesses making their own, in-house.</p>
+          <a class="bento-link" href="https://badge-a-minit.com.au/about-us">Learn our process <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </div>
+        <div class="bento-feature-img">
+          <img src="workshop-button-press.jpg" alt="Green Stack-A-Button button badge press with components and a finished name badge, in the Badge-A-Minit workshop">
+        </div>
+      </div>
+
+      <div class="bento-card bento-tonal">
+        <div>
+          <h2>Materials made to last</h2>
+          <p>From engraved wood to stainless steel, every material is chosen to hold its finish through years of daily wear.</p>
+        </div>
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.4"><path d="M12 2l2.6 7.2L22 12l-7.4 2.8L12 22l-2.6-7.2L2 12l7.4-2.8z"/></svg>
+      </div>
+
+      <div class="bento-card bento-info">
+        <div class="bento-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7"><rect x="1" y="7" width="14" height="10" rx="1"/><path d="M15 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg></div>
+        <div>
+          <h3>Fast, Australia-wide delivery</h3>
+          <p>Same-day dispatch on stock lines, shipped nationwide from our workshop in Prospect, SA.</p>
+        </div>
+      </div>
+
+      <div class="bento-card bento-cta">
+        <h2>Ready to outfit your team?</h2>
+        <p>Talk to us about bulk name badges, lanyards, or setting up your own badge-making equipment.</p>
+        <a class="bento-cta-btn" href="https://badge-a-minit.com.au/get-quote">Start a conversation</a>
+      </div>
     </div>
   </div>
 </section>

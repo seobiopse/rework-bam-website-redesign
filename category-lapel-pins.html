@@ -413,10 +413,19 @@
   .process-card p{font-size:13px;color:var(--slate);line-height:1.5;}
   @media(max-width:900px){.process-grid{grid-template-columns:repeat(2,1fr);}}
 
-  .content-block{max-width:760px;}
-  .content-block h2{font-family:'Fraunces',serif;font-size:26px;color:var(--green-forest-2);margin-bottom:14px;}
-  .content-block p{font-size:15px;color:var(--slate);line-height:1.65;margin-bottom:16px;}
-  .content-block a{color:var(--brass);font-weight:600;}
+  .content-block{max-width:1080px;}
+  .guide-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:48px;align-items:start;}
+  .guide-main .eyebrow{margin-bottom:16px;}
+  .guide-main h2{font-family:'Fraunces',serif;font-size:26px;color:var(--green-forest-2);margin-bottom:14px;}
+  .guide-main h3{font-family:'Fraunces',serif;font-size:18px;color:var(--green-forest-2);margin:22px 0 8px;}
+  .guide-main p{font-size:15px;color:var(--slate);line-height:1.65;margin-bottom:14px;}
+  .guide-main a{color:var(--brass);font-weight:600;}
+  .guide-facts{background:var(--hm-bg,#fbf9f4);border:1px solid var(--line);border-radius:10px;padding:26px;}
+  .guide-facts-label{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brass);margin-bottom:16px;}
+  .guide-facts ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+  .guide-facts li{font-size:13.5px;color:var(--ink);padding-left:18px;position:relative;line-height:1.45;}
+  .guide-facts li::before{content:'';position:absolute;left:0;top:6px;width:6px;height:6px;border-radius:50%;background:var(--brass);}
+  @media(max-width:800px){.guide-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -579,7 +588,7 @@
       <div class="filter-bar">
         <div id="activeFilterSummary" style="font-size:13px;color:var(--slate);">Showing all styles</div>
         <div class="filter-meta">
-          <span id="productCount">18 products</span>
+          <span id="productCount">18 Product Varieties</span>
           <select id="sortSelect">
             <option value="featured">Sort: Featured</option>
             <option value="az">Name: A–Z</option>
@@ -588,136 +597,173 @@
         </div>
       </div>
 
-      <div style="margin-bottom:20px;">
-        <a class="btn btn-primary btn-sm" href="https://badge-a-minit.com.au/get-quote/parent_category/lapel-pins">Get a Free Quote</a>
+      <div class="cat-delivery-info" style="display:flex;align-items:center;gap:10px;margin-bottom:20px;font-size:13.5px;color:var(--slate);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="width:18px;height:18px;flex-shrink:0;"><rect x="1" y="7" width="14" height="10" rx="1"/><path d="M15 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg>
+        <span><b style="color:var(--ink);">Same-day dispatch</b> on stock lines, shipped Australia-wide from our workshop in Prospect, SA.</span>
       </div>
 
       <div class="product-grid" id="productGrid">
-        <div class="product-card" data-index="0" data-style="enamel">
+        <div class="product-card" data-index="0" data-style="enamel" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/soft-enamel-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/soft-enamel-lapel-pin-9378.jpg" alt="Soft Enamel Lapel Pin"></div>
             <h4>Soft Enamel Lapel Pin</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/soft-enamel-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
-        <div class="product-card" data-index="1" data-style="enamel">
+        <div class="product-card" data-index="1" data-style="enamel" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/hard-enamel-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/hard-enamel-lapel-pin-7231.jpg" alt="Hard Enamel Lapel Pin"></div>
             <h4>Hard Enamel Lapel Pin</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/hard-enamel-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
-        <div class="product-card" data-index="2" data-style="die">
+        <div class="product-card" data-index="2" data-style="die" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/die-struck-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/die-struck-lapel-pin-7460.jpg" alt="Die Struck Lapel Pin"></div>
             <h4>Die Struck Lapel Pin</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/die-struck-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
-        <div class="product-card" data-index="3" data-style="die">
+        <div class="product-card" data-index="3" data-style="die" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/die-cast-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/die-cast-lapel-pin-4012.jpg" alt="Die Cast Lapel Pin"></div>
             <h4>Die Cast Lapel Pin</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/die-cast-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
-        <div class="product-card" data-index="4" data-style="printed">
+        <div class="product-card" data-index="4" data-style="printed" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/full-colour-printed-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/full-colour-printed-lapel-pin-5442.jpg" alt="Full Colour Printed Lapel Pin"></div>
             <h4>Full Colour Printed Lapel Pin</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/full-colour-printed-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
-        <div class="product-card" data-index="5" data-style="die">
+        <div class="product-card" data-index="5" data-style="die" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/3d-die-stamped-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/category-1910.jpg" alt="3D Die Stamped Lapel Pin"></div>
             <h4>3D Die Stamped Lapel Pin</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/3d-die-stamped-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
-        <div class="product-card" data-index="6" data-style="specialty">
+        <div class="product-card" data-index="6" data-style="specialty" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/diamante-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/category-5206.jpg" alt="Diamante Lapel Pin"></div>
             <h4>Diamante Lapel Pin</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/diamante-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
-        <div class="product-card" data-index="7" data-style="printed">
+        <div class="product-card" data-index="7" data-style="printed" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/offset-printed-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/category-6062.jpg" alt="Offset Printed Lapel Pin"></div>
             <h4>Offset Printed Lapel Pin</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/offset-printed-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
-        <div class="product-card" data-index="8" data-style="printed">
+        <div class="product-card" data-index="8" data-style="printed" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/photo-printed-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/category-7749.jpg" alt="Photo Printed Lapel Pin"></div>
             <h4>Photo Printed Lapel Pin</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/photo-printed-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
-        <div class="product-card" data-index="9" data-style="enamel">
+        <div class="product-card" data-index="9" data-style="enamel" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/iron-soft-enamel-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/new-2026-6116.jpg" alt="Iron Soft Enamel Lapel Pin"></div>
             <h4>Iron Soft Enamel Lapel Pin</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/iron-soft-enamel-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
-        <div class="product-card" data-index="10" data-style="enamel">
+        <div class="product-card" data-index="10" data-style="enamel" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/imitation-hard-enamel-with-rubber-decoration-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/image-1-3724.jpg" alt="Imitation Hard Enamel with Rubber Decoration Lapel Pin"></div>
             <h4>Imitation Hard Enamel, Rubber Decoration</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/imitation-hard-enamel-with-rubber-decoration-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
-        <div class="product-card" data-index="11" data-style="express">
+        <div class="product-card" data-index="11" data-style="express" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/express-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/0express-category-6974.jpg" alt="Express Lapel Pin"></div>
             <h4>Express Lapel Pin</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/express-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
-        <div class="product-card" data-index="12" data-style="express">
+        <div class="product-card" data-index="12" data-style="express" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/express-pvs-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/category-4065.jpg" alt="Express PVS Lapel Pin"></div>
             <h4>Express PVS Lapel Pin</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/express-pvs-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
-        <div class="product-card" data-index="13" data-style="specialty">
+        <div class="product-card" data-index="13" data-style="specialty" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/service-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/category-8485.jpg" alt="Service Lapel Pin"></div>
             <h4>Service Lapel Pin</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/service-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
-        <div class="product-card" data-index="14" data-style="specialty">
+        <div class="product-card" data-index="14" data-style="specialty" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/glitter-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/category-3658.jpg" alt="Glitter Lapel Pin"></div>
             <h4>Glitter Lapel Pin</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/glitter-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
-        <div class="product-card" data-index="15" data-style="specialty">
+        <div class="product-card" data-index="15" data-style="specialty" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/rainbow-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/category-7476.jpg" alt="Rainbow Lapel Pin"></div>
             <h4>Rainbow Lapel Pin</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/rainbow-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
-        <div class="product-card" data-index="16" data-style="specialty">
+        <div class="product-card" data-index="16" data-style="specialty" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/ribbon-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/category-5052.jpg" alt="Ribbon Lapel Pin"></div>
             <h4>Ribbon Lapel Pin</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/ribbon-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
-        <div class="product-card" data-index="17" data-style="enamel">
+        <div class="product-card" data-index="17" data-style="enamel" data-price="TODO">
           <a href="https://badge-a-minit.com.au/product/uv-printed-sof-enamel-lapel-pin">
             <div class="p-img"><span class="wishlist"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z"/></svg></span><img src="https://badge-a-minit.com.au/storage/product/image/category-3421.jpg" alt="UV Printed Soft Enamel Lapel Pin"></div>
             <h4>UV Printed Soft Enamel Lapel Pin</h4>
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
+          <div class="p-price"><span>From</span>$TBC</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/uv-printed-sof-enamel-lapel-pin" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
       </div>
 
@@ -892,9 +938,18 @@
     buyingGuide: {
       eyebrow: "Buying guide",
       heading: "Order custom lapel pins in Australia",
-      paragraphs: [
-        "With 47 years of local manufacturing behind us, Badge-A-Minit builds lapel pins using techniques from classic die struck and enamel through to UV printing, 3D die stamping, glitter and diamante finishes — so the production method matches what your design actually needs, not the other way around.",
-        "Not sure which finish suits your budget or timeline? Contact our team for a 100% free, no-obligation quote and virtual sample before you commit. If a more casual option suits your event better, our <a href=\"https://badge-a-minit.com.au/products/button-badge\">button badges</a> are worth a look too."
+      intro: "With 47 years of local manufacturing behind us, Badge-A-Minit builds lapel pins using techniques from classic die struck and enamel through to UV printing, 3D die stamping, glitter and diamante finishes — so the production method matches what your design actually needs, not the other way around.",
+      subsections: [
+        { title: "Which option is right for you?", body: "Not sure which finish suits your budget or timeline? Pick a style above and add it straight to your cart — pricing is shown per unit with no quote required. If a more casual option suits your event better, our <a href=\"https://badge-a-minit.com.au/products/button-badge\">button badges</a> are worth a look too." },
+        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+      ],
+      facts: [
+        "18 product varieties in lapel pins",
+        "Pricing per unit, no minimum order",
+        "Free artwork &amp; design proof on every order",
+        "Same-day dispatch on stock lines",
+        "Australian made since 1978",
+        "Bulk pricing scales automatically with quantity"
       ]
     },
 
@@ -909,7 +964,6 @@
       ]
     }
   };
-
 
   function renderSectionHead(el, eyebrow, heading, intro){
     el.innerHTML = `<div class="eyebrow">${eyebrow}</div><h2>${heading}</h2>${intro ? `<p>${intro}</p>` : ''}`;
@@ -927,7 +981,7 @@
           <div class="row-value">${o.bestFor}</div>
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
-          <div class="price">${o.priceFrom ? `From ${o.priceFrom}` : 'Free quote'}</div>
+          <div class="price">${o.priceFrom ? `From ${o.priceFrom}` : 'Buy Now'}</div>
           <a class="cta" href="${o.ctaHref}">${o.ctaLabel}</a>
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
@@ -969,12 +1023,24 @@
         <div class="hm-card"><div class="hm-img"><img src="${p.image}" alt="${p.name}"></div><h4 class="hm-serif">${p.name}</h4>${p.priceFrom ? `<div class="hm-price">From <b>${p.priceFrom}</b></div>` : '<div class="hm-price">&nbsp;</div>'}<a class="hm-more" href="${p.href}">MORE INFO →</a></div>`).join('');
     } else { document.getElementById('section-crosssell').style.display = 'none'; }
 
-    // Buying guide
+    // Buying guide / about section
     if (data.buyingGuide) {
+      const bg = data.buyingGuide;
+      const subsHtml = (bg.subsections || []).map(s => `<h3>${s.title}</h3><p>${s.body}</p>`).join('');
+      const factsHtml = (bg.facts || []).map(f => `<li>${f}</li>`).join('');
       document.getElementById('buyingGuideBlock').innerHTML = `
-        <div class="eyebrow" style="margin-bottom:16px;">${data.buyingGuide.eyebrow}</div>
-        <h2>${data.buyingGuide.heading}</h2>
-        ${data.buyingGuide.paragraphs.map(p => `<p>${p}</p>`).join('')}`;
+        <div class="guide-grid">
+          <div class="guide-main">
+            <div class="eyebrow">${bg.eyebrow}</div>
+            <h2>${bg.heading}</h2>
+            ${bg.intro ? `<p>${bg.intro}</p>` : ''}
+            ${subsHtml}
+          </div>
+          <div class="guide-facts">
+            <div class="guide-facts-label">Quick facts</div>
+            <ul>${factsHtml}</ul>
+          </div>
+        </div>`;
     } else { document.getElementById('section-buyingguide').style.display = 'none'; }
 
     // FAQ — split into two columns automatically
@@ -1037,7 +1103,7 @@
       if (show) visible++;
     });
     const anyFacetActive = styleFilters.length > 0 || priceFilters.length > 0;
-    countLabel.textContent = visible + (visible === 1 ? ' product' : ' products');
+    countLabel.textContent = visible + (visible === 1 ? ' Product Variety' : ' Product Varieties');
     loadMoreBtn.style.display = (!anyFacetActive && !revealed && cards.length > INITIAL_COUNT) ? 'inline-flex' : 'none';
     summaryLabel.textContent = anyFacetActive ? [...styleFilters, ...priceFilters.map(r => 'price')].length + ' filter' + (([...styleFilters, ...priceFilters].length === 1) ? '' : 's') + ' applied' : 'Showing all styles';
   }

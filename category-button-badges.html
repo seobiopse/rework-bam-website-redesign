@@ -413,10 +413,19 @@
   .process-card p{font-size:13px;color:var(--slate);line-height:1.5;}
   @media(max-width:900px){.process-grid{grid-template-columns:repeat(2,1fr);}}
 
-  .content-block{max-width:760px;}
-  .content-block h2{font-family:'Fraunces',serif;font-size:26px;color:var(--green-forest-2);margin-bottom:14px;}
-  .content-block p{font-size:15px;color:var(--slate);line-height:1.65;margin-bottom:16px;}
-  .content-block a{color:var(--brass);font-weight:600;}
+  .content-block{max-width:1080px;}
+  .guide-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:48px;align-items:start;}
+  .guide-main .eyebrow{margin-bottom:16px;}
+  .guide-main h2{font-family:'Fraunces',serif;font-size:26px;color:var(--green-forest-2);margin-bottom:14px;}
+  .guide-main h3{font-family:'Fraunces',serif;font-size:18px;color:var(--green-forest-2);margin:22px 0 8px;}
+  .guide-main p{font-size:15px;color:var(--slate);line-height:1.65;margin-bottom:14px;}
+  .guide-main a{color:var(--brass);font-weight:600;}
+  .guide-facts{background:var(--hm-bg,#fbf9f4);border:1px solid var(--line);border-radius:10px;padding:26px;}
+  .guide-facts-label{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brass);margin-bottom:16px;}
+  .guide-facts ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+  .guide-facts li{font-size:13.5px;color:var(--ink);padding-left:18px;position:relative;line-height:1.45;}
+  .guide-facts li::before{content:'';position:absolute;left:0;top:6px;width:6px;height:6px;border-radius:50%;background:var(--brass);}
+  @media(max-width:800px){.guide-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -583,7 +592,7 @@
       <div class="filter-bar">
         <div id="activeFilterSummary" style="font-size:13px;color:var(--slate);">Showing all styles</div>
         <div class="filter-meta">
-          <span id="productCount">10 products</span>
+          <span id="productCount">10 Product Varieties</span>
           <select id="sortSelect">
             <option value="featured">Sort: Featured</option>
             <option value="low">Price: Low to High</option>
@@ -592,10 +601,10 @@
         </div>
       </div>
 
-      <div style="margin-bottom:20px;">
-        <a class="btn btn-primary btn-sm" href="https://badge-a-minit.com.au/get-quote">Get a Free Quote</a>
+      <div class="cat-delivery-info" style="display:flex;align-items:center;gap:10px;margin-bottom:20px;font-size:13.5px;color:var(--slate);">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="width:18px;height:18px;flex-shrink:0;"><rect x="1" y="7" width="14" height="10" rx="1"/><path d="M15 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg>
+        <span><b style="color:var(--ink);">Same-day dispatch</b> on stock lines, shipped Australia-wide from our workshop in Prospect, SA.</span>
       </div>
-
       <div class="product-grid" id="productGrid">
         <div class="product-card" data-index="0" data-style="pin" data-price="0.36">
           <a href="https://badge-a-minit.com.au/product/button-badge-25-mm">
@@ -604,6 +613,7 @@
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
           <div class="p-price"><span>From</span>$0.36</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/button-badge-25-mm" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
         <div class="product-card" data-index="1" data-style="pin" data-price="0.45">
           <a href="https://badge-a-minit.com.au/product/button-badge-35-mm">
@@ -612,6 +622,7 @@
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
           <div class="p-price"><span>From</span>$0.45</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/button-badge-35-mm" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
         <div class="product-card" data-index="2" data-style="pin" data-price="0.53">
           <a href="https://badge-a-minit.com.au/product/button-badge-57-mm">
@@ -620,6 +631,7 @@
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
           <div class="p-price"><span>From</span>$0.53</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/button-badge-57-mm" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
         <div class="product-card" data-index="3" data-style="pin" data-price="0.63">
           <a href="https://badge-a-minit.com.au/product/button-badge-85-mm">
@@ -628,6 +640,7 @@
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
           <div class="p-price"><span>From</span>$0.63</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/button-badge-85-mm" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
         <div class="product-card" data-index="4" data-style="magnet" data-price="0.84">
           <a href="https://badge-a-minit.com.au/product/button-badge-magnet-faster-35-mm">
@@ -636,6 +649,7 @@
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
           <div class="p-price"><span>From</span>$0.84</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/button-badge-magnet-faster-35-mm" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
         <div class="product-card" data-index="5" data-style="magnet" data-price="0.95">
           <a href="https://badge-a-minit.com.au/product/button-badge-magnet-faster-57-mm">
@@ -644,6 +658,7 @@
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
           <div class="p-price"><span>From</span>$0.95</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/button-badge-magnet-faster-57-mm" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
         <div class="product-card" data-index="6" data-style="magnet" data-price="1.06">
           <a href="https://badge-a-minit.com.au/product/button-badge-magnet-faster-85-mm">
@@ -652,6 +667,7 @@
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
           <div class="p-price"><span>From</span>$1.06</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/button-badge-magnet-faster-85-mm" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
         <div class="product-card" data-index="7" data-style="fridge" data-price="0.84">
           <a href="https://badge-a-minit.com.au/product/fridge-badge-magnet-35-mm">
@@ -660,6 +676,7 @@
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
           <div class="p-price"><span>From</span>$0.84</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/fridge-badge-magnet-35-mm" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
         <div class="product-card" data-index="8" data-style="fridge" data-price="0.95">
           <a href="https://badge-a-minit.com.au/product/fridge-badge-magnet-57-mm">
@@ -668,6 +685,7 @@
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
           <div class="p-price"><span>From</span>$0.95</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/fridge-badge-magnet-57-mm" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
         <div class="product-card" data-index="9" data-style="fridge" data-price="1.06">
           <a href="https://badge-a-minit.com.au/product/fridge-badge-magnet-85-mm">
@@ -676,6 +694,7 @@
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
           <div class="p-price"><span>From</span>$1.06</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/fridge-badge-magnet-85-mm" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
       </div>
 
@@ -847,9 +866,18 @@
     buyingGuide: {
       eyebrow: "Buying guide",
       heading: "Order button badges in Australia",
-      paragraphs: [
-        "Every badge is made with durable materials and a crystal-clear protective film for a finish that lasts, fastened with spring-loaded safety clasps rather than the flimsy pins found on cheaper imports. Production runs on our own commercial-grade button badge machines — the same machines we manufacture and sell to <a href=\"https://badge-a-minit.com.au/products/button-badge-machines\">customers who want to make badges themselves</a> — so quality control and turnaround stay consistent from a single prototype to a run of 10,000.",
-        "Want something with a more premium, permanent feel? Our <a href=\"https://badge-a-minit.com.au/products/lapel-pins\">lapel pins</a> are worth a look alongside these."
+      intro: "Every badge is made with durable materials and a crystal-clear protective film for a finish that lasts, fastened with spring-loaded safety clasps rather than the flimsy pins found on cheaper imports. Production runs on our own commercial-grade button badge machines — the same machines we manufacture and sell to <a href=\"https://badge-a-minit.com.au/products/button-badge-machines\">customers who want to make badges themselves</a> — so quality control and turnaround stay consistent from a single prototype to a run of 10,000.",
+      subsections: [
+        { title: "Which option is right for you?", body: "Want something with a more premium, permanent feel? Our <a href=\"https://badge-a-minit.com.au/products/lapel-pins\">lapel pins</a> are worth a look alongside these." },
+        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+      ],
+      facts: [
+        "10 product varieties in custom button badges",
+        "Starting from $0.36",
+        "Free artwork &amp; design proof on every order",
+        "Same-day dispatch on stock lines",
+        "Australian made since 1978",
+        "Bulk pricing scales automatically with quantity"
       ]
     },
 
@@ -864,8 +892,6 @@
       ]
     }
   };
-
-
 
   function renderSectionHead(el, eyebrow, heading, intro){
     el.innerHTML = `<div class="eyebrow">${eyebrow}</div><h2>${heading}</h2>${intro ? `<p>${intro}</p>` : ''}`;
@@ -883,7 +909,7 @@
           <div class="row-value">${o.bestFor}</div>
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
-          <div class="price">${o.priceFrom ? `From ${o.priceFrom}` : 'Free quote'}</div>
+          <div class="price">${o.priceFrom ? `From ${o.priceFrom}` : 'Buy Now'}</div>
           <a class="cta" href="${o.ctaHref}">${o.ctaLabel}</a>
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
@@ -925,12 +951,24 @@
         <div class="hm-card"><div class="hm-img"><img src="${p.image}" alt="${p.name}"></div><h4 class="hm-serif">${p.name}</h4>${p.priceFrom ? `<div class="hm-price">From <b>${p.priceFrom}</b></div>` : '<div class="hm-price">&nbsp;</div>'}<a class="hm-more" href="${p.href}">MORE INFO →</a></div>`).join('');
     } else { document.getElementById('section-crosssell').style.display = 'none'; }
 
-    // Buying guide
+    // Buying guide / about section
     if (data.buyingGuide) {
+      const bg = data.buyingGuide;
+      const subsHtml = (bg.subsections || []).map(s => `<h3>${s.title}</h3><p>${s.body}</p>`).join('');
+      const factsHtml = (bg.facts || []).map(f => `<li>${f}</li>`).join('');
       document.getElementById('buyingGuideBlock').innerHTML = `
-        <div class="eyebrow" style="margin-bottom:16px;">${data.buyingGuide.eyebrow}</div>
-        <h2>${data.buyingGuide.heading}</h2>
-        ${data.buyingGuide.paragraphs.map(p => `<p>${p}</p>`).join('')}`;
+        <div class="guide-grid">
+          <div class="guide-main">
+            <div class="eyebrow">${bg.eyebrow}</div>
+            <h2>${bg.heading}</h2>
+            ${bg.intro ? `<p>${bg.intro}</p>` : ''}
+            ${subsHtml}
+          </div>
+          <div class="guide-facts">
+            <div class="guide-facts-label">Quick facts</div>
+            <ul>${factsHtml}</ul>
+          </div>
+        </div>`;
     } else { document.getElementById('section-buyingguide').style.display = 'none'; }
 
     // FAQ — split into two columns automatically
@@ -993,7 +1031,7 @@
       if (show) visible++;
     });
     const anyFacetActive = styleFilters.length > 0 || priceFilters.length > 0;
-    countLabel.textContent = visible + (visible === 1 ? ' product' : ' products');
+    countLabel.textContent = visible + (visible === 1 ? ' Product Variety' : ' Product Varieties');
     loadMoreBtn.style.display = (!anyFacetActive && !revealed && cards.length > INITIAL_COUNT) ? 'inline-flex' : 'none';
     summaryLabel.textContent = anyFacetActive ? [...styleFilters, ...priceFilters.map(r => 'price')].length + ' filter' + (([...styleFilters, ...priceFilters].length === 1) ? '' : 's') + ' applied' : 'Showing all styles';
   }

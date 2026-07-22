@@ -413,10 +413,19 @@
   .process-card p{font-size:13px;color:var(--slate);line-height:1.5;}
   @media(max-width:900px){.process-grid{grid-template-columns:repeat(2,1fr);}}
 
-  .content-block{max-width:760px;}
-  .content-block h2{font-family:'Fraunces',serif;font-size:26px;color:var(--green-forest-2);margin-bottom:14px;}
-  .content-block p{font-size:15px;color:var(--slate);line-height:1.65;margin-bottom:16px;}
-  .content-block a{color:var(--brass);font-weight:600;}
+  .content-block{max-width:1080px;}
+  .guide-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:48px;align-items:start;}
+  .guide-main .eyebrow{margin-bottom:16px;}
+  .guide-main h2{font-family:'Fraunces',serif;font-size:26px;color:var(--green-forest-2);margin-bottom:14px;}
+  .guide-main h3{font-family:'Fraunces',serif;font-size:18px;color:var(--green-forest-2);margin:22px 0 8px;}
+  .guide-main p{font-size:15px;color:var(--slate);line-height:1.65;margin-bottom:14px;}
+  .guide-main a{color:var(--brass);font-weight:600;}
+  .guide-facts{background:var(--hm-bg,#fbf9f4);border:1px solid var(--line);border-radius:10px;padding:26px;}
+  .guide-facts-label{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brass);margin-bottom:16px;}
+  .guide-facts ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+  .guide-facts li{font-size:13.5px;color:var(--ink);padding-left:18px;position:relative;line-height:1.45;}
+  .guide-facts li::before{content:'';position:absolute;left:0;top:6px;width:6px;height:6px;border-radius:50%;background:var(--brass);}
+  @media(max-width:800px){.guide-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -566,12 +575,16 @@
       <div class="filter-bar">
         <div id="activeFilterSummary" style="font-size:13px;color:var(--slate);">Showing all products</div>
         <div class="filter-meta">
-          <span id="productCount">3 products</span>
+          <span id="productCount">3 Product Varieties</span>
         </div>
       </div>
 
-      <div style="margin-bottom:20px;">
-        <a class="btn btn-primary btn-sm" href="https://badge-a-minit.com.au/get-quote">Get a Free Quote</a>
+      <div class="cat-delivery-info" style="display:flex;align-items:center;gap:10px;margin-bottom:20px;font-size:13.5px;color:var(--slate);">
+
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" style="width:18px;height:18px;flex-shrink:0;"><rect x="1" y="7" width="14" height="10" rx="1"/><path d="M15 10h4l3 3v4h-7z"/><circle cx="6" cy="19" r="1.6"/><circle cx="18" cy="19" r="1.6"/></svg>
+
+        <span><b style="color:var(--ink);">Same-day dispatch</b> on stock lines, shipped Australia-wide from our workshop in Prospect, SA.</span>
+
       </div>
 
       <div class="product-grid" id="productGrid" style="grid-template-columns:repeat(3,minmax(0,1fr));max-width:760px;">
@@ -582,6 +595,7 @@
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
           <div class="p-price"><span>From</span>$17.50</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/a-frame-style-desk-name-plate" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
         <div class="product-card" data-index="1" data-style="aluminium" data-price="24.50">
           <a href="https://badge-a-minit.com.au/product/premium-aluminium-desk-name-plate-with-changeable-nameplate">
@@ -590,6 +604,7 @@
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
           <div class="p-price"><span>From</span>$24.50</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/premium-aluminium-desk-name-plate-with-changeable-nameplate" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
         <div class="product-card" data-index="2" data-style="replacement" data-price="19.25">
           <a href="https://badge-a-minit.com.au/product/replacement-desk-name-plate-for-premium-aluminium-desk-name-plate-stand">
@@ -598,6 +613,7 @@
           </a>
           <div class="stock"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>In stock</div>
           <div class="p-price"><span>From</span>$19.25</div>
+          <a class="btn btn-primary btn-sm buy-now-btn" href="https://badge-a-minit.com.au/product/replacement-desk-name-plate-for-premium-aluminium-desk-name-plate-stand" style="margin-top:8px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>
       </div>
 
@@ -754,9 +770,18 @@
     buyingGuide: {
       eyebrow: "Buying guide",
       heading: "Why choose our custom desk name plates?",
-      paragraphs: [
-        "With over 47 years of experience, we combine craftsmanship and reliability to deliver desk name plates Australia trusts for quality and professionalism. Every plate is fully customisable with names, titles and company logos through our online design tools, using the same durable, high-grade materials that also define our long-lasting <a href=\"https://badge-a-minit.com.au/products/name-badges\">name badges</a>.",
-        "From personalised plates for individual executives to bulk orders for corporate teams, offices, schools, medical practices and law firms, we deliver fast Australia-wide."
+      intro: "With over 47 years of experience, we combine craftsmanship and reliability to deliver desk name plates Australia trusts for quality and professionalism. Every plate is fully customisable with names, titles and company logos through our online design tools, using the same durable, high-grade materials that also define our long-lasting <a href=\"https://badge-a-minit.com.au/products/name-badges\">name badges</a>.",
+      subsections: [
+        { title: "Which option is right for you?", body: "From personalised plates for individual executives to bulk orders for corporate teams, offices, schools, medical practices and law firms, we deliver fast Australia-wide." },
+        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+      ],
+      facts: [
+        "3 product varieties in desk name plates",
+        "Starting from $17.50",
+        "Free artwork &amp; design proof on every order",
+        "Same-day dispatch on stock lines",
+        "Australian made since 1978",
+        "Bulk pricing scales automatically with quantity"
       ]
     },
 
@@ -771,11 +796,6 @@
       ]
     }
   };
-
-
-
-
-
 
   function renderSectionHead(el, eyebrow, heading, intro){
     el.innerHTML = `<div class="eyebrow">${eyebrow}</div><h2>${heading}</h2>${intro ? `<p>${intro}</p>` : ''}`;
@@ -793,7 +813,7 @@
           <div class="row-value">${o.bestFor}</div>
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
-          <div class="price">${o.priceFrom ? `From ${o.priceFrom}` : 'Free quote'}</div>
+          <div class="price">${o.priceFrom ? `From ${o.priceFrom}` : 'Buy Now'}</div>
           <a class="cta" href="${o.ctaHref}">${o.ctaLabel}</a>
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
@@ -835,12 +855,24 @@
         <div class="hm-card"><div class="hm-img"><img src="${p.image}" alt="${p.name}"></div><h4 class="hm-serif">${p.name}</h4>${p.priceFrom ? `<div class="hm-price">From <b>${p.priceFrom}</b></div>` : '<div class="hm-price">&nbsp;</div>'}<a class="hm-more" href="${p.href}">MORE INFO →</a></div>`).join('');
     } else { document.getElementById('section-crosssell').style.display = 'none'; }
 
-    // Buying guide
+    // Buying guide / about section
     if (data.buyingGuide) {
+      const bg = data.buyingGuide;
+      const subsHtml = (bg.subsections || []).map(s => `<h3>${s.title}</h3><p>${s.body}</p>`).join('');
+      const factsHtml = (bg.facts || []).map(f => `<li>${f}</li>`).join('');
       document.getElementById('buyingGuideBlock').innerHTML = `
-        <div class="eyebrow" style="margin-bottom:16px;">${data.buyingGuide.eyebrow}</div>
-        <h2>${data.buyingGuide.heading}</h2>
-        ${data.buyingGuide.paragraphs.map(p => `<p>${p}</p>`).join('')}`;
+        <div class="guide-grid">
+          <div class="guide-main">
+            <div class="eyebrow">${bg.eyebrow}</div>
+            <h2>${bg.heading}</h2>
+            ${bg.intro ? `<p>${bg.intro}</p>` : ''}
+            ${subsHtml}
+          </div>
+          <div class="guide-facts">
+            <div class="guide-facts-label">Quick facts</div>
+            <ul>${factsHtml}</ul>
+          </div>
+        </div>`;
     } else { document.getElementById('section-buyingguide').style.display = 'none'; }
 
     // FAQ — split into two columns automatically
