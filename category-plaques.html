@@ -827,8 +827,8 @@
           <div class="row-value">${o.bestFor}</div>
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
-          <div class="price">${o.priceFrom ? `From ${o.priceFrom}` : 'Buy Now'}</div>
-          <a class="cta" href="${o.ctaHref}">${o.ctaLabel}</a>
+          ${o.priceFrom ? `<div class="price">From ${o.priceFrom}</div>` : ''}
+          <a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
 
