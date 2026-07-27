@@ -559,6 +559,74 @@
             .header-nav-strip .nav-links a { padding: 14px 16px; white-space: nowrap; }
         }
 
+        .header-nav-strip .nav-dropdown { position: relative; }
+        .header-nav-strip .nav-dropdown > a::after {
+            content: '';
+            display: inline-block;
+            margin-left: 5px;
+            width: 6px;
+            height: 6px;
+            border-right: 1.5px solid rgba(255,255,255,0.75);
+            border-bottom: 1.5px solid rgba(255,255,255,0.75);
+            transform: rotate(45deg) translateY(-2px);
+        }
+        .header-nav-strip .nav-dropdown-panel {
+            position: absolute;
+            top: calc(100% + 0px);
+            left: 0;
+            background: white;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            padding: 24px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(6px);
+            transition: var(--transition);
+            z-index: 200;
+        }
+        .header-nav-strip .nav-dropdown:hover .nav-dropdown-panel {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .header-nav-strip .nav-mega {
+            display: flex;
+            gap: 40px;
+            width: max-content;
+            max-width: 640px;
+        }
+        .header-nav-strip .mega-col {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            min-width: 220px;
+        }
+        .header-nav-strip .mega-col > a,
+        .header-nav-strip .has-submenu > a {
+            padding: 6px 0;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        .header-nav-strip .mega-col > a:hover,
+        .header-nav-strip .has-submenu > a:hover { color: var(--accent); background: none; }
+        .header-nav-strip .submenu {
+            display: flex;
+            flex-direction: column;
+            padding-left: 10px;
+            margin-bottom: 4px;
+        }
+        .header-nav-strip .submenu a {
+            padding: 4px 0;
+            font-size: 12.5px;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+        .header-nav-strip .submenu a:hover { color: var(--accent); background: none; }
+        @media (max-width: 900px) {
+            .header-nav-strip .nav-dropdown-panel { display: none; }
+        }
+
         /* ══════════════════════════════════════════
            TOPBAR & NAV NAVIGATION
            ══════════════════════════════════════════ */
@@ -2747,7 +2815,52 @@
         <div class="wrap container">
           <div class="nav-links">
             <a href="https://badge-a-minit.com.au" class="active">Home</a>
-            <a href="https://badge-a-minit.com.au/categories">Categories</a>
+            <div class="nav-dropdown">
+              <a href="https://badge-a-minit.com.au/categories">Categories</a>
+              <div class="nav-dropdown-panel nav-mega">
+                <div class="mega-col">
+                  <div class="has-submenu">
+                    <a href="https://badge-a-minit.com.au/products/name-badges">Custom &amp; Personalised Name Badges</a>
+                    <div class="submenu">
+                      <a href="https://badge-a-minit.com.au/products/name-badges/full-colour-name-badges">Full Colour Name Badges</a>
+                      <a href="https://badge-a-minit.com.au/products/name-badges/engraved-name-badges">Engraved Name Badges</a>
+                      <a href="https://badge-a-minit.com.au/products/name-badges/chalkboard-name-badges">Chalkboard Name Badges</a>
+                      <a href="https://badge-a-minit.com.au/products/name-badges/engraved-wood-name-badges">Engraved Wood Name Badges</a>
+                      <a href="https://badge-a-minit.com.au/products/name-badges/reusable-name-badges">Reusable Name Badges</a>
+                      <a href="https://badge-a-minit.com.au/products/name-badges/framed-name-badges">Framed Name Badges</a>
+                    </div>
+                  </div>
+                  <a href="https://badge-a-minit.com.au/products/lapel-pins">Lapel Pins</a>
+                  <a href="https://badge-a-minit.com.au/products/button-badge">Custom Button Badges</a>
+                  <div class="has-submenu">
+                    <a href="https://badge-a-minit.com.au/products/button-badge-machines">Button Badge Machines</a>
+                    <div class="submenu">
+                      <a href="https://badge-a-minit.com.au/products/button-badge-machines/australian-made-button-badge-machine">Australian Made Button Badge Machine</a>
+                      <a href="https://badge-a-minit.com.au/products/button-badge-machines/multi-press-button-badge-machine">Multi Press Button Badge Machine</a>
+                    </div>
+                  </div>
+                  <a href="https://badge-a-minit.com.au/products/event-id-cards">ID Cards / Event Badges</a>
+                  <a href="https://badge-a-minit.com.au/products/lanyards">Lanyards</a>
+                  <a href="https://badge-a-minit.com.au/products/desk-name-plates">Desk Name Plates</a>
+                </div>
+                <div class="mega-col">
+                  <div class="has-submenu">
+                    <a href="https://badge-a-minit.com.au/products/aluminium-plaques">Plaques</a>
+                    <div class="submenu">
+                      <a href="https://badge-a-minit.com.au/product/pvc-plaque-laser-engraved">PVC Plaques</a>
+                      <a href="https://badge-a-minit.com.au/product/aluminium-plaque-laser-engraved">Aluminium Plaques</a>
+                      <a href="https://badge-a-minit.com.au/product/stainless-steel-plaque-laser-engraved">Stainless Steel Plaques</a>
+                    </div>
+                  </div>
+                  <a href="https://badge-a-minit.com.au/products/luggage-tags">Luggage Tags</a>
+                  <a href="https://badge-a-minit.com.au/products/badge-accessories">Badge Accessories</a>
+                  <a href="https://badge-a-minit.com.au/products/button-badge-accessories">Button Badge Accessories</a>
+                  <a href="https://badge-a-minit.com.au/products/button-badge-components">Button Badge Components</a>
+                  <a href="https://badge-a-minit.com.au/products/button-badge-die-cutting-tools">Button Badge Die Cutting Tools</a>
+                  <a href="https://badge-a-minit.com.au/products/button-badge-interchangeable-dies">Button Badge Interchangeable Dies</a>
+                </div>
+              </div>
+            </div>
             <a href="https://badge-a-minit.com.au/about-us">About Us</a>
             <a href="https://badge-a-minit.com.au/contact">Contact Us</a>
             <a href="https://badge-a-minit.com.au/get-quote">Quote Form</a>
