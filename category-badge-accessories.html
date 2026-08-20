@@ -855,17 +855,17 @@
     buyingGuide: {
       eyebrow: "Buying guide",
       heading: "Find your perfect badge fitting",
-      intro: "For secure fabric attachment, the hook pin is the classic, cost-effective choice for everyday use, while a clip pin or rotary clip provides a stronger hold with flexible movement, keeping <a href=\"https://badge-a-minit.com.au/products/button-badge\">button badges</a> securely in place — or choose a brass pin for a traditional, premium-looking option in professional or formal settings.",
+      intro: "Every badge is only as good as how it is worn — and the right badge fitting is the difference between an accessory that quietly does its job and one that causes frustration all day. For secure fabric attachment without damage to uniform or shirt, the classic hook pin is the most cost-effective choice, used by schools, clubs and workplaces across Australia for decades. A clip pin or rotary clip pin delivers a stronger, spring-loaded hold with flexible movement — keeping <a href=\"https://badge-a-minit.com.au/products/button-badge\">button badges</a> securely in place on thicker fabrics like blazers or lanyards. Choose a brass pin when a traditional, premium-looking fastener is needed for formal or ceremonial settings.",
       subsections: [
-        { title: "Which option is right for you?", body: "For a professional, no-hole look, rectangle and round magnets are designed for scan-and-go convenience, perfect for <a href=\"https://badge-a-minit.com.au/products/event-id-cards\">ID badges</a> used in offices, hospitals, schools and conferences, while Ferrite and Extra Large magnets add the strength needed for heavier badges or thicker materials. Every fitting is priced per unit and bulk-friendly — browse the range and add it to your badge order." },
-        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+        { title: "Pins vs magnets: which is better for your team?", body: "For healthcare workers, conference delegates, retail staff and corporate teams who wear badges all day on delicate uniforms, the magnetic backing is the professional answer — no pin holes, no fabric snags, no visible fastener. Rectangle and round magnets are designed for lightweight <a href=\"https://badge-a-minit.com.au/products/event-id-cards\">name badges and ID cards</a>, while Ferrite and Extra Large magnets deliver the extra holding strength needed for heavier engraved metal badges or thicker materials. The retractable badge clip solves a different problem: scan-and-go convenience in workplaces and hospitals where swiping an ID card multiple times a day matters." },
+        { title: "Ordering, delivery &amp; support", body: "All badge accessories are stocked and dispatched from our workshop in Prospect, SA. Every order includes a free artwork check before production. Pricing is per unit with no minimum — whether you need a handful of replacements or hundreds to kit out a new team, the cart scales automatically." }
       ],
       facts: [
         "9 product varieties in badge accessories",
-        "Starting from $0.33",
-        "Free artwork &amp; design proof on every order",
+        "Starting from $0.33 per unit",
+        "Compatible with name badges, ID cards &amp; button badges",
         "Same-day dispatch on stock lines",
-        "Australian made since 1978",
+        "Family-owned Australian business since 1978",
         "Bulk pricing scales automatically with quantity"
       ]
     },
@@ -874,11 +874,12 @@
       eyebrow: "FAQ",
       heading: "Badge accessory questions, answered",
       items: [
-        { q: "What's the difference between a hook pin and a clip pin?", a: "A hook pin is a simple, cost-effective metal fastener suitable for most fabrics. A clip pin uses a clutch mechanism that can offer a stronger, more secure hold, especially on thicker garments." },
-        { q: "When should I choose a magnetic backing over a pin?", a: "Choose magnets when you want to avoid putting holes in clothing or prefer a sleek, professional finish. For heavier badges, opt for Ferrite or Extra Large Magnets for maximum strength." },
-        { q: "What is a retractable badge reel used for?", a: "A retractable reel lets you extend and retract your ID badge easily — ideal for frequent scanning in workplaces, hospitals and events." },
-        { q: "Are your badge accessories sold individually or in bulk?", a: "Accessories are priced per unit and great for bulk orders — simply add the quantity you need directly to your cart." },
-        { q: "How long does shipping take within Australia?", a: "Standard production time is 5 working days, with multiple express and priority options available for urgent deadlines." }
+        { q: "Are magnetic badge fasteners safe for all clothing?", a: "Yes — magnetic backings hold securely without puncturing or damaging delicate fabrics like silk, wool blazers, or scrubs. Note: magnetic fasteners should not be worn by individuals with pacemakers." },
+        { q: "Can I buy replacement magnetic plates or pins separately?", a: "Yes — all our fittings are available as individual components in bulk or small quantities, ideal for replacing lost backs or updating existing inventory." },
+        { q: "What is the cord length on retractable badge reels?", a: "Our retractable reels feature a durable 70cm nylon cord with a smooth recoil mechanism, designed for frequent tap-and-scan access points." },
+        { q: "Do you offer bulk discounts on large accessory orders?", a: "Yes — per-unit pricing decreases automatically as quantity tiers increase at checkout." },
+        { q: "What's the difference between standard magnets and extra-large magnets?", a: "Standard magnets suit lightweight plastic or wood badges, while Extra Large and Ferrite magnets provide maximum pull strength for heavy metal plaques or thick winter coats." },
+        { q: "How quickly do accessory orders ship?", a: "Unprinted stock accessories ship same-day from our Adelaide workshop when ordered before 2pm ACDT." }
       ]
     }
   };
@@ -888,7 +889,6 @@
   }
 
   function renderCategoryContent(data){
-    // Compare guide
     if (data.compareGuide) {
       renderSectionHead(document.getElementById('compareHead'), data.compareGuide.eyebrow, data.compareGuide.heading, data.compareGuide.intro);
       document.getElementById('compareGrid').innerHTML = data.compareGuide.options.map(o => `
@@ -900,48 +900,34 @@
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
           ${o.priceFrom ? `<div class="price">From ${o.priceFrom}</div>` : ''}
-          <a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
+          ${o.ctaLabel ? `<a class="cta" href="${o.ctaHref}">${o.ctaLabel}</a>` : ''}
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
 
-    // Variant showcase (materials / finishes / attachment styles — whatever applies)
     if (data.variantShowcase) {
       renderSectionHead(document.getElementById('variantHead'), data.variantShowcase.eyebrow, data.variantShowcase.heading, data.variantShowcase.intro);
-      document.getElementById('variantStrip').innerHTML = data.variantShowcase.items.map(v => `
-        <div class="material-chip">
-          <div class="swatch"><img src="${v.image}" alt="${v.name}"></div>
-          <h4>${v.name}</h4>${v.priceFrom ? `<span>From ${v.priceFrom}</span>` : ''}
-        </div>`).join('');
+      document.getElementById('variantStrip').innerHTML = data.variantShowcase.items.map(m => `
+        <div class="material-chip"><div class="swatch"><img src="${m.image}" alt="${m.name}"></div><h4>${m.name}</h4>${m.priceFrom ? `<span>From ${m.priceFrom}</span>` : ''}</div>`).join('');
     } else { document.getElementById('section-variant').style.display = 'none'; }
 
-    // Process
     if (data.process) {
       renderSectionHead(document.getElementById('processHead'), data.process.eyebrow, data.process.heading);
       document.getElementById('processGrid').innerHTML = data.process.steps.map((s, i) => `
         <div class="process-card"><div class="process-num">${i + 1}</div><h4>${s.title}</h4><p>${s.body}</p></div>`).join('');
     } else { document.getElementById('section-process').style.display = 'none'; }
 
-    // Reviews
     if (data.reviews) {
       renderSectionHead(document.getElementById('reviewsHead'), data.reviews.eyebrow, data.reviews.heading);
-      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => {
-        const initials = r.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-        return `<div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"${r.quote}"</p>
-          <div class="t-who"><div class="t-avatar">${initials}</div><div><b>${r.name}</b><span>${r.source}</span></div></div>
-        </div>`;
-      }).join('');
+      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => `
+        <div class="testimonial-card"><p class="quote">"${r.quote}"</p><div class="author">${r.name}</div><div class="source">${r.source}</div></div>`).join('');
     } else { document.getElementById('section-reviews').style.display = 'none'; }
 
-    // Cross-sell
     if (data.crossSell) {
       renderSectionHead(document.getElementById('crossSellHead'), data.crossSell.eyebrow, data.crossSell.heading, data.crossSell.intro);
       document.getElementById('crossSellScroll').innerHTML = data.crossSell.items.map(p => `
         <div class="hm-card"><div class="hm-img"><img src="${p.image}" alt="${p.name}"></div><h4 class="hm-serif">${p.name}</h4>${p.priceFrom ? `<div class="hm-price">From <b>${p.priceFrom}</b></div>` : '<div class="hm-price">&nbsp;</div>'}<a class="hm-more" href="${p.href}">MORE INFO →</a></div>`).join('');
     } else { document.getElementById('section-crosssell').style.display = 'none'; }
 
-    // Buying guide / about section
     if (data.buyingGuide) {
       const bg = data.buyingGuide;
       const subsHtml = (bg.subsections || []).map(s => `<h3>${s.title}</h3><p>${s.body}</p>`).join('');
@@ -961,7 +947,6 @@
         </div>`;
     } else { document.getElementById('section-buyingguide').style.display = 'none'; }
 
-    // FAQ — split into two columns automatically
     if (data.faq) {
       renderSectionHead(document.getElementById('faqHead'), data.faq.eyebrow, data.faq.heading);
       const col1 = [], col2 = [];

@@ -875,19 +875,28 @@
 
     buyingGuide: {
       eyebrow: "Buying guide",
-      heading: "Order button badges in Australia",
-      intro: "Every badge is made with durable materials and a crystal-clear protective film for a finish that lasts, fastened with spring-loaded safety clasps rather than the flimsy pins found on cheaper imports. Production runs on our own commercial-grade button badge machines — the same machines we manufacture and sell to <a href=\"https://badge-a-minit.com.au/products/button-badge-machines\">customers who want to make badges themselves</a> — so quality control and turnaround stay consistent from a single prototype to a run of 10,000.",
+      heading: "Custom button badges made in Australia",
+      tagline: "Vibrant, high-impact promotional badges made to order on commercial presses.",
+      intro: "A badge that falls off mid-event, fades after one wash or arrives with blurry printing creates an impression you didn't intend. Badge-A-Minit button badges are produced on commercial-grade presses — the same machines we manufacture and sell — with a crystal-clear mylar protective cover film over the printed insert, spring-loaded safety clasps that lock firmly in place all day, and full-colour CMYK printing that stays vibrant for years. From a single personalised badge to a run of 10,000 for a national campaign, every unit goes through the same quality check before it leaves our Prospect, SA workshop.",
+      featurePills: [
+        "🎨 High-Definition Full-Colour Printing",
+        "🔒 Spring-Loaded Safety Clasps",
+        "🧲 Pin-Back &amp; Magnet Backing Options",
+        "📄 Free Pre-Press 1:1 Artwork Proof",
+        "⚡ 3-Day Priority Rush Dispatch Available"
+      ],
       subsections: [
-        { title: "Which option is right for you?", body: "Want something with a more premium, permanent feel? Our <a href=\"https://badge-a-minit.com.au/products/lapel-pins\">lapel pins</a> are worth a look alongside these." },
-        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+        { title: "Pin-back vs magnet: which is right for your use?", body: "Pin-back badges are the classic choice for bags, jackets and lapels — lightweight, secure and the format most people picture when they think of a button badge. The Magnet Faster backing is the professional alternative for uniforms, blazers and delicate fabrics where a pin hole isn't acceptable; a strong magnet pair holds the badge invisibly without fabric damage. For promotional giveaways and display use, Fridge Badge Magnets turn any finished badge into a keepsake or brand touchpoint on any metal surface — popular at markets, events and fundraisers." },
+        { title: "Size guide: matching size to use", body: "25mm is the smallest and most widely used for everyday pinback badges and campaign buttons — low cost, wearable on almost anything. 35mm is the go-to for school projects, fundraisers and most promotional orders where readability matters. 57mm gives you space for clear logos, slogans and event artwork. 85mm makes a statement — ideal for large display pieces, photo badges and where maximum visual impact is needed. Want something with a more permanent, premium feel? Our <a href=\"https://badge-a-minit.com.au/products/lapel-pins\">lapel pins</a> are worth considering alongside these." },
+        { title: "Ordering, delivery &amp; support", body: "A free artwork proof is prepared for every order before production begins — you approve the design, then we press. Standard turnaround is 12–14 business days, Express 7–8 days, Priority Rush approximately 5–6 days total including shipping." }
       ],
       facts: [
-        "10 product varieties in custom button badges",
-        "Starting from $0.36",
-        "Free artwork &amp; design proof on every order",
-        "Same-day dispatch on stock lines",
-        "Australian made since 1978",
-        "Bulk pricing scales automatically with quantity"
+        "10 product varieties — pin-back, magnet and fridge magnet",
+        "Sizes available: 25mm, 35mm, 57mm, 85mm",
+        "Starting from $0.36 per badge",
+        "Free artwork proof on every order",
+        "Family-owned Australian business since 1978",
+        "No minimum order quantity"
       ]
     },
 
@@ -895,10 +904,12 @@
       eyebrow: "FAQ",
       heading: "Button badge questions, answered",
       items: [
-        { q: "Is there a minimum order quantity for custom button badges?", a: "No — order a single badge, which suits individuals or small teams, right through to bulk runs with per-unit discounts for large campaigns, events or school projects." },
-        { q: "How do I stop button badges from falling off?", a: "Our badges use secure, spring-loaded safety clasps, far stronger than the flimsy pins found on cheaper imports. They lock firmly in place, keeping the badge secure all day." },
-        { q: "What's the fastest you can produce and deliver button badges?", a: "Our Priority Rush Service produces badges in 3 working days, with express shipping adding 2-3 business days — around 5-6 business days total. Standard (12-14 days) and Express (7-8 days) timelines are also available." },
-        { q: "How do you make button badges?", a: "Each badge is assembled on professional button badge machines that ensure perfect alignment and durability. We're also the Australian manufacturer of these same commercial-grade machines, for customers who want to make badges themselves." }
+        { q: "Is there a minimum order quantity for custom button badges?", a: "No — order a single badge, which suits prototypes or small teams, right through to bulk runs of thousands with per-unit discounts for large campaigns, school projects or events." },
+        { q: "How do I stop button badges from falling off?", a: "Our badges use spring-loaded safety clasps that lock firmly in place — far stronger than the flimsy pins found on cheap imported alternatives. The pin locks until deliberately released, keeping the badge secure throughout a full day of wear." },
+        { q: "What's the fastest way to receive custom button badges in Australia?", a: "Our Priority Rush Service produces badges in approximately 3 working days, and Express shipping adds 2–3 business days — you can usually receive your badges within 5–6 business days from ordering. Standard turnaround is 12–14 days, Express is 7–8 days." },
+        { q: "What's the difference between pin-back and Magnet Faster badges?", a: "Pin-back is the classic style using a safety pin clasp — ideal for fabric like bags and jacket lapels. Magnet Faster uses a strong magnetic pair that grips through fabric with no pin holes, suited to delicate uniforms, blazers and any setting where fabric damage isn't acceptable." },
+        { q: "Can I order multiple badge sizes in one order?", a: "Yes — add different sizes to your cart as separate products. Each size is priced independently, so you can order a small quantity of 57mm for display use and a larger run of 25mm or 35mm for giveaways in the same order." },
+        { q: "How are the badges made?", a: "Each badge is assembled on professional cast-iron and steel badge presses — the same machines we manufacture and sell to customers who want to make badges themselves. A printed insert is covered by a protective mylar film, then pressed between the metal shell and back with precision alignment." }
       ]
     }
   };
@@ -908,7 +919,6 @@
   }
 
   function renderCategoryContent(data){
-    // Compare guide
     if (data.compareGuide) {
       renderSectionHead(document.getElementById('compareHead'), data.compareGuide.eyebrow, data.compareGuide.heading, data.compareGuide.intro);
       document.getElementById('compareGrid').innerHTML = data.compareGuide.options.map(o => `
@@ -920,11 +930,10 @@
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
           ${o.priceFrom ? `<div class="price">From ${o.priceFrom}</div>` : ''}
-          <a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
+          ${o.ctaLabel ? `<a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">${o.ctaLabel}</a>` : ''}
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
 
-    // Variant showcase (materials / finishes / attachment styles — whatever applies)
     if (data.variantShowcase) {
       renderSectionHead(document.getElementById('variantHead'), data.variantShowcase.eyebrow, data.variantShowcase.heading, data.variantShowcase.intro);
       document.getElementById('variantStrip').innerHTML = data.variantShowcase.items.map(v => `
@@ -934,34 +943,24 @@
         </div>`).join('');
     } else { document.getElementById('section-variant').style.display = 'none'; }
 
-    // Process
     if (data.process) {
       renderSectionHead(document.getElementById('processHead'), data.process.eyebrow, data.process.heading);
       document.getElementById('processGrid').innerHTML = data.process.steps.map((s, i) => `
         <div class="process-card"><div class="process-num">${i + 1}</div><h4>${s.title}</h4><p>${s.body}</p></div>`).join('');
     } else { document.getElementById('section-process').style.display = 'none'; }
 
-    // Reviews
     if (data.reviews) {
       renderSectionHead(document.getElementById('reviewsHead'), data.reviews.eyebrow, data.reviews.heading);
-      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => {
-        const initials = r.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-        return `<div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"${r.quote}"</p>
-          <div class="t-who"><div class="t-avatar">${initials}</div><div><b>${r.name}</b><span>${r.source}</span></div></div>
-        </div>`;
-      }).join('');
+      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => `
+        <div class="testimonial-card"><p class="quote">"${r.quote}"</p><div class="author">${r.name}</div><div class="source">${r.source}</div></div>`).join('');
     } else { document.getElementById('section-reviews').style.display = 'none'; }
 
-    // Cross-sell
     if (data.crossSell) {
       renderSectionHead(document.getElementById('crossSellHead'), data.crossSell.eyebrow, data.crossSell.heading, data.crossSell.intro);
       document.getElementById('crossSellScroll').innerHTML = data.crossSell.items.map(p => `
         <div class="hm-card"><div class="hm-img"><img src="${p.image}" alt="${p.name}"></div><h4 class="hm-serif">${p.name}</h4>${p.priceFrom ? `<div class="hm-price">From <b>${p.priceFrom}</b></div>` : '<div class="hm-price">&nbsp;</div>'}<a class="hm-more" href="${p.href}">MORE INFO →</a></div>`).join('');
     } else { document.getElementById('section-crosssell').style.display = 'none'; }
 
-    // Buying guide / about section
     if (data.buyingGuide) {
       const bg = data.buyingGuide;
       const subsHtml = (bg.subsections || []).map(s => `<h3>${s.title}</h3><p>${s.body}</p>`).join('');
@@ -981,7 +980,6 @@
         </div>`;
     } else { document.getElementById('section-buyingguide').style.display = 'none'; }
 
-    // FAQ — split into two columns automatically
     if (data.faq) {
       renderSectionHead(document.getElementById('faqHead'), data.faq.eyebrow, data.faq.heading);
       const col1 = [], col2 = [];

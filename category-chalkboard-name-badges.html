@@ -782,18 +782,27 @@
 
     buyingGuide: {
       eyebrow: "Buying guide",
-      heading: "Why choose reusable chalkboard badges",
-      intro: "Write, wipe and reuse to reduce ongoing costs — a practical alternative to disposable <a href=\"https://badge-a-minit.com.au/products/name-badges\">name tags</a> that saves money and cuts down on unnecessary waste. The rustic chalkboard look adds personality to cafés, boutiques, events and creative agencies, encouraging friendly interaction between staff and customers.",
+      heading: "The smart choice for hospitality, events and rotating teams",
+      tagline: "Write, wipe, and rewrite — the smart, eco-friendly choice for dynamic teams.",
+      intro: "When your team changes weekly, your event runs for a single afternoon, or your café introduces a new barista every season, a fixed-print name badge that can't be updated becomes waste within days. Chalkboard name badges solve this with a surface that writes, wipes and rewrites indefinitely — the eco-friendly, cost-smart alternative to disposable name tags that pile up in the bin. The matte blackboard aesthetic works particularly well in hospitality and creative environments where it adds character rather than looking like corporate PPE.",
+      featurePills: [
+        "✍️ Reusable Matte Chalkboard Surface",
+        "💧 Liquid Chalk Compatible &amp; Dust-Free",
+        "🏷️ Blank, Logo Only &amp; Custom Options",
+        "🧲 Neodymium Magnet &amp; Pin Fasteners",
+        "🌱 Waste-Reducing Eco Alternative"
+      ],
       subsections: [
-        { title: "Which option is right for you?", body: "Reusability also reduces the number of single-use tags thrown away — a simple switch that supports sustainability goals, offering a different aesthetic to the permanence of <a href=\"https://badge-a-minit.com.au/products/name-badges/engraved-wood-name-badges\">wood name badges</a>." },
-        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+        { title: "Liquid chalk vs regular chalk: what to use", body: "Liquid chalk markers are the right tool for these badges — they produce vibrant, opaque lines that dry quickly and wipe cleanly from the badge surface with a damp cloth, creating no chalk dust. Regular chalk sticks can leave a dusty residue and produce less consistent lines on the badge surface. Most major stationery suppliers stock liquid chalk markers in white and a range of colours." },
+        { title: "Branded vs blank: which suits your setting?", body: "The blank badge gives total flexibility — write whatever you need and update it any time. It's ideal for pop-up markets, casual events and settings where the badge serves purely as a name identifier. Adding a permanently printed logo (Logo Only style) locks in your branding while keeping the name area writable, which is ideal for hospitality groups with staff turnover but consistent presentation standards. The Logo &amp; Text style permanently prints both your logo and a role or department label, keeping the badge professional-looking without daily handwriting. Compare to our permanently printed <a href=\"https://badge-a-minit.com.au/products/name-badges/full-colour-name-badges\">full colour name badges</a> for fixed-team use." },
+        { title: "Ordering, delivery &amp; support", body: "Blank badges ship same-day from Prospect, SA. Custom printed styles (Logo Only and Logo &amp; Text) require 5 working days production, with Fast Track and Priority Rush options available. Every printed order includes a free digital proof before production begins." }
       ],
       facts: [
-        "3 product varieties in chalkboard name badges",
+        "3 product varieties: blank, logo only, logo &amp; text",
         "Starting from $1.50",
-        "Free artwork &amp; design proof on every order",
-        "Same-day dispatch on stock lines",
-        "Australian made since 1978",
+        "Reusable — write, wipe and update indefinitely",
+        "Same-day dispatch on blank stock",
+        "Family-owned Australian business since 1978",
         "Bulk pricing scales automatically with quantity"
       ]
     },
@@ -802,10 +811,12 @@
       eyebrow: "FAQ",
       heading: "Chalkboard name badge questions, answered",
       items: [
-        { q: "What should I use to write on the chalkboard name badges?", a: "We recommend liquid chalk markers. They create vibrant, opaque lines that are easy to read, produce minimal dust compared to traditional chalk, and wipe off cleanly with a damp cloth." },
-        { q: "How do I clean and reuse the badges?", a: "Simply wipe the surface with a dry or slightly damp cloth, or use a regular blackboard eraser. The durable finish is designed for repeated updates." },
-        { q: "Are these badges suitable for a busy café or restaurant environment?", a: "Yes — they're perfect for fast-moving hospitality settings where staffing and roles change often. Full colour logo options keep branding consistent while handwritten details can be updated anytime." },
-        { q: "What's the delivery time for custom full colour chalkboard badges?", a: "Standard production is 5 working days, followed by your chosen shipping method. Fast Track and Priority Rush services are available if you're working to a tight deadline." }
+        { q: "What should I use to write on chalkboard name badges?", a: "We strongly recommend liquid chalk markers. They create vibrant, opaque lines that are easy to read, produce no chalk dust, and wipe off cleanly with a damp cloth. Most stationery suppliers stock these in white and other colours." },
+        { q: "How do I clean and reuse the badges?", a: "Simply wipe the writing surface with a dry or slightly damp cloth, or use a regular blackboard eraser. The durable chalk surface is designed for hundreds of repeated updates without degrading." },
+        { q: "Are chalkboard badges suitable for a busy café or restaurant?", a: "Yes — they're ideal for fast-moving hospitality environments where staff rotate frequently. The Logo Only style keeps branding consistent while allowing names to be updated daily, and the format communicates warmth and personality to customers in a way plastic printed badges can't." },
+        { q: "How is a chalkboard badge different from a whiteboard or dry-erase badge?", a: "A chalkboard badge has a matte black surface designed for liquid chalk or traditional chalk markers, giving a classic blackboard aesthetic. Dry-erase badges use a glossy surface suited to whiteboard markers. The chalkboard look has a distinct artisanal quality particularly suited to hospitality and creative settings." },
+        { q: "What's the delivery time for custom full colour chalkboard badges?", a: "Standard production is 5 working days, followed by your chosen shipping method. Fast Track and Priority Rush services are available if you're working to a tight deadline. Blank (non-printed) badges dispatch same-day from stock." },
+        { q: "Can I mix styles — some blank and some with logos?", a: "Yes — blank and printed styles are separate products and can be ordered simultaneously. This is common for teams with a mix of permanent and rotating staff, with printed badges for senior team members and blank badges for casual or event staff." }
       ]
     }
   };
@@ -827,11 +838,11 @@
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
           ${o.priceFrom ? `<div class="price">From ${o.priceFrom}</div>` : ''}
-          <a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
+          ${o.ctaLabel ? `<a class="cta" href="${o.ctaHref}">${o.ctaLabel}</a>` : ''}
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
 
-    // Variant showcase (materials / finishes / attachment styles — whatever applies)
+    // Variant showcase
     if (data.variantShowcase) {
       renderSectionHead(document.getElementById('variantHead'), data.variantShowcase.eyebrow, data.variantShowcase.heading, data.variantShowcase.intro);
       document.getElementById('variantStrip').innerHTML = data.variantShowcase.items.map(v => `
@@ -851,14 +862,8 @@
     // Reviews
     if (data.reviews) {
       renderSectionHead(document.getElementById('reviewsHead'), data.reviews.eyebrow, data.reviews.heading);
-      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => {
-        const initials = r.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-        return `<div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"${r.quote}"</p>
-          <div class="t-who"><div class="t-avatar">${initials}</div><div><b>${r.name}</b><span>${r.source}</span></div></div>
-        </div>`;
-      }).join('');
+      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => `
+        <div class="testimonial-card"><p class="quote">"${r.quote}"</p><div class="author">${r.name}</div><div class="source">${r.source}</div></div>`).join('');
     } else { document.getElementById('section-reviews').style.display = 'none'; }
 
     // Cross-sell

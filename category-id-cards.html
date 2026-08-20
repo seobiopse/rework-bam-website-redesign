@@ -769,18 +769,27 @@
 
     buyingGuide: {
       eyebrow: "Buying guide",
-      heading: "Security & efficiency with advanced features",
-      intro: "Our custom event ID cards can be enhanced with barcodes or QR codes for fast check-in and attendance tracking, and colour-coded access levels to distinguish Staff, Attendees, VIPs and Media at a glance. Choose sturdy plastic cards for long-lasting performance or laminated paper passes for short-term use.",
+      heading: "Event ID cards that do more than just identify",
+      tagline: "Professional, secure access control and identification for events, staff, and VIPs.",
+      intro: "A well-designed event ID card is doing several jobs at once: it identifies the bearer, communicates their access level, carries your event or sponsor branding, and — in many modern event setups — enables digital check-in via barcode or QR code. Getting this right before the event starts means smoother entry queues, faster check-in and fewer incidents at access gates. Getting it wrong means last-minute reprints, confused staff at the door and a first impression that undercuts weeks of event planning.",
+      featurePills: [
+        "💳 Durable Credit-Card Grade PVC",
+        "📊 Barcode, QR Code &amp; Variable Data Printing",
+        "🏷️ Personalised &amp; Non-Personalised Event Passes",
+        "🎗️ Seamless Lanyard &amp; Accessory Integration",
+        "⚡ Priority Rush Production Available"
+      ],
       subsections: [
-        { title: "Which option is right for you?", body: "Pair your cards with <a href=\"https://badge-a-minit.com.au/products/lanyards\">lanyards</a>, badge holders, or retractable reels for a ready-to-use identification system — we can supply these as a complete kit." },
-        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+        { title: "Personalised vs non-personalised: how to choose", body: "Personalised ID cards — with individual names, photos and roles printed on each card — are essential for multi-day events, VIP access management and any environment where accountability matters: conferences, trade shows, corporate summits and accredited media. Non-personalised event passes display your event branding, sponsor logos and design without individual names — cost-effective for general admission at festivals, one-day expos or large community events where individual identification isn't the priority. Both can include barcodes or QR codes for digital scanning." },
+        { title: "Building a complete event ID system", body: "Cards work best as part of a complete identification system. Pair your ID cards with <a href=\"https://badge-a-minit.com.au/products/lanyards\">custom lanyards</a> — dye-sublimated lanyards with your event branding match the card quality and make a strong visual impression throughout the event. Add plastic badge holders and retractable reels from our <a href=\"https://badge-a-minit.com.au/products/badge-accessories\">badge accessories</a> range for comfortable, professional wear throughout the day." },
+        { title: "Ordering, delivery &amp; support", body: "We recommend ordering 2–3 weeks before your event to allow time for design, proofing, production and delivery. Every order includes a free digital proof before production. Contact us early for large or complex personalised orders." }
       ],
       facts: [
-        "2 product varieties in id cards / event badges",
+        "2 product varieties: personalised and non-personalised",
         "Starting from $5.35",
+        "Barcode &amp; QR code printing available",
         "Free artwork &amp; design proof on every order",
-        "Same-day dispatch on stock lines",
-        "Australian made since 1978",
+        "Family-owned Australian business since 1978",
         "Bulk pricing scales automatically with quantity"
       ]
     },
@@ -789,10 +798,12 @@
       eyebrow: "FAQ",
       heading: "ID card questions, answered",
       items: [
-        { q: "What's the difference between personalised and non-personalised event badges?", a: "Personalised ID cards include details like name, photo and role — ideal for staff, speakers and VIPs. Non-personalised passes display only event branding, perfect for general attendees or one-day access." },
-        { q: "Can I add barcodes or QR codes to the ID cards for check-in?", a: "Yes — we can print unique barcodes or QR codes on each card for efficient scanning, check-in, or digital integration, helping manage access and data securely." },
-        { q: "What accessories do I need for my event ID cards?", a: "The most popular options are lanyards, plastic badge holders, and retractable reels for frequent scanners. We can supply these as a complete kit to simplify your order." },
-        { q: "How far in advance should I order my event ID cards?", a: "We recommend ordering 2-3 weeks before your event to allow time for design, proofing and delivery. For large or complex orders, contact us early for scheduling assistance." }
+        { q: "What's the difference between personalised and non-personalised event badges?", a: "Personalised ID cards include details like name, photo and role — ideal for staff, speakers and VIPs where individual accountability matters. Non-personalised passes display only event branding, perfect for general attendees or one-day access where individual identification isn't required." },
+        { q: "Can I add barcodes or QR codes to the ID cards for check-in?", a: "Yes — we can print unique barcodes or QR codes on each card for efficient scanning, check-in, or digital integration, helping manage access and attendance data securely and quickly." },
+        { q: "What accessories do I need for my event ID cards?", a: "The most popular options are lanyards, plastic badge holders, and retractable reels for frequent scanners. We can supply these as a complete kit — contact us to discuss a packaged event ID solution." },
+        { q: "How far in advance should I order my event ID cards?", a: "We recommend ordering 2–3 weeks before your event to allow time for design, proofing, production and delivery. For large or complex personalised orders — particularly those with individual names, photos or QR codes — contact us as early as possible to confirm scheduling." },
+        { q: "Can I colour-code the cards to show different access levels?", a: "Yes — a common approach is to design separate card layouts for different attendee categories (Staff, Attendee, VIP, Media) using different background colours or coloured borders. This allows staff at access points to identify authorisation at a glance, without reading each card individually." },
+        { q: "What's the minimum order quantity for event ID cards?", a: "There is no minimum order — you can order a small run for a boutique event or a large production run for a national conference. Pricing per card improves automatically as quantity increases, with no separate quote needed for standard orders." }
       ]
     }
   };
@@ -814,11 +825,11 @@
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
           ${o.priceFrom ? `<div class="price">From ${o.priceFrom}</div>` : ''}
-          <a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
+          ${o.ctaLabel ? `<a class="cta" href="${o.ctaHref}">${o.ctaLabel}</a>` : ''}
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
 
-    // Variant showcase (materials / finishes / attachment styles — whatever applies)
+    // Variant showcase
     if (data.variantShowcase) {
       renderSectionHead(document.getElementById('variantHead'), data.variantShowcase.eyebrow, data.variantShowcase.heading, data.variantShowcase.intro);
       document.getElementById('variantStrip').innerHTML = data.variantShowcase.items.map(v => `
@@ -838,14 +849,8 @@
     // Reviews
     if (data.reviews) {
       renderSectionHead(document.getElementById('reviewsHead'), data.reviews.eyebrow, data.reviews.heading);
-      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => {
-        const initials = r.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-        return `<div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"${r.quote}"</p>
-          <div class="t-who"><div class="t-avatar">${initials}</div><div><b>${r.name}</b><span>${r.source}</span></div></div>
-        </div>`;
-      }).join('');
+      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => `
+        <div class="testimonial-card"><p class="quote">"${r.quote}"</p><div class="author">${r.name}</div><div class="source">${r.source}</div></div>`).join('');
     } else { document.getElementById('section-reviews').style.display = 'none'; }
 
     // Cross-sell

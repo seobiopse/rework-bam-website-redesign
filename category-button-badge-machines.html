@@ -831,18 +831,27 @@
     buyingGuide: {
       eyebrow: "Buying guide",
       heading: "Why invest in a Badge-A-Minit machine?",
-      intro: "Unlike cheap imported alternatives, our heavy-duty cast iron and steel construction outlasts plastic competitors, and every machine makes a professional badge in under a minute with no technical skill required. As Australia's only manufacturer of button badge machines, we're a complete ecosystem — one trusted local source for machines, components, cutting dies and accessories.",
+      tagline: "Heavy-duty cast iron construction built to press perfect badges for decades.",
+      intro: "There is a reason Badge-A-Minit has been manufacturing button badge presses in Australia since 1978 — our machines are built from cast iron and steel, not the lightweight plastic found in cheaper imported alternatives. Every badge presses cleanly and consistently in under a minute, with no technical skill required: load the components, pull the lever, done. Schools that bought a Badge-A-Minit press a decade ago are still running it today, which is why our replacement parts and interchangeable dies are stocked continuously rather than discontinued when a new model comes out.",
+      featurePills: [
+        "🏋️ Heavy-Duty Cast Iron &amp; Steel Build",
+        "⚡ Press a Badge in Under 60 Seconds",
+        "🎁 Complete Starter Kits with 100 Free Sets",
+        "🇦🇺 Australia's Only Machine Manufacturer",
+        "🛠️ Local Spare Parts &amp; Lifetime Support"
+      ],
       subsections: [
-        { title: "Which option is right for you?", body: "Not ready to make your own? Our <a href=\"https://badge-a-minit.com.au/products/button-badge\">custom button badges</a> are made to order on these same machines." },
-        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+        { title: "Starter kit, standalone machine, or Multi Press?", body: "If this is your first machine, start with a starter kit — it includes the press, the cutting die for your chosen size and 100 free components to get you making badges within minutes of unpacking. If you already own a setup and are adding a second size, the Australian Made Machine sold on its own gives you the same durable press without duplicating dies and components you already have. The Multi Press frame is the right call for anyone producing multiple badge sizes regularly — the interchangeable die system means one robust frame does the work of three single-size machines." },
+        { title: "Not ready to make your own?", body: "We produce <a href=\"https://badge-a-minit.com.au/products/button-badge\">custom button badges</a> to order on these same commercial-grade machines — so if you need finished badges without the machine investment, that's an option too. When your volume grows to the point where making them yourself makes sense, the machine pays for itself quickly." },
+        { title: "Ordering, delivery &amp; support", body: "Machines ship from Prospect, SA with full instructions and local support. Call us on (08) 8363 1655 for sizing advice or compatibility questions before purchasing." }
       ],
       facts: [
-        "5 product varieties in button badge machines",
-        "Starting from $100.00",
-        "Free artwork &amp; design proof on every order",
-        "Same-day dispatch on stock lines",
-        "Australian made since 1978",
-        "Bulk pricing scales automatically with quantity"
+        "5 machine options across 3 badge sizes",
+        "Starter kits from $457.65, machines from $100.00",
+        "Cast iron and steel construction — not plastic",
+        "Australia's only button badge machine manufacturer",
+        "Family-owned Australian business since 1978",
+        "Local support and spare parts always in stock"
       ]
     },
 
@@ -850,10 +859,12 @@
       eyebrow: "FAQ",
       heading: "Button badge machine questions, answered",
       items: [
-        { q: "What's the main difference between the Australian Made Machine and the Multi Press?", a: "The Australian Made Machine is a durable, single-size workhorse ideal for everyday production. The Multi Press offers flexibility with interchangeable dies, letting you produce multiple badge sizes on the same press." },
-        { q: "Are your button badge machines difficult to use?", a: "Not at all — place your printed design and components into the press, pull the lever, and your badge is ready in under a minute. Every machine includes clear instructions and full local support." },
-        { q: "Do I need to buy anything else to start making badges?", a: "Yes — a cutting die for your chosen size and badge components (metal shell, plastic cover, printed insert, and back). Our starter kits include everything needed to get going right away." },
-        { q: "What badge sizes can I make, and how do I change them?", a: "We support 25mm, 58mm, and 75mm badge sizes. The Australian Made Machine is built for one size, while the Multi Press switches between sizes using interchangeable dies." }
+        { q: "What's the main difference between the Australian Made Machine and the Multi Press?", a: "The Australian Made Machine is a durable, single-size workhorse ideal for everyday production — each machine is sized for one badge diameter (25mm, 35mm, 57mm or 75mm). The Multi Press is a frame that accepts interchangeable die sets, letting you produce multiple badge sizes on the same press without buying multiple machines." },
+        { q: "Are your button badge machines difficult to use?", a: "Not at all — place your printed insert and components into the press, pull the lever, and your badge is complete in under a minute. Every machine includes clear instructions, and our team is available by phone on (08) 8363 1655 for setup support." },
+        { q: "Do I need to buy anything else to start making badges?", a: "If you buy a starter kit, everything is included — the press, a cutting die for your size and 100 free components. If you buy the standalone machine, you'll also need a cutting die and badge components (shell, mylar cover, printed insert and back). We stock all of these separately." },
+        { q: "What badge sizes can I make, and how do I change them?", a: "Single-size Australian Made Machines are available in 25mm, 35mm, 57mm and 75mm. The Multi Press supports 25mm, 35mm and 57mm via interchangeable die sets, which swap without tools in minutes — no recalibration needed." },
+        { q: "How long does a Badge-A-Minit machine last?", a: "With correct use and occasional replacement of consumable parts (cutter wheels, ejector pins), our cast iron and steel machines are built to last for many years. Schools and businesses that purchased machines from us a decade ago are still running them today with only minor maintenance." },
+        { q: "Can I use Badge-A-Minit badge components in my machine?", a: "Yes — our badge components (shells, mylar covers and backs) are designed for our machines. We also stock replacement cutter wheels, ejector pins and base boards if any part needs replacing over time." }
       ]
     }
   };
@@ -863,7 +874,6 @@
   }
 
   function renderCategoryContent(data){
-    // Compare guide
     if (data.compareGuide) {
       renderSectionHead(document.getElementById('compareHead'), data.compareGuide.eyebrow, data.compareGuide.heading, data.compareGuide.intro);
       document.getElementById('compareGrid').innerHTML = data.compareGuide.options.map(o => `
@@ -875,11 +885,10 @@
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
           ${o.priceFrom ? `<div class="price">From ${o.priceFrom}</div>` : ''}
-          <a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
+          ${o.ctaLabel ? `<a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">${o.ctaLabel}</a>` : ''}
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
 
-    // Variant showcase (materials / finishes / attachment styles — whatever applies)
     if (data.variantShowcase) {
       renderSectionHead(document.getElementById('variantHead'), data.variantShowcase.eyebrow, data.variantShowcase.heading, data.variantShowcase.intro);
       document.getElementById('variantStrip').innerHTML = data.variantShowcase.items.map(v => `
@@ -889,34 +898,24 @@
         </div>`).join('');
     } else { document.getElementById('section-variant').style.display = 'none'; }
 
-    // Process
     if (data.process) {
       renderSectionHead(document.getElementById('processHead'), data.process.eyebrow, data.process.heading);
       document.getElementById('processGrid').innerHTML = data.process.steps.map((s, i) => `
         <div class="process-card"><div class="process-num">${i + 1}</div><h4>${s.title}</h4><p>${s.body}</p></div>`).join('');
     } else { document.getElementById('section-process').style.display = 'none'; }
 
-    // Reviews
     if (data.reviews) {
       renderSectionHead(document.getElementById('reviewsHead'), data.reviews.eyebrow, data.reviews.heading);
-      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => {
-        const initials = r.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-        return `<div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"${r.quote}"</p>
-          <div class="t-who"><div class="t-avatar">${initials}</div><div><b>${r.name}</b><span>${r.source}</span></div></div>
-        </div>`;
-      }).join('');
+      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => `
+        <div class="testimonial-card"><p class="quote">"${r.quote}"</p><div class="author">${r.name}</div><div class="source">${r.source}</div></div>`).join('');
     } else { document.getElementById('section-reviews').style.display = 'none'; }
 
-    // Cross-sell
     if (data.crossSell) {
       renderSectionHead(document.getElementById('crossSellHead'), data.crossSell.eyebrow, data.crossSell.heading, data.crossSell.intro);
       document.getElementById('crossSellScroll').innerHTML = data.crossSell.items.map(p => `
         <div class="hm-card"><div class="hm-img"><img src="${p.image}" alt="${p.name}"></div><h4 class="hm-serif">${p.name}</h4>${p.priceFrom ? `<div class="hm-price">From <b>${p.priceFrom}</b></div>` : '<div class="hm-price">&nbsp;</div>'}<a class="hm-more" href="${p.href}">MORE INFO →</a></div>`).join('');
     } else { document.getElementById('section-crosssell').style.display = 'none'; }
 
-    // Buying guide / about section
     if (data.buyingGuide) {
       const bg = data.buyingGuide;
       const subsHtml = (bg.subsections || []).map(s => `<h3>${s.title}</h3><p>${s.body}</p>`).join('');
@@ -936,7 +935,6 @@
         </div>`;
     } else { document.getElementById('section-buyingguide').style.display = 'none'; }
 
-    // FAQ — split into two columns automatically
     if (data.faq) {
       renderSectionHead(document.getElementById('faqHead'), data.faq.eyebrow, data.faq.heading);
       const col1 = [], col2 = [];

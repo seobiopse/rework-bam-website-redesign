@@ -792,19 +792,28 @@
 
     buyingGuide: {
       eyebrow: "Buying guide",
-      heading: "Why choose Badge-A-Minit for your name badges?",
-      intro: "High-resolution, full-colour printing on durable materials ensures your badges look professional and stand the test of daily use, with easy online design and ordering — create custom name badges in minutes with our simple tools or upload your artwork directly. Enjoy fast, reliable Australia-wide shipping with vibrant, durable colour that stays crisp and bright.",
+      heading: "Why full colour name badges work harder for your brand",
+      tagline: "Vivid CMYK brand representation printed directly onto scratch-resistant acrylic.",
+      intro: "When your team wears a name badge, it's not just identifying a person — it's carrying your brand in front of every customer, guest or patient they interact with. Full colour name badges deliver the highest visual impact in the range: your logo rendered in CMYK across the full badge surface, vibrant and crisp, printed directly onto scratch-resistant plastic that holds its colour through thousands of wears. For teams in retail, healthcare, hospitality or events where first impressions happen fast, full colour gives you the most professional and on-brand outcome at a very accessible price point.",
+      featurePills: [
+        "🎨 High-Resolution Full-Colour CMYK Printing",
+        "🛡️ Scratch-Resistant Polyurethane Coating",
+        "🧲 Uniform-Safe Magnetic Fasteners",
+        "📐 4 Distinct Shapes: Rectangle, Oval, Round, Square",
+        "📄 Free Pre-Press 1:1 Vector Proof"
+      ],
       subsections: [
-        { title: "Which option is right for you?", body: "Do not settle for generic tags when you can customise every detail — from permanent full colour name badges to easy-to-update <a href=\"https://badge-a-minit.com.au/product/reusable-full-colour-rectangle-name-badge\">reusable name badges</a>, we're your partner for all your team identification needs." },
-        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+        { title: "Permanent print vs reusable inserts: choosing the right format", body: "Standard full colour badges are printed once for a specific name and role — the right choice when your team is stable and you want a consistent, premium finish for every person. If you have a rotating roster, seasonal staff or large events with varying attendees, <a href=\"https://badge-a-minit.com.au/products/name-badges/reusable-name-badges\">reusable name badges</a> with interchangeable inserts give you the same full-colour look with the flexibility to update names whenever you need to." },
+        { title: "Shape and setting: matching form to function", body: "Rectangle is the standard for corporate environments — the classic shape most associated with professional identification, with ample space for name, title and logo. Round offers a more welcoming, informal visual tone suited to retail and customer service. Oval adds elegance — particularly popular in hotel, restaurant and premium service contexts. Square gives a contemporary, geometric look suited to creative agencies and modern brands. All four shapes are available in identical material and print quality, so the choice is entirely driven by the impression you want to create." },
+        { title: "Ordering, delivery &amp; support", body: "Every order includes a free digital proof before anything goes to print. Standard turnaround is 4 working days, with Express and Priority Rush available. Minimum order is one badge, and pricing scales automatically with quantity." }
       ],
       facts: [
-        "4 product varieties in full colour name badges",
+        "4 shape options: rectangle, round, oval, square",
         "Starting from $2.50",
         "Free artwork &amp; design proof on every order",
-        "Same-day dispatch on stock lines",
-        "Australian made since 1978",
-        "Bulk pricing scales automatically with quantity"
+        "4-day standard turnaround, express options available",
+        "Family-owned Australian business since 1978",
+        "No minimum order quantity"
       ]
     },
 
@@ -812,10 +821,12 @@
       eyebrow: "FAQ",
       heading: "Full colour name badge questions, answered",
       items: [
-        { q: "Can I include my company logo on the name badges?", a: "Yes — you can upload your logo during the online design process. We recommend a high-quality PNG with a transparent background for best results and precise positioning." },
+        { q: "Can I include my company logo on the name badges?", a: "Yes — you can upload your logo during the online design process. We recommend a high-quality PNG with a transparent background for best results and precise positioning. Vector files (AI, EPS) are also accepted for logos with fine detail." },
         { q: "I need my badges for an event next week. What's your fastest service?", a: "Choose our Priority Rush Service for production in 3 working days, followed by Express shipping, which typically arrives in 2 to 3 business days — you can usually receive your badges within 5 to 6 business days from ordering." },
-        { q: "What's your minimum order quantity?", a: "There is no minimum order — purchase a single badge or place a bulk order. Larger quantities often receive reduced per-badge pricing." },
-        { q: "What's the quality and durability of your full-colour name badges?", a: "Our full-colour name badges are professionally printed using a high-resolution process onto durable, scratch-resistant plastic. The colours are vibrant and long-lasting, ensuring your branding, names and logos remain clear and professional even with daily wear." }
+        { q: "What's your minimum order quantity?", a: "There is no minimum order — purchase a single badge or place a bulk order. Larger quantities receive reduced per-badge pricing automatically at checkout, with no quote required." },
+        { q: "What's the quality and durability of your full-colour name badges?", a: "Our full-colour name badges are professionally printed using a high-resolution CMYK process onto durable, scratch-resistant plastic. The colours are vibrant and long-lasting, ensuring your branding, names and logos remain clear and professional even with daily wear." },
+        { q: "What is the difference between full colour and engraved name badges?", a: "Full colour badges support photographic-quality printing including gradients, photography and multi-colour logos — ideal for brands where visual identity is central. Engraved badges use a laser to permanently etch a two-tone design into dual-layer plastic — more durable against surface wear, and preferred in settings where a premium, traditional look is valued." },
+        { q: "Are these badges suitable for healthcare workers and clinical staff?", a: "Yes — full colour name badges are widely used in healthcare settings. The magnetic backing option is particularly recommended for clinical environments where pin holes in scrubs or theatre wear are not acceptable. Strong neodymium magnets provide a secure hold without fabric damage." }
       ]
     }
   };
@@ -837,11 +848,11 @@
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
           ${o.priceFrom ? `<div class="price">From ${o.priceFrom}</div>` : ''}
-          <a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
+          ${o.ctaLabel ? `<a class="cta" href="${o.ctaHref}">${o.ctaLabel}</a>` : ''}
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
 
-    // Variant showcase (materials / finishes / attachment styles — whatever applies)
+    // Variant showcase
     if (data.variantShowcase) {
       renderSectionHead(document.getElementById('variantHead'), data.variantShowcase.eyebrow, data.variantShowcase.heading, data.variantShowcase.intro);
       document.getElementById('variantStrip').innerHTML = data.variantShowcase.items.map(v => `
@@ -861,14 +872,8 @@
     // Reviews
     if (data.reviews) {
       renderSectionHead(document.getElementById('reviewsHead'), data.reviews.eyebrow, data.reviews.heading);
-      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => {
-        const initials = r.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-        return `<div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"${r.quote}"</p>
-          <div class="t-who"><div class="t-avatar">${initials}</div><div><b>${r.name}</b><span>${r.source}</span></div></div>
-        </div>`;
-      }).join('');
+      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => `
+        <div class="testimonial-card"><p class="quote">"${r.quote}"</p><div class="author">${r.name}</div><div class="source">${r.source}</div></div>`).join('');
     } else { document.getElementById('section-reviews').style.display = 'none'; }
 
     // Cross-sell

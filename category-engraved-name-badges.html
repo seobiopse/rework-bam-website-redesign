@@ -792,18 +792,27 @@
 
     buyingGuide: {
       eyebrow: "Buying guide",
-      heading: "Why laser engraving is the superior choice",
-      intro: "Laser engraving physically etches the design into the material, unlike printed ink, which sits on the surface — the result cannot fade, peel or rub off, ensuring a long-term investment that withstands daily wear. Engraved text offers a crisp, high-contrast finish with a subtle texture, and dual-layer materials create clean, two-tone results without the need for printing. Laser technology also captures intricate details with precision, ideal for fine-line logos or small text elements.",
+      heading: "Why laser engraving is the superior choice for professional name badges",
+      tagline: "Laser-etched permanence that will never fade, scratch off, or peel.",
+      intro: "Laser engraving physically etches the design into the material — not printed on top, not applied with ink. The result cannot fade, peel or rub off, no matter how many times the badge is worn, handled or washed. For a corporate law firm, a hospital department, a hospitality team or a retail chain, this permanence is the point: the badge you receive today will look exactly the same in three years, which is why engraved badges are the industry standard for professional identification in settings where appearance reflects directly on the organisation.",
+      featurePills: [
+        "⚡ Precision Dual-Layer Engraving Plastic",
+        "📐 Rectangle, Oval, Round &amp; Square Shapes",
+        "🧲 Neodymium Clothing-Safe Magnets",
+        "🛡️ Scratch-Proof &amp; Chemical Resistant",
+        "📄 Free Digital Proof Before Engraving"
+      ],
       subsections: [
-        { title: "Which option is right for you?", body: "This same durable engraving process is used in our range of premium <a href=\"https://badge-a-minit.com.au/products/name-badges/engraved-wood-name-badges\">engraved wood name badges</a> for a distinct, natural aesthetic — choose a <a href=\"https://badge-a-minit.com.au/products/name-badges\">name tag</a> that lasts, with fast Australian production and reliable nationwide shipping." },
-        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+        { title: "How dual-layer engraving works", body: "Our engraved name badges use precision dual-layer plastic — two layers of material with contrasting colours bonded together. When the laser removes the top layer, the contrasting core colour is revealed in crisp, sharp detail, producing a natural two-tone result without any printing process. This means no inks to dry, no colours to bleed, and no film to peel — just clean, machined lettering and graphics." },
+        { title: "Choosing the right shape for your setting", body: "Rectangle is the most common for corporate, legal and medical settings — ample space for names, job titles and logos with a balanced, traditional layout. Oval brings a softer, more welcoming character that suits hospitality and customer-facing roles where approachability matters. Round and Square shapes add visual personality — round for friendly retail environments, square for modern, design-led brands. For teams wanting a natural, sustainable aesthetic, these same shapes are available in our <a href=\"https://badge-a-minit.com.au/products/name-badges/engraved-wood-name-badges\">engraved wood name badge</a> range." },
+        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's engraved. Standard turnaround is 4 working days, with Express and Priority Rush available. Pricing scales automatically with quantity." }
       ],
       facts: [
-        "4 product varieties in engraved name badges",
+        "4 shape options: rectangle, oval, round, square",
         "Starting from $1.92",
         "Free artwork &amp; design proof on every order",
-        "Same-day dispatch on stock lines",
-        "Australian made since 1978",
+        "4-day standard turnaround, express options available",
+        "Family-owned Australian business since 1978",
         "Bulk pricing scales automatically with quantity"
       ]
     },
@@ -812,10 +821,12 @@
       eyebrow: "FAQ",
       heading: "Engraved name badge questions, answered",
       items: [
-        { q: "What are the main advantages of laser engraved badges over printed ones?", a: "Laser engraving creates permanent markings by removing material rather than applying ink. This ensures the design remains crisp and cannot fade, scratch off or deteriorate even with heavy daily use." },
-        { q: "What materials are available for engraved name badges?", a: "We use premium dual-layer plastics with contrasting core colours. When engraved, the core colour is revealed, producing a clean and professional two-tone finish without the need for printing." },
-        { q: "Can you engrave my company logo on the badges, and what file do I need?", a: "Yes — we can engrave detailed logos accurately. A vector file or high-quality PNG works best, and our team ensures your logo translates perfectly into an engraved format." },
-        { q: "What's the process for approving the design before you engrave my order?", a: "Once your order is placed, we prepare a digital proof for your review. We only begin engraving after you approve the design so you can be confident everything is correct." }
+        { q: "What are the main advantages of laser engraved badges over printed ones?", a: "Laser engraving creates permanent markings by removing material rather than applying ink. This ensures the design remains crisp and cannot fade, scratch off or deteriorate even with heavy daily use — a critical advantage for professional environments where badge appearance reflects on the organisation." },
+        { q: "What materials are available for engraved name badges?", a: "We use premium dual-layer plastics with contrasting core colours. When engraved, the core colour is revealed, producing a clean and professional two-tone finish without the need for printing — no ink, no fading, no peeling." },
+        { q: "Can you engrave my company logo on the badges, and what file do I need?", a: "Yes — we can engrave detailed logos accurately. A vector file (AI, EPS or SVG) gives the best result for logos with fine lines or complex detail. A high-quality PNG works well for simpler artwork. Our team reviews every file before production." },
+        { q: "What's the process for approving the design before you engrave my order?", a: "Once your order is placed, we prepare a digital proof for your review. We only begin engraving after you approve the design — so you can be confident the layout, text, logo position and spelling are exactly correct before production starts." },
+        { q: "Which shape should I choose for a hospitality setting?", a: "Oval is most popular in hospitality — the smooth, rounded profile looks elegant on uniforms and carries a warmer impression than a hard-edged rectangle. Round is also widely used in retail and café settings for a friendly, accessible look." },
+        { q: "Is there a minimum order quantity for engraved name badges?", a: "No — order as few as one badge if needed, right through to bulk orders for a full corporate or healthcare team. Pricing improves automatically as quantity increases at checkout, with no quote required." }
       ]
     }
   };
@@ -837,11 +848,11 @@
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
           ${o.priceFrom ? `<div class="price">From ${o.priceFrom}</div>` : ''}
-          <a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
+          ${o.ctaLabel ? `<a class="cta" href="${o.ctaHref}">${o.ctaLabel}</a>` : ''}
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
 
-    // Variant showcase (materials / finishes / attachment styles — whatever applies)
+    // Variant showcase
     if (data.variantShowcase) {
       renderSectionHead(document.getElementById('variantHead'), data.variantShowcase.eyebrow, data.variantShowcase.heading, data.variantShowcase.intro);
       document.getElementById('variantStrip').innerHTML = data.variantShowcase.items.map(v => `
@@ -861,14 +872,8 @@
     // Reviews
     if (data.reviews) {
       renderSectionHead(document.getElementById('reviewsHead'), data.reviews.eyebrow, data.reviews.heading);
-      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => {
-        const initials = r.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-        return `<div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"${r.quote}"</p>
-          <div class="t-who"><div class="t-avatar">${initials}</div><div><b>${r.name}</b><span>${r.source}</span></div></div>
-        </div>`;
-      }).join('');
+      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => `
+        <div class="testimonial-card"><p class="quote">"${r.quote}"</p><div class="author">${r.name}</div><div class="source">${r.source}</div></div>`).join('');
     } else { document.getElementById('section-reviews').style.display = 'none'; }
 
     // Cross-sell

@@ -769,18 +769,27 @@
 
     buyingGuide: {
       eyebrow: "Buying guide",
-      heading: "Why choose our engraved luggage tags?",
-      intro: "Made from high-quality materials with a deeply engraved, long-lasting surface that won't tear, fade or fall off, our tags give your bag the same immediate recognition as a colourful <a href=\"https://badge-a-minit.com.au/products/button-badge\">button badge</a> at an event — spot it instantly on the carousel, no more confusion or risk of mix-ups.",
+      heading: "The permanent identification solution for frequent travellers",
+      tagline: "Permanent laser-engraved identification built to survive a lifetime of travel.",
+      intro: "Airlines handle hundreds of millions of bags a year, and the single most effective step you can take to protect yours is to display clear, permanent contact information on the outside. A laser-engraved luggage tag from Badge-A-Minit cannot tear like a paper tag, cannot fade like a printed plastic one, and cannot slip off like a flimsy tie-on label. Your name, phone number or contact details are etched permanently into the material — there from the first trip to the thousandth, surviving conveyor belts, tarmac handling and years of travel.",
+      featurePills: [
+        "✈️ Deeply Laser-Engraved — Fade &amp; Tear Proof",
+        "📐 Rectangle &amp; Carousel-Visible Arch Shapes",
+        "💼 Personal Travel &amp; Corporate Gifting",
+        "🛡️ High-Impact Scratch-Resistant Surface",
+        "🇦🇺 Dispatched Fast Australia-Wide"
+      ],
       subsections: [
-        { title: "Which option is right for you?", body: "Add names, numbers, graphics or logos for a unique tag that reflects your personal or professional style. Locally produced by a trusted Australian supplier, with dependable turnaround and fast nationwide shipping." },
-        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+        { title: "Beyond personal travel: corporate and branded applications", body: "Luggage tags are not just for personal use. Travel teams, airline cabin crews and corporate frequent flyers often order in bulk to maintain a consistent, branded look across the organisation. Promotional luggage tags make highly valued corporate gifts — practical, long-lasting and perceived as premium. A custom engraved tag with a company logo and employee name is the kind of gift that travels everywhere with the recipient rather than sitting in a desk drawer. The same laser engraving quality is available across our <a href=\"https://badge-a-minit.com.au/products/name-badges\">name badge</a> and <a href=\"https://badge-a-minit.com.au/products/plaques\">plaque</a> ranges for a consistent branded standard across all your engraved items." },
+        { title: "Rectangle vs arch: does shape matter?", body: "Both are functionally identical — permanently engraved, durable and available with the same personalisation options. The rectangle is the standard, immediately recognisable tag shape that attracts no attention on the carousel. The arch shape is distinctive enough to make your bag visibly different from the hundreds of similar-looking bags coming through the same carousel — a practical advantage in high-volume travel situations where spotting your bag quickly matters." },
+        { title: "Ordering, delivery &amp; support", body: "Standard production is 5 working days from proof approval, with Priority Rush available for urgent orders. Every order includes a free digital proof. Pricing improves automatically with quantity at checkout — no quote required." }
       ],
       facts: [
-        "2 product varieties in luggage tags",
+        "2 shape options: rectangle and arch",
         "Starting from $6.50",
+        "Permanently laser-engraved — cannot fade or tear",
         "Free artwork &amp; design proof on every order",
-        "Same-day dispatch on stock lines",
-        "Australian made since 1978",
+        "Family-owned Australian business since 1978",
         "Bulk pricing scales automatically with quantity"
       ]
     },
@@ -789,10 +798,12 @@
       eyebrow: "FAQ",
       heading: "Luggage tag questions, answered",
       items: [
-        { q: "Are your luggage tags suitable for checked baggage?", a: "Absolutely — our tags are made from durable materials built to withstand the rigours of airline travel and are ideal for both checked and carry-on bags." },
-        { q: "Can I use my own logo or a specific font?", a: "Yes — upload your artwork or logo via our online design tool for a fully personalised result, perfect for gifts, corporate travel or team branding." },
-        { q: "How long does it take to produce and deliver my order in Australia?", a: "Standard production is 5 working days. Shipping options range from regular delivery to Priority Rush, with orders ready and shipped in as little as 5-6 business days." },
-        { q: "Why should I use a durable, engraved luggage tag?", a: "Paper or plastic tags can tear or fade. Our engraved luggage tags permanently display your details, dramatically improving the chance your luggage is returned if lost." }
+        { q: "Are your luggage tags suitable for checked baggage?", a: "Absolutely — our tags are made from durable materials built to withstand the rigours of airline travel, including the mechanical handling systems used for checked luggage. They are equally suitable for carry-on bags, sports equipment bags and corporate travel." },
+        { q: "Can I use my own logo or a specific font?", a: "Yes — upload your artwork or logo via our online design tool for a fully personalised result, perfect for gifts, corporate travel kits or team branding. Our team reviews every design before production to ensure the best possible laser engraving result." },
+        { q: "How long does it take to produce and deliver my order in Australia?", a: "Standard production is 5 working days from proof approval. Shipping options range from regular delivery to Priority Rush, with orders typically received within 7–10 business days standard. Priority Rush reduces total turnaround to approximately 5–6 business days." },
+        { q: "Why should I use a durable, engraved luggage tag?", a: "Paper or plastic printed tags can tear, fade or detach during transit. Our engraved luggage tags permanently display your details, dramatically improving the chance your luggage is identified and returned if lost or misrouted — a small investment with significant practical value for frequent travellers." },
+        { q: "Is the arch shape more visible on the baggage carousel than the rectangle?", a: "Yes — the distinctive arch shape is noticeably different from the standard rectangular tags used by most travellers, making your bag easier to spot quickly on a busy carousel. This practical advantage is particularly valued by frequent travellers who want to minimise wait time at baggage claim." },
+        { q: "Can I order luggage tags as corporate gifts in bulk?", a: "Yes — luggage tags are a popular corporate gift choice because they're practical, premium-looking and long-lasting. Personalised with individual names and a company logo, they make a gift that travels everywhere with the recipient. Bulk pricing applies automatically at checkout, and we can advise on packaging options for gifting." }
       ]
     }
   };
@@ -814,11 +825,11 @@
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
           ${o.priceFrom ? `<div class="price">From ${o.priceFrom}</div>` : ''}
-          <a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
+          ${o.ctaLabel ? `<a class="cta" href="${o.ctaHref}">${o.ctaLabel}</a>` : ''}
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
 
-    // Variant showcase (materials / finishes / attachment styles — whatever applies)
+    // Variant showcase
     if (data.variantShowcase) {
       renderSectionHead(document.getElementById('variantHead'), data.variantShowcase.eyebrow, data.variantShowcase.heading, data.variantShowcase.intro);
       document.getElementById('variantStrip').innerHTML = data.variantShowcase.items.map(v => `
@@ -838,14 +849,8 @@
     // Reviews
     if (data.reviews) {
       renderSectionHead(document.getElementById('reviewsHead'), data.reviews.eyebrow, data.reviews.heading);
-      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => {
-        const initials = r.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-        return `<div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"${r.quote}"</p>
-          <div class="t-who"><div class="t-avatar">${initials}</div><div><b>${r.name}</b><span>${r.source}</span></div></div>
-        </div>`;
-      }).join('');
+      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => `
+        <div class="testimonial-card"><p class="quote">"${r.quote}"</p><div class="author">${r.name}</div><div class="source">${r.source}</div></div>`).join('');
     } else { document.getElementById('section-reviews').style.display = 'none'; }
 
     // Cross-sell

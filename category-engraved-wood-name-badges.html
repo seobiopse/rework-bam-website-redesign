@@ -813,18 +813,27 @@
 
     buyingGuide: {
       eyebrow: "Buying guide",
-      heading: "Unique benefits of engraved wood name badges",
-      intro: "Wood conveys warmth, trust and craftsmanship, and our engraved wood name badges are made from biodegradable, renewable materials — choosing wood over plastic helps businesses reduce their ecological footprint while promoting eco-conscious values.",
+      heading: "Why engraved wood name badges stand apart",
+      tagline: "Natural timber warmth and unique wood grains crafted for eco-conscious brands.",
+      intro: "Wood communicates something that no printed plastic can: warmth, craftsmanship and a considered approach to branding. When a customer or guest notices a natural timber name badge, it registers as a deliberate choice — a reflection of a business that pays attention to the details that others overlook. Our engraved wood name badges are made from real timber — cherry, maple, walnut, bamboo and mahogany — with natural grain patterns that make every single badge subtly unique. No two are identical, which gives each team member's badge a sense of individuality that's impossible to replicate with a printed sheet.",
+      featurePills: [
+        "🪵 Cherry, Maple, Walnut, Bamboo &amp; Mahogany",
+        "🌱 100% Biodegradable &amp; Sustainably Sourced",
+        "🔥 Deep Laser-Burnt Contrast Finish",
+        "🧲 Magnetic, Pin &amp; Swivel Clip Fasteners",
+        "🇦🇺 Locally Crafted in Prospect SA"
+      ],
       subsections: [
-        { title: "Which option is right for you?", body: "Laser engraving ensures permanent, crisp designs that will not fade. Finished and sealed, our <a href=\"https://badge-a-minit.com.au/products/name-badges/engraved-name-badges\">engraved name badges</a> are built to withstand everyday wear while maintaining a polished, professional appearance, with magnetic, pin-back or swivel clip backing to suit your uniform." },
-        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+        { title: "The sustainability case for wood badges", body: "Bamboo grows to harvestable size in 3–5 years, compared to 30–100 years for hardwoods — making it the most renewable option in the range and a compelling choice for businesses with documented sustainability goals. Cherry, maple, walnut and mahogany are sourced from managed suppliers. All five woods are natural and biodegradable at end of life, meaning a wood badge leaves far less environmental footprint than a plastic alternative. Finished and sealed, the badges withstand daily wear while maintaining a polished appearance." },
+        { title: "Laser engraving on wood: permanent and precise", body: "The laser burns directly into the wood grain, creating a permanent, fade-proof mark — no ink applied, no surface treatment that can peel or chip off. This same precision process is also used in our standard <a href=\"https://badge-a-minit.com.au/products/name-badges/engraved-name-badges\">engraved name badges</a> on plastic. On wood, the result is warmer — a naturally contrasting burnt-in mark against the timber's own colour and grain, creating a textured depth that catches the light differently depending on the wood species." },
+        { title: "Backing and ordering", body: "All wood badges are available with magnetic, pin-back or swivel clip backing to suit different uniforms and fabrics. Every order includes a free artwork proof before engraving begins. Pricing scales automatically with quantity, and same-day dispatch applies to stock items." }
       ],
       facts: [
-        "5 product varieties in engraved wood name badges",
+        "5 wood varieties: cherry, maple, walnut, bamboo, mahogany",
         "Starting from $3.84",
+        "Biodegradable and sustainably sourced materials",
         "Free artwork &amp; design proof on every order",
-        "Same-day dispatch on stock lines",
-        "Australian made since 1978",
+        "Family-owned Australian business since 1978",
         "Bulk pricing scales automatically with quantity"
       ]
     },
@@ -833,10 +842,12 @@
       eyebrow: "FAQ",
       heading: "Engraved wood name badge questions, answered",
       items: [
-        { q: "Are these engraved wooden name badges truly eco-friendly?", a: "Yes — we source our woods from sustainable suppliers, and bamboo is highly renewable. Unlike plastic, wood is natural and biodegradable, making these badges an environmentally responsible choice." },
-        { q: "How durable is the laser engraving on wood?", a: "The engraving burns directly into the wood, creating a permanent design. It will not peel, fade or rub off, ensuring your badge remains crisp and professional." },
-        { q: "Can you engrave a detailed company logo on the wood?", a: "Absolutely — our laser technology captures fine details with precision. High-resolution vector files give the best results for complex logos." },
-        { q: "What backing options are available for the badges?", a: "We offer magnetic backs, classic pin-backs, and swivel clips to suit different uniforms and preferences, providing secure and comfortable wear." }
+        { q: "Are these engraved wooden name badges truly eco-friendly?", a: "Yes — we source our woods from sustainable suppliers. Bamboo is particularly renewable, reaching harvestable maturity in 3–5 years. Unlike plastic, all five wood species are natural and biodegradable, making these badges an environmentally responsible choice for sustainability-conscious businesses." },
+        { q: "How durable is the laser engraving on wood?", a: "The engraving burns directly into the wood fibre, creating a permanent design that will not peel, fade or rub off. Finished and sealed, the badges withstand daily wear and maintain a crisp, professional appearance throughout their service life." },
+        { q: "Can you engrave a detailed company logo on the wood?", a: "Absolutely — our laser technology captures fine details with high precision. Vector files (AI, EPS, SVG) give the best results for complex logos with fine lines. High-quality PNGs also work well for simpler artwork." },
+        { q: "What backing options are available for the badges?", a: "We offer magnetic backs, classic pin-backs, and swivel clips to suit different uniforms and preferences, providing secure and comfortable wear throughout the working day." },
+        { q: "What is the difference between the wood species in terms of appearance?", a: "Cherry and maple are light-toned woods with a warm, approachable aesthetic. Walnut and mahogany are darker, richer timbers that convey elegance and tradition. Bamboo has a distinctive linear grain with a contemporary, minimalist look. All five laser-engrave with high contrast and clarity." },
+        { q: "Are my badges all identical, or will the grain pattern vary?", a: "The grain pattern varies naturally across each badge because these are real wood — no two are identical. This is considered a feature rather than a flaw; it gives each team member's badge a subtle individuality that printed badges cannot replicate." }
       ]
     }
   };
@@ -858,11 +869,11 @@
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
           ${o.priceFrom ? `<div class="price">From ${o.priceFrom}</div>` : ''}
-          <a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
+          ${o.ctaLabel ? `<a class="cta" href="${o.ctaHref}">${o.ctaLabel}</a>` : ''}
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
 
-    // Variant showcase (materials / finishes / attachment styles — whatever applies)
+    // Variant showcase
     if (data.variantShowcase) {
       renderSectionHead(document.getElementById('variantHead'), data.variantShowcase.eyebrow, data.variantShowcase.heading, data.variantShowcase.intro);
       document.getElementById('variantStrip').innerHTML = data.variantShowcase.items.map(v => `
@@ -882,14 +893,8 @@
     // Reviews
     if (data.reviews) {
       renderSectionHead(document.getElementById('reviewsHead'), data.reviews.eyebrow, data.reviews.heading);
-      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => {
-        const initials = r.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-        return `<div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"${r.quote}"</p>
-          <div class="t-who"><div class="t-avatar">${initials}</div><div><b>${r.name}</b><span>${r.source}</span></div></div>
-        </div>`;
-      }).join('');
+      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => `
+        <div class="testimonial-card"><p class="quote">"${r.quote}"</p><div class="author">${r.name}</div><div class="source">${r.source}</div></div>`).join('');
     } else { document.getElementById('section-reviews').style.display = 'none'; }
 
     // Cross-sell

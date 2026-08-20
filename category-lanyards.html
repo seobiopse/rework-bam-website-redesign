@@ -921,19 +921,28 @@
 
     buyingGuide: {
       eyebrow: "Buying guide",
-      heading: "Custom lanyards for every purpose",
-      intro: "Every lanyard is fully configurable: width from 10mm to 25mm, a breakaway clip for schools, healthcare and factory safety, and a choice of swivel hooks, bulldog clips, split rings or retractable reels for whatever it needs to hold. Colours can be Pantone-matched to your branding for perfect consistency.",
+      heading: "Custom lanyards that work as hard as your team",
+      tagline: "Custom printed woven and sublimated lanyards that keep your brand visible all day.",
+      intro: "A lanyard is worn every day, seen by everyone in your organisation and everyone who visits it — which makes it one of the most consistent brand touchpoints a business can own. A cheap, unbranded polyester cord undermines the professionalism of the badge attached to it. The right lanyard — your logo, your colours, the right width and the right attachment — ties your entire identification system together and signals that your organisation takes presentation seriously.",
+      featurePills: [
+        "🎯 Exact Pantone (PMS) Colour Matching",
+        "🚨 Safety Breakaway Clips Standard Option",
+        "📐 10mm to 25mm Width Configurations",
+        "♻️ 100% Recycled PET Eco Option Available",
+        "📄 Free Pre-Press 1:1 Vector Proof"
+      ],
       subsections: [
-        { title: "Which option is right for you?", body: "With nearly five decades of local expertise, we supply bulk lanyards for conferences and sustainable options for everyday staff wear alike — pick your material and print method above, add your quantity, and check out online in minutes." },
-        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+        { title: "Print method: matching quality to use", body: "Screen printing on polyester or nylon suits everyday corporate use with simple logos and solid Pantone-matched colours — durable, fast and cost-effective at any volume. Dye sublimation delivers photographic-quality full-colour printing edge to edge for conference, exhibition and event lanyards where vibrant, detailed artwork matters. Woven-in text is the most durable of all: the design is woven directly into the fabric rather than printed on the surface, making it completely impossible to fade or wear off — ideal for long-term staff identification lanyards at schools, universities, healthcare organisations or government bodies." },
+        { title: "Configuration: width, clip and safety", body: "Width ranges from 10mm to 25mm — narrower for a sleek corporate look, wider for greater surface area to display logos and artwork. Attachment options include swivel hooks, bulldog clips, split rings and retractable reels, depending on whether the lanyard carries an ID card for daily scanning or simply holds a badge. For schools, hospitals, factories and any environment with safety requirements, always specify a breakaway clip: it snaps apart under pressure to prevent injury or strangulation if the lanyard is caught." },
+        { title: "Eco options and ordering", body: "Our Recycled PET Lanyards are made from 100% post-consumer recycled plastic bottles and are a certified sustainable choice for environmentally conscious organisations. Printed lanyards have a 100-unit minimum; plain lanyards have none. Every order includes a free artwork proof, and colours can be Pantone-matched to your exact brand specifications." }
       ],
       facts: [
-        "15 product varieties in lanyards",
+        "15 product varieties across all lanyard styles",
         "Starting from $0.70",
-        "Free artwork &amp; design proof on every order",
-        "Same-day dispatch on stock lines",
-        "Australian made since 1978",
-        "Bulk pricing scales automatically with quantity"
+        "Width options: 10mm to 25mm",
+        "Pantone colour matching available",
+        "Family-owned Australian business since 1978",
+        "100-unit minimum for printed styles; no minimum for plain"
       ]
     },
 
@@ -941,10 +950,12 @@
       eyebrow: "FAQ",
       heading: "Lanyard questions, answered",
       items: [
-        { q: "What's the minimum order quantity for custom lanyards?", a: "Plain, non-printed lanyards have no minimum — order a single one if needed. Printed styles (silk screen, dye sublimation, woven or reflective) have a 100-unit minimum, with bulk discounts for larger orders." },
-        { q: "What's the difference between screen printing and dye sublimation?", a: "Screen printing suits simple designs with solid colours. Dye sublimation is ideal for full-colour photographic artwork with seamless, fade-resistant printing." },
-        { q: "What is a breakaway clip, and why is it important?", a: "A breakaway clip snaps apart under pressure, preventing injury or strangulation if caught — essential for schools, healthcare and factory environments." },
-        { q: "Do you offer eco-friendly lanyard options?", a: "Yes — our Recycled PET Lanyards are made from post-consumer plastic bottles, durable and high quality, and well suited to sustainability-focused organisations." }
+        { q: "What's the minimum order quantity for custom lanyards?", a: "Plain, non-printed lanyards have no minimum — order a single one if needed. Printed styles (silk screen, dye sublimation, woven or reflective) have a 100-unit minimum, with bulk discounts that improve significantly for larger orders." },
+        { q: "What is a breakaway clip and should I get one?", a: "A breakaway clip is a safety feature built into the lanyard cord that releases automatically under sudden pressure, preventing choking or neck injury if the lanyard gets caught in machinery, doors or hardware. They are strongly recommended for schools, hospitals, industrial environments and active workplaces." },
+        { q: "How does Pantone matching work for lanyards?", a: "Provide your PMS colour code during artwork setup and we will match the dyed fabric or print inks to your exact brand standard. This is available across screen printed, dye sublimated and woven lanyard options." },
+        { q: "What lanyard width is best for my brand logo?", a: "15mm or 20mm are the most versatile widths for corporate logos and text. 10mm provides a subtle, slimline profile for smaller text. 25mm offers maximum printable surface for complex artwork or dual-logo event branding." },
+        { q: "Can I order matching ID card holders with my lanyards?", a: "Yes — we stock a full range of clear vinyl and rigid plastic badge holders, as well as retractable badge reels in our badge accessories range." },
+        { q: "What attachment options are available for the end of the lanyard?", a: "Options include swivel hooks (for ID cards and badge holders), bulldog clips (for secure attachment to thicker items), split rings (for keys or larger attachments) and retractable reels (for ID cards that need to be extended for scanning throughout the day). Breakaway and non-breakaway versions are available for most attachment types." }
       ]
     }
   };
@@ -966,7 +977,7 @@
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
           ${o.priceFrom ? `<div class="price">From ${o.priceFrom}</div>` : ''}
-          <a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
+          ${o.ctaLabel ? `<a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">${o.ctaLabel}</a>` : ''}
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
 
@@ -990,14 +1001,8 @@
     // Reviews
     if (data.reviews) {
       renderSectionHead(document.getElementById('reviewsHead'), data.reviews.eyebrow, data.reviews.heading);
-      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => {
-        const initials = r.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-        return `<div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"${r.quote}"</p>
-          <div class="t-who"><div class="t-avatar">${initials}</div><div><b>${r.name}</b><span>${r.source}</span></div></div>
-        </div>`;
-      }).join('');
+      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => `
+        <div class="testimonial-card"><p class="quote">"${r.quote}"</p><div class="author">${r.name}</div><div class="source">${r.source}</div></div>`).join('');
     } else { document.getElementById('section-reviews').style.display = 'none'; }
 
     // Cross-sell

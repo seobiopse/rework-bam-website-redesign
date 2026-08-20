@@ -818,18 +818,27 @@
 
     buyingGuide: {
       eyebrow: "Buying guide",
-      heading: "Keep your badge machine in perfect working order",
-      intro: "Reliable equipment means consistent badges, less downtime, and a smoother workflow. From replacement cutter wheels and ejector pins to protective baseboards, every part is engineered for precision and guaranteed compatibility with our <a href=\"https://badge-a-minit.com.au/products/button-badge-machines\">button badge machines</a> — no guesswork, no mismatches.",
+      heading: "Keep your badge-making setup running perfectly",
+      tagline: "Precision replacement parts and components keeping your badge press running smoothly.",
+      intro: "When you rely on a button badge machine for your school fundraiser, market stall, campaign run or event, the last thing you want is for a worn cutter wheel or a tired ejector pin to bring production to a halt. Reliable equipment means consistent badges, less downtime and a smoother workflow — which is why Badge-A-Minit supplies every replacement part engineered for precision and guaranteed compatible with our <a href=\"https://badge-a-minit.com.au/products/button-badge-machines\">button badge machines</a>. No guesswork, no mismatches, no wasted time.",
+      featurePills: [
+        "⚙️ Heavy-Duty Press Compatible Parts",
+        "🛡️ Crystal-Clear Mylar Protective Film",
+        "📍 Spring-Steel Pins &amp; Magnet Backs",
+        "📦 Same-Day Dispatch from Prospect SA",
+        "🇦🇺 Factory-Direct Australian Support"
+      ],
       subsections: [
-        { title: "Which option is right for you?", body: "We supply professional-grade accessories built to last, ensuring your <a href=\"https://badge-a-minit.com.au/products/button-badge\">button badges</a> press cleanly and consistently, job after job, backed by support from local Australian badge-making specialists." },
-        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+        { title: "Replacement parts vs a new machine: when to repair?", body: "A worn cutter wheel, a damaged ejector pin or a scratched base board does not mean you need a new machine — these are consumable components designed to be replaced. Our Cutter Circle Base Board, Replacement Ejector Pin and Replacement Cutter Wheel restore your machine to full working condition at a fraction of the cost of replacement. If your machine is producing badges with ragged edges or the ejector is sticking, a single part swap is almost always the fix." },
+        { title: "Fridge magnets: turning badges into display pieces", body: "The self-adhesive Fridge Magnets for Button Badges transform any finished <a href=\"https://badge-a-minit.com.au/products/button-badge\">button badge</a> into a decorative or promotional magnet in seconds — popular for fundraising, brand giveaways and charity events. Simply peel and stick to the back of any badge for strong, clean adhesion on any metal surface." },
+        { title: "Ordering, delivery &amp; support", body: "All accessories are stocked in Prospect, SA and dispatch same-day on weekdays. For critical downtime, call our team on (08) 8363 1655 and we will advise the fastest path to getting your machine back in production." }
       ],
       facts: [
         "5 product varieties in button badge accessories",
         "Starting from $0.50",
-        "Free artwork &amp; design proof on every order",
+        "All parts guaranteed compatible with Badge-A-Minit machines",
         "Same-day dispatch on stock lines",
-        "Australian made since 1978",
+        "Family-owned Australian business since 1978",
         "Bulk pricing scales automatically with quantity"
       ]
     },
@@ -838,10 +847,12 @@
       eyebrow: "FAQ",
       heading: "Button badge accessory questions, answered",
       items: [
-        { q: "Are these accessories compatible with my badge machine?", a: "Yes — all accessories listed here are fully compatible with Badge-A-Minit machines and standard badge components. Using another brand? Contact us to confirm compatibility before ordering." },
-        { q: "How do I turn a button badge into a fridge magnet?", a: "Simply attach one of our self-adhesive fridge magnets to the back of your completed badge. They provide a strong hold and instantly transform badges into decorative or promotional magnets." },
-        { q: "What's included in the Button Badge Accessories Travel Case?", a: "A heavy-duty, empty organiser with custom foam inserts designed to securely hold your button badge accessories, such as the circle cutter, assembly dies and essential tools — ideal for professionals, educators and mobile makers." },
-        { q: "Do you offer faster shipping for urgent replacement parts?", a: "Absolutely — select Express, Fast Track or Priority Rush at checkout for the fastest turnaround. For critical downtime, call us and we'll help expedite your order." }
+        { q: "Are these accessories compatible with my badge machine?", a: "Yes — all accessories listed here are fully compatible with Badge-A-Minit machines. Using another brand? Contact us to confirm compatibility before ordering. We'll advise honestly if a part won't work rather than risk a wasted purchase." },
+        { q: "How do I turn a button badge into a fridge magnet?", a: "Simply attach one of our self-adhesive Fridge Magnets for Button Badges to the back of your completed badge — peel and stick. They provide a strong hold and instantly transform badges into decorative or promotional magnets for any metal surface." },
+        { q: "What's included in the Button Badge Accessories Travel Case?", a: "The travel case is a heavy-duty, empty organiser with custom foam inserts designed to securely hold your badge-making accessories — including the circle cutter, assembly dies and essential tools. Ideal for mobile badge makers, school events, market stalls and professional badge-making businesses." },
+        { q: "How do I know when my cutter wheel needs replacing?", a: "Signs include ragged or compressed edges on the cut circles rather than clean punched holes, or increased resistance when cutting. A replacement cutter wheel is a quick, affordable fix that restores consistent, clean cuts." },
+        { q: "Do you offer faster shipping for urgent replacement parts?", a: "Yes — select Express, Fast Track or Priority Rush at checkout for the fastest turnaround. For critical machine downtime, call us on (08) 8363 1655 and we'll help expedite your order." },
+        { q: "Can I buy a single replacement part or do I need to buy in bulk?", a: "There is no minimum order on any badge accessory. Buy the single part you need, or stock up on multiples to avoid downtime in the future — pricing per unit remains the same, with bulk discounts available on larger quantities." }
       ]
     }
   };
@@ -863,11 +874,11 @@
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
           ${o.priceFrom ? `<div class="price">From ${o.priceFrom}</div>` : ''}
-          <a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
+          ${o.ctaLabel ? `<a class="cta" href="${o.ctaHref}">${o.ctaLabel}</a>` : ''}
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
 
-    // Variant showcase (materials / finishes / attachment styles — whatever applies)
+    // Variant showcase
     if (data.variantShowcase) {
       renderSectionHead(document.getElementById('variantHead'), data.variantShowcase.eyebrow, data.variantShowcase.heading, data.variantShowcase.intro);
       document.getElementById('variantStrip').innerHTML = data.variantShowcase.items.map(v => `
@@ -887,14 +898,8 @@
     // Reviews
     if (data.reviews) {
       renderSectionHead(document.getElementById('reviewsHead'), data.reviews.eyebrow, data.reviews.heading);
-      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => {
-        const initials = r.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-        return `<div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"${r.quote}"</p>
-          <div class="t-who"><div class="t-avatar">${initials}</div><div><b>${r.name}</b><span>${r.source}</span></div></div>
-        </div>`;
-      }).join('');
+      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => `
+        <div class="testimonial-card"><p class="quote">"${r.quote}"</p><div class="author">${r.name}</div><div class="source">${r.source}</div></div>`).join('');
     } else { document.getElementById('section-reviews').style.display = 'none'; }
 
     // Cross-sell

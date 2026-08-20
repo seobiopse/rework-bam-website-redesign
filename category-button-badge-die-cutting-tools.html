@@ -820,18 +820,27 @@
 
     buyingGuide: {
       eyebrow: "Buying guide",
-      heading: "Choose your perfect badge cutting tool",
-      intro: "For high volume production, the Desktop Die Cutter cuts ten or more images at once, significantly reducing time on bulk <a href=\"https://badge-a-minit.com.au/products/button-badge\">button badge</a> orders. For portability and simplicity, the Hand Punch is compact, easy to align and perfect for small runs, cutting three images at a time with excellent accuracy.",
+      heading: "Choose the right cutting tool for your output",
+      tagline: "Clean, precise paper circles every single time — built for high-volume production.",
+      intro: "The quality of a button badge starts with the quality of the cut. A poorly trimmed circle causes alignment problems in the press, wasted components and a badge that looks off-centre — something that might not be obvious until you've already run a batch. Badge-A-Minit's die-cutting tools are purpose-built for <a href=\"https://badge-a-minit.com.au/products/button-badge-components\">button badge components</a>, so every circle comes out at exactly the right diameter for a perfect press every time.",
+      featurePills: [
+        "🔪 Hardened Tool Steel Cutter Wheels",
+        "🎯 Sizing for 25mm, 35mm, 57mm, 75mm",
+        "🪵 Heavy-Duty Wooden Baseboards",
+        "🔄 Smooth Heavy-Duty Lever Action",
+        "🇦🇺 Australian Made &amp; Serviced Locally"
+      ],
       subsections: [
-        { title: "Which option is right for you?", body: "For precision and ease, the Australian-made Circle Cutter is locally crafted for accuracy and long-lasting build quality, while the Imported Circle Cutter offers a reliable, cost-effective option for everyday badge making. Unlike general craft cutters, these tools are engineered specifically for standard <a href=\"https://badge-a-minit.com.au/products/button-badge-components\">button badge components</a> to ensure perfect sizing and reduced waste." },
-        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+        { title: "Matching tool to volume", body: "For high-volume production — schools, campaign runs, event suppliers — the Desktop Die Cutter cuts ten or more circles at once and dramatically reduces per-badge time at scale. The Hand Punch hits the sweet spot for small batches and portable use, cutting three circles at a time with excellent accuracy and zero bench footprint. For everyday makers and hobbyists, both the Australian-made Circle Cutter and the more affordable Imported Circle Cutter deliver consistent single-image cuts — the Australian-made version is locally produced for long-lasting build quality, while the imported option is a reliable everyday choice at a lower price point." },
+        { title: "Maintaining your tools", body: "Die Cutter Knives are the consumable in any blade-based die cutting system. When the Desktop Die Cutter starts producing cut edges that compress or fray rather than punch cleanly, a knife replacement restores full performance. Keep a spare set on hand if you're running regular production. For more on the <a href=\"https://badge-a-minit.com.au/products/button-badge-machines\">badge machines</a> these tools are designed to feed, see the Button Badge Machines category." },
+        { title: "Ordering, delivery &amp; support", body: "All die cutting tools are stocked in Prospect, SA and dispatch same-day. Compatibility is guaranteed with Badge-A-Minit badge press systems. If you're unsure which cutter matches your setup, call us on (08) 8363 1655." }
       ],
       facts: [
         "5 product varieties in button badge die cutting tools",
         "Starting from $77.00",
-        "Free artwork &amp; design proof on every order",
+        "Purpose-built for Badge-A-Minit badge press systems",
         "Same-day dispatch on stock lines",
-        "Australian made since 1978",
+        "Family-owned Australian business since 1978",
         "Bulk pricing scales automatically with quantity"
       ]
     },
@@ -840,11 +849,12 @@
       eyebrow: "FAQ",
       heading: "Die cutting tool questions, answered",
       items: [
-        { q: "What's the difference between the Desktop Die Cutter and a Hand Punch?", a: "The Desktop Die Cutter is designed for high-volume work and can cut ten or more circles at once. The Hand Punch is portable and ideal for smaller batches, cutting three circles at a time with easy alignment." },
-        { q: "Can I use a Cricut or other electronic cutting machine instead?", a: "Electronic cutters can work, but our tools are purpose-built for badge making. They match badge component sizes perfectly and offer faster, simpler batch cutting with no software setup required." },
-        { q: "Are the circle cutters easy to use for beginners?", a: "Yes — both the Australian Made Circle Cutter and Hand Punch include guides and mechanisms that make alignment simple and deliver clean cuts even for first-time users." },
-        { q: "Which tool is best for cutting fabric for badges?", a: "For fabric or tougher materials, choose the Desktop Die Cutter or Hand Punch. They provide the force needed to cut cleanly through fabric, felt or thin leather. Replaceable knives in the Desktop Die Cutter make it especially effective." },
-        { q: "Do I need to buy separate knives for the Desktop Die Cutter?", a: "The cutter is supplied ready to use. Replacement knives are optional but recommended for high-volume users to maintain sharpness and avoid rough edges." }
+        { q: "What's the difference between the Desktop Die Cutter and a Hand Punch?", a: "The Desktop Die Cutter is designed for high-volume work and can cut ten or more circles at once — significantly reducing batch preparation time. The Hand Punch is compact, portable and ideal for smaller batches, cutting three circles at a time with easy alignment and no bench space required." },
+        { q: "Can I use a Cricut or other electronic cutting machine instead?", a: "Electronic cutters can work for some users, but our tools are purpose-built for badge-making. They match badge component sizes precisely and offer faster, simpler batch cutting with no software setup, calibration or material waste required." },
+        { q: "What's the difference between the Australian Made and Imported Circle Cutters?", a: "Both cut a single circle at a time with high accuracy. The Australian Made Circle Cutter is locally produced for superior build quality and long-term durability. The Imported Circle Cutter is a reliable, more cost-effective option for everyday badge making. Both include a cutting board." },
+        { q: "Are the circle cutters easy to use for beginners?", a: "Yes — both the Australian Made Circle Cutter and Hand Punch are designed for straightforward alignment and deliver clean cuts even for first-time users. The desktop unit requires slightly more setup but becomes very fast once the workflow is established." },
+        { q: "Which tool is best for cutting fabric or felt for badges?", a: "For fabric, felt or tougher materials, the Desktop Die Cutter or Hand Punch provide the force needed for a clean cut. Replaceable knives in the Desktop Die Cutter make it especially effective on these materials over time." },
+        { q: "How do I know when to replace the Die Cutter Knives?", a: "When the Desktop Die Cutter starts producing circles with compressed or ragged edges rather than clean punched holes, the blade is due for replacement. Keeping a spare set on hand avoids production delays — knives are sold separately for exactly this reason." }
       ]
     }
   };
@@ -866,11 +876,11 @@
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
           ${o.priceFrom ? `<div class="price">From ${o.priceFrom}</div>` : ''}
-          <a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
+          ${o.ctaLabel ? `<a class="cta" href="${o.ctaHref}">${o.ctaLabel}</a>` : ''}
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
 
-    // Variant showcase (materials / finishes / attachment styles — whatever applies)
+    // Variant showcase
     if (data.variantShowcase) {
       renderSectionHead(document.getElementById('variantHead'), data.variantShowcase.eyebrow, data.variantShowcase.heading, data.variantShowcase.intro);
       document.getElementById('variantStrip').innerHTML = data.variantShowcase.items.map(v => `
@@ -890,14 +900,8 @@
     // Reviews
     if (data.reviews) {
       renderSectionHead(document.getElementById('reviewsHead'), data.reviews.eyebrow, data.reviews.heading);
-      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => {
-        const initials = r.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-        return `<div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"${r.quote}"</p>
-          <div class="t-who"><div class="t-avatar">${initials}</div><div><b>${r.name}</b><span>${r.source}</span></div></div>
-        </div>`;
-      }).join('');
+      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => `
+        <div class="testimonial-card"><p class="quote">"${r.quote}"</p><div class="author">${r.name}</div><div class="source">${r.source}</div></div>`).join('');
     } else { document.getElementById('section-reviews').style.display = 'none'; }
 
     // Cross-sell

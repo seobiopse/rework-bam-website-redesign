@@ -953,19 +953,28 @@
 
     buyingGuide: {
       eyebrow: "Buying guide",
-      heading: "Order custom name badges in Australia",
-      intro: "With 47 years of local manufacturing behind us and thousands of Australian clients, we deliver more than a name badge — consistency, durability, and a proof you can approve before anything's made. Whether you're outfitting a corporate floor, a healthcare team, or a one-off event crew, there's a finish above built for the job.",
+      heading: "Custom name badges that represent your people and your brand",
+      tagline: "Humanising every customer interaction with professional, beautifully crafted badges.",
+      intro: "A name badge does something quietly powerful: it makes every interaction more human. When a customer knows the name of the person helping them, the conversation shifts — service becomes personal, trust is established faster, and complaints are less likely to escalate. For your staff, wearing a well-made badge signals professional identity and belonging within the team. With 47 years of Australian manufacturing behind us, we deliver badges built to the same standard whether you're ordering ten for a boutique or ten thousand for a national rollout.",
+      featurePills: [
+        "🏅 Engraved, Full Colour, Wooden &amp; Reusable Styles",
+        "🧲 Neodymium Magnetic &amp; Safety Pin Attachments",
+        "📄 Free Artwork Proof on Every Order",
+        "⚡ 4-Day Standard Turnaround (Priority Available)",
+        "🇦🇺 Family-Owned Australian Manufacturer Since 1978"
+      ],
       subsections: [
-        { title: "Which option is right for you?", body: "Ready to order? Pick a finish above, choose your backing and quantity, and add it straight to your cart — bulk pricing is applied automatically at checkout." },
-        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+        { title: "Choosing the right finish for your setting", body: "Engraved badges (plastic or wood) are the professional standard in corporate, legal, medical and hospitality settings — permanent, crisp and dignified. Full colour badges are ideal where brand presence matters most: retail chains, events and consumer-facing businesses where the logo needs to be vivid and immediately identifiable. Magnetic badges eliminate fabric damage for healthcare, uniform-sensitive and hospitality environments. Reusable badges are the practical answer for high-turnover workplaces, events and temporary staff where the name changes but the badge stays." },
+        { title: "Backing and attachment: what to specify", body: "The backing is as important as the badge itself. Magnetic backings are the professional choice for healthcare, aviation, hospitality and any setting with quality uniforms — no pin holes, no fabric snags, no visible hardware. Safety pin backings are the most versatile for casual environments. Swivel clips attach to lanyards for event and conference settings where the badge is worn around the neck rather than on the chest. Our <a href=\"https://badge-a-minit.com.au/products/badge-accessories\">badge accessories</a> range has every fitting option available separately if you need replacements." },
+        { title: "Ordering, delivery &amp; support", body: "Every order includes a free digital proof before production. Standard turnaround is 4 working days, with Express and Priority Rush available for tight timelines. Pricing scales automatically with quantity — add your badges to cart and the discount applies at checkout without needing to request a quote." }
       ],
       facts: [
-        "18 product varieties in name badges",
+        "18 product varieties across all badge styles and materials",
         "Starting from $1.50",
         "Free artwork &amp; design proof on every order",
-        "Same-day dispatch on stock lines",
-        "Australian made since 1978",
-        "Bulk pricing scales automatically with quantity"
+        "4-day standard turnaround, express options available",
+        "Family-owned Australian business since 1978",
+        "No minimum order quantity"
       ]
     },
 
@@ -973,12 +982,12 @@
       eyebrow: "FAQ",
       heading: "Name badge questions, answered",
       items: [
-        { q: "What's the difference between engraved and printed name badges?", a: "Engraved badges are permanently etched into metal or wood for a classic, durable finish. Printed badges use full-colour printing for more vibrant designs and flexibility, usually at a lower price point." },
-        { q: "Are magnetic name badges strong enough to stay put?", a: "Yes — our magnetic badges use high-strength neodymium magnets for a secure, comfortable hold without damaging clothing. Not recommended for pacemaker users." },
-        { q: "What backing options are available?", a: "Most styles offer a choice of magnetic or pin backing at checkout, so the same badge can suit uniforms, blazers or delicate fabrics." },
-        { q: "Can I include my company logo?", a: "Absolutely — upload your logo during checkout or use our design tools. Our team reviews every design before it goes to print for a crisp, professional result." },
-        { q: "What's the typical turnaround time?", a: "Most name badge orders have a 4-day production turnaround, with express options available for tighter deadlines." },
-        { q: "Is there a minimum order quantity?", a: "No — order a single badge or several hundred. Pricing improves automatically as quantity increases." }
+        { q: "What's the difference between engraved and printed name badges?", a: "Engraved badges are permanently etched into metal or wood for a classic, durable finish that cannot fade, peel or rub off — the professional standard for corporate and healthcare settings. Printed badges use full-colour CMYK printing for more vibrant designs including logos and gradients, at a lower price point and with more visual flexibility." },
+        { q: "Are magnetic name badges strong enough to stay put?", a: "Yes — our magnetic badges use high-strength neodymium magnets for a secure hold through most fabric thicknesses without damaging clothing. They are the preferred choice for healthcare, hospitality and corporate uniform settings. Not recommended for pacemaker users or those with implanted medical devices." },
+        { q: "What backing options are available?", a: "Most styles offer a choice of magnetic, safety pin, swivel clip or rotary clip at checkout. The same badge can be ordered with different backings to suit different members of your team — clinic staff might prefer magnetics while event staff prefer a lanyard clip." },
+        { q: "Can I include my company logo?", a: "Absolutely — upload your logo during checkout or use our design tools. Our team reviews every design before it goes to print or engraving for a crisp, professional result. Vector files (AI, EPS, SVG) give the best quality for logos with fine detail." },
+        { q: "What's the typical turnaround time?", a: "Standard turnaround is 4 working days from proof approval, with Express (2 days) and Priority Rush (1 day production) options available. Contact us if your timeline is critical and we'll advise the fastest path for your order." },
+        { q: "Is there a minimum order quantity?", a: "No — order a single badge or several hundred. Pricing improves automatically as quantity increases, and no minimum or separate quote is required for any standard name badge order." }
       ]
     }
   };
@@ -1000,11 +1009,11 @@
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
           ${o.priceFrom ? `<div class="price">From ${o.priceFrom}</div>` : ''}
-          <a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
+          ${o.ctaLabel ? `<a class="cta" href="${o.ctaHref}">${o.ctaLabel}</a>` : ''}
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
 
-    // Variant showcase (materials / finishes / attachment styles — whatever applies)
+    // Variant showcase
     if (data.variantShowcase) {
       renderSectionHead(document.getElementById('variantHead'), data.variantShowcase.eyebrow, data.variantShowcase.heading, data.variantShowcase.intro);
       document.getElementById('variantStrip').innerHTML = data.variantShowcase.items.map(v => `
@@ -1024,14 +1033,8 @@
     // Reviews
     if (data.reviews) {
       renderSectionHead(document.getElementById('reviewsHead'), data.reviews.eyebrow, data.reviews.heading);
-      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => {
-        const initials = r.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-        return `<div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"${r.quote}"</p>
-          <div class="t-who"><div class="t-avatar">${initials}</div><div><b>${r.name}</b><span>${r.source}</span></div></div>
-        </div>`;
-      }).join('');
+      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => `
+        <div class="testimonial-card"><p class="quote">"${r.quote}"</p><div class="author">${r.name}</div><div class="source">${r.source}</div></div>`).join('');
     } else { document.getElementById('section-reviews').style.display = 'none'; }
 
     // Cross-sell

@@ -780,18 +780,27 @@
     buyingGuide: {
       eyebrow: "Buying guide",
       heading: "Maximise your Multi Press investment",
-      intro: "Why buy a separate machine for every badge size when the <a href=\"https://badge-a-minit.com.au/products/button-badge-machines/multi-press-button-badge-machine\">Multi Press button badge machine</a> lets you do it all in one unit? These dedicated dies let you switch between 25mm, 35mm and 57mm badges without extra equipment, saving space in your workshop and cutting setup costs while maintaining a professional finish.",
+      tagline: "One Multi Press frame, endless badge size possibilities.",
+      intro: "Why buy a separate machine for every badge size when the <a href=\"https://badge-a-minit.com.au/products/button-badge-machines/multi-press-button-badge-machine\">Multi Press button badge machine</a> lets you do it all in one unit? These dedicated interchangeable die sets let you switch between 25mm, 35mm and 57mm badge production without purchasing extra equipment — keeping your workshop costs down, your bench space clear and your badge-making capability broad.",
+      featurePills: [
+        "🔄 Tool-Free Quick Die Changeover",
+        "⚙️ Solid Steel Precision Machined",
+        "📐 25mm, 35mm &amp; 57mm Sizing",
+        "🛠️ Perfect Alignment &amp; Zero Recalibration",
+        "🇦🇺 Manufactured in South Australia Since 1978"
+      ],
       subsections: [
-        { title: "Which option is right for you?", body: "Each die set is engineered specifically for the Multi Press for a perfect fit and smooth, reliable operation, made from robust, long-wearing materials and supplied directly from Australian stock — with quick, tool-free interchangeability for minimal downtime between sizes." },
-        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+        { title: "Why official dies matter more than you'd think", body: "Each die set is precision-engineered to fit the Multi Press exactly — the tolerances are tight by design, ensuring every badge presses cleanly without alignment drift. Third-party or generic dies risk binding the press, producing mis-shaped badges or wearing the machine frame prematurely. Official dies from Badge-A-Minit are made from robust, long-wearing materials specifically matched to the Multi Press geometry, and are supplied directly from Australian stock for fast turnaround." },
+        { title: "Which die size should you start with?", body: "25mm badges are the most popular for casual promotional use — wearable, affordable and ideal for campaigns and brand giveaways. 35mm offers the classic button badge size that most people picture: large enough for clear text and artwork, comfortable on a shirt or bag. 57mm gives you maximum visual impact for display-oriented use — slogans, events and bold design statements. Most production users hold at least two sizes to serve different clients or occasions." },
+        { title: "Ordering, delivery &amp; support", body: "All die sets are stocked in Prospect, SA and dispatch same-day. Contact our team on (08) 8363 1655 to confirm compatibility with your specific Multi Press configuration before ordering." }
       ],
       facts: [
-        "3 product varieties in button badge interchangeable dies",
+        "3 die size options: 25mm, 35mm, 57mm",
         "Starting from $275.00",
-        "Free artwork &amp; design proof on every order",
-        "Same-day dispatch on stock lines",
-        "Australian made since 1978",
-        "Bulk pricing scales automatically with quantity"
+        "Exclusive to the Badge-A-Minit Multi Press",
+        "Tool-free interchange — change sizes in minutes",
+        "Family-owned Australian business since 1978",
+        "Same-day dispatch on stock lines"
       ]
     },
 
@@ -799,10 +808,12 @@
       eyebrow: "FAQ",
       heading: "Interchangeable die questions, answered",
       items: [
-        { q: "What's included in a Multi Press Die Set?", a: "Each set includes all the precision parts required to convert your Multi Press to a new size — upper and lower dies suited to the 25mm, 35mm or 57mm format for a seamless changeover." },
-        { q: "Are these dies compatible with any badge machine?", a: "No — these die sets are designed exclusively for the Badge-A-Minit Multi Press and are not suitable for other presses or generic badge-making supplies." },
-        { q: "How do I change the dies on my Multi Press machine?", a: "The process is quick and tool-free. Swap dies in moments and move from one badge size to another without slowing down your workflow." },
-        { q: "Why should I buy official Badge-A-Minit dies instead of generic ones?", a: "Official dies ensure perfect compatibility, superior performance and long-term reliability. They protect your machine and deliver a clean, professional finish every time." }
+        { q: "What's included in a Multi Press Die Set?", a: "Each die set includes all the precision-machined parts required to convert your Multi Press to a new badge size — upper and lower dies engineered to the exact tolerances of the 25mm, 35mm or 57mm format, for a clean, consistent press on every badge." },
+        { q: "Are these dies compatible with any badge machine?", a: "No — these die sets are designed exclusively for the Badge-A-Minit Multi Press frame and are not suitable for other presses or generic badge-making equipment. If you're unsure whether your machine is a Multi Press, contact us before ordering." },
+        { q: "How do I change the dies on my Multi Press machine?", a: "The process is quick and tool-free — the Multi Press is designed for fast interchangeability. Remove the current die set, insert the new one, and you're ready to press a different badge size within minutes, with no recalibration required." },
+        { q: "Why should I buy official Badge-A-Minit dies instead of generic ones?", a: "Official dies are precision-matched to the Multi Press frame geometry. Generic dies risk binding the press, producing misaligned or misshapen badges, or damaging the machine over time. Official dies protect your investment and deliver consistent results across every run." },
+        { q: "Which size die should I buy first?", a: "Most users start with 35mm — the classic button badge size that suits most promotional and campaign use. 25mm is ideal if your primary use is small giveaway badges, while 57mm suits bold, high-visibility applications. Many professional badge makers hold all three." },
+        { q: "Can I use the Multi Press die sets with the standard Australian Made Button Badge Machine?", a: "No — the Multi Press die sets are designed specifically for the Multi Press frame. The standard Australian Made Button Badge Machine uses a fixed die configuration and is not compatible with interchangeable dies." }
       ]
     }
   };
@@ -824,11 +835,11 @@
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
           ${o.priceFrom ? `<div class="price">From ${o.priceFrom}</div>` : ''}
-          <a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
+          ${o.ctaLabel ? `<a class="cta" href="${o.ctaHref}">${o.ctaLabel}</a>` : ''}
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
 
-    // Variant showcase (materials / finishes / attachment styles — whatever applies)
+    // Variant showcase
     if (data.variantShowcase) {
       renderSectionHead(document.getElementById('variantHead'), data.variantShowcase.eyebrow, data.variantShowcase.heading, data.variantShowcase.intro);
       document.getElementById('variantStrip').innerHTML = data.variantShowcase.items.map(v => `
@@ -848,15 +859,16 @@
     // Reviews
     if (data.reviews) {
       renderSectionHead(document.getElementById('reviewsHead'), data.reviews.eyebrow, data.reviews.heading);
-      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => {
-        const initials = r.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-        return `<div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"${r.quote}"</p>
-          <div class="t-who"><div class="t-avatar">${initials}</div><div><b>${r.name}</b><span>${r.source}</span></div></div>
-        </div>`;
-      }).join('');
+      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => `
+        <div class="testimonial-card"><p class="quote">"${r.quote}"</p><div class="author">${r.name}</div><div class="source">${r.source}</div></div>`).join('');
     } else { document.getElementById('section-reviews').style.display = 'none'; }
+
+    // Cross-sell
+    if (data.crossSell) {
+      renderSectionHead(document.getElementById('crossSellHead'), data.crossSell.eyebrow, data.crossSell.heading, data.crossSell.intro);
+      document.getElementById('crossSellScroll').innerHTML = data.crossSell.items.map(p => `
+        <div class="hm-card"><div class="hm-img"><img src="${p.image}" alt="${p.name}"></div><h4 class="hm-serif">${p.name}</h4>${p.priceFrom ? `<div class="hm-price">From <b>${p.priceFrom}</b></div>` : '<div class="hm-price">&nbsp;</div>'}<a class="hm-more" href="${p.href}">MORE INFO →</a></div>`).join('');
+    } else { document.getElementById('section-crosssell').style.display = 'none'; }
 
     // Cross-sell
     if (data.crossSell) {

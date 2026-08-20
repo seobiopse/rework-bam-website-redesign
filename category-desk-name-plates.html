@@ -777,18 +777,27 @@
 
     buyingGuide: {
       eyebrow: "Buying guide",
-      heading: "Why choose our custom desk name plates?",
-      intro: "With over 47 years of experience, we combine craftsmanship and reliability to deliver desk name plates Australia trusts for quality and professionalism. Every plate is fully customisable with names, titles and company logos through our online design tools, using the same durable, high-grade materials that also define our long-lasting <a href=\"https://badge-a-minit.com.au/products/name-badges\">name badges</a>.",
+      heading: "Which desk name plate is right for your workplace?",
+      tagline: "A statement of permanence, authority, and professional respect at every desk.",
+      intro: "A well-chosen desk name plate doesn't just display a name — it signals permanence, professionalism and respect for the person seated there. For open-plan offices, healthcare waiting rooms and reception desks, a desk name plate is often the first thing a visitor reads before any interaction happens. Choosing the right format communicates as much about your culture as the name it carries.",
+      featurePills: [
+        "🏛️ Executive Premium Aluminium &amp; A-Frame Styles",
+        "🔄 Changeable Nameplate Insert System",
+        "✒️ High-Contrast Laser Engraving &amp; Print",
+        "🏢 Ideal for Hot-Desking &amp; Reception Counters",
+        "🇦🇺 Australian Made &amp; Dispatched Fast"
+      ],
       subsections: [
-        { title: "Which option is right for you?", body: "From personalised plates for individual executives to bulk orders for corporate teams, offices, schools, medical practices and law firms, we deliver fast Australia-wide." },
-        { title: "Ordering, delivery &amp; support", body: "Every order includes a free artwork check before production, so you can approve your design before anything's made. Stock lines dispatch same-day, and pricing improves automatically as your quantity increases — no quote required." }
+        { title: "A-Frame for flexibility, Premium Aluminium for permanence", body: "The A-Frame is the versatile, cost-effective choice for workplaces where names or roles change — hot-desking environments, temporary workstations, classroom settings and front-of-house positions. Its lightweight all-in-one design places a crisp printed insert in a stable plastic stand that sits securely on any flat surface. The Premium Aluminium stand is a long-term investment: a single, elegant metal stand that pairs with a changeable name insert — so when roles or staff change, you order a replacement insert at a fraction of the cost rather than replacing the whole unit. Over time, the Premium Aluminium stand pays for itself through insert replacements alone." },
+        { title: "Compatible with all name badge formats", body: "The same print quality and material standard used in our desk name plates also applies to our broader range of personalised <a href=\"https://badge-a-minit.com.au/products/name-badges\">name badges</a> — making it straightforward to maintain a unified visual identity across wearable and desk-based identification for your team." },
+        { title: "Ordering, delivery &amp; support", body: "Both stand styles are available to order online with the artwork tool. Every order includes a free digital proof before production. Same-day dispatch applies to stock items, and bulk pricing improves automatically as quantity increases." }
       ],
       facts: [
         "3 product varieties in desk name plates",
         "Starting from $17.50",
         "Free artwork &amp; design proof on every order",
         "Same-day dispatch on stock lines",
-        "Australian made since 1978",
+        "Family-owned Australian business since 1978",
         "Bulk pricing scales automatically with quantity"
       ]
     },
@@ -797,10 +806,12 @@
       eyebrow: "FAQ",
       heading: "Desk name plate questions, answered",
       items: [
-        { q: "What's the advantage of the Premium Aluminium plate with a changeable nameplate?", a: "It's designed for long-term savings and sustainability. The aluminium stand is a one-time purchase, and you only replace the name insert when details change — saving money and reducing waste." },
-        { q: "Can I add my company logo to a desk name plate?", a: "Absolutely — upload your logo and artwork directly, or use our easy online design tools to personalise your plate with names, titles and corporate branding." },
-        { q: "What's the difference between the A-Frame and Premium Aluminium name plates?", a: "The A-Frame is a classic, all-in-one plastic design ideal for temporary or general office use. The Premium Aluminium model features a reusable metal stand with interchangeable inserts for long-term value and a more prestigious appearance." },
-        { q: "Do you ship desk name plates across Australia?", a: "Yes — we offer fast, Australia-wide shipping for individuals and businesses alike, from major cities to regional areas and multiple office locations nationwide." }
+        { q: "What's the advantage of the Premium Aluminium plate with a changeable nameplate?", a: "It's designed for long-term savings and sustainability. The aluminium stand is a one-time purchase, and you only replace the name insert when details change — saving money and reducing waste over the life of the stand, particularly in workplaces with regular staff changes." },
+        { q: "Can I add my company logo to a desk name plate?", a: "Absolutely — upload your logo and artwork directly, or use our easy online design tools to personalise your plate with names, titles and corporate branding. Every order includes a free digital proof before production begins." },
+        { q: "What's the difference between the A-Frame and Premium Aluminium name plates?", a: "The A-Frame is a classic, all-in-one plastic design ideal for temporary or general office use. The Premium Aluminium model features a reusable metal stand with interchangeable inserts for long-term value and a more prestigious, executive appearance." },
+        { q: "Which desk name plate is best for a hot-desking office?", a: "The A-Frame is ideal for hot-desking — it's lightweight, cost-effective and designed for easy placement on any surface. Alternatively, the Premium Aluminium stand with a replacement insert lets assigned desks maintain a professional appearance without replacing the whole unit when occupants change." },
+        { q: "Do you ship desk name plates across Australia?", a: "Yes — we offer fast, Australia-wide shipping for individuals and businesses alike, from major cities to regional areas and multiple office locations nationwide. Express and Priority Rush options are available for urgent requirements." },
+        { q: "Can I order just one desk name plate, or is there a minimum?", a: "There is no minimum order — order a single plate for one desk or a bulk run for a full office floor. Pricing improves automatically per unit as quantity increases." }
       ]
     }
   };
@@ -822,11 +833,11 @@
           <div class="row-label">Key benefit</div>
           <div class="row-value">${o.benefit}</div>
           ${o.priceFrom ? `<div class="price">From ${o.priceFrom}</div>` : ''}
-          <a class="btn btn-primary btn-sm cta-buy" href="${o.ctaHref}" style="margin-top:16px;width:100%;text-align:center;justify-content:center;">Buy Now</a>
+          ${o.ctaLabel ? `<a class="cta" href="${o.ctaHref}">${o.ctaLabel}</a>` : ''}
         </div>`).join('');
     } else { document.getElementById('section-compare').style.display = 'none'; }
 
-    // Variant showcase (materials / finishes / attachment styles — whatever applies)
+    // Variant showcase
     if (data.variantShowcase) {
       renderSectionHead(document.getElementById('variantHead'), data.variantShowcase.eyebrow, data.variantShowcase.heading, data.variantShowcase.intro);
       document.getElementById('variantStrip').innerHTML = data.variantShowcase.items.map(v => `
@@ -846,14 +857,8 @@
     // Reviews
     if (data.reviews) {
       renderSectionHead(document.getElementById('reviewsHead'), data.reviews.eyebrow, data.reviews.heading);
-      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => {
-        const initials = r.name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
-        return `<div class="t-card">
-          <div class="t-stars">★★★★★</div>
-          <p class="t-quote">"${r.quote}"</p>
-          <div class="t-who"><div class="t-avatar">${initials}</div><div><b>${r.name}</b><span>${r.source}</span></div></div>
-        </div>`;
-      }).join('');
+      document.getElementById('reviewsGrid').innerHTML = data.reviews.items.map(r => `
+        <div class="testimonial-card"><p class="quote">"${r.quote}"</p><div class="author">${r.name}</div><div class="source">${r.source}</div></div>`).join('');
     } else { document.getElementById('section-reviews').style.display = 'none'; }
 
     // Cross-sell
